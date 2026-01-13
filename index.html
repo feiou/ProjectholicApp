@@ -4,13 +4,21 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Projectholic App</title>
-  <link rel="icon" type="image/png" href="appIcon-favicon.png" />
-  <link rel="apple-touch-icon" href="appIcon-favicon.png" />
+  <link rel="icon" type="image/png" href="images/appIcon-20260112.png" />
+  <link rel="apple-touch-icon" href="images/appIcon-20260112.png" />
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Noto+Serif:wght@500;600;700&display=swap');
+
     :root {
-      --primary-color: #1f2430;
-      --background-start: #ffffff;
-      --background-end: #808080;
+      --ink: #f5f2ed;
+      --muted-ink: rgba(245, 242, 237, 0.72);
+      --accent: #ff8c42;
+      --accent-warm: #ffa566;
+      --night: #121212;
+      --night-soft: #1a1a1a;
+      --panel: rgba(255, 255, 255, 0.05);
+      --panel-stroke: rgba(255, 255, 255, 0.1);
+      --glow: rgba(255, 140, 66, 0.2);
     }
 
     * {
@@ -25,273 +33,586 @@
 
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
-      background: linear-gradient(180deg, var(--background-start) 0%, var(--background-end) 100%);
-      background-attachment: fixed;
-      color: var(--primary-color);
+      font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+      background: radial-gradient(circle at top, #2b2b2b 0%, #161616 55%, #101010 100%);
+      color: var(--ink);
       overflow-x: hidden;
+      -webkit-tap-highlight-color: transparent;
+      -webkit-touch-callout: none;
     }
 
-    /* Hero Section */
-    .hero {
-      min-height: 100vh;
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(circle at 20% 20%, rgba(255, 140, 66, 0.15), transparent 50%),
+        radial-gradient(circle at 80% 10%, rgba(255, 165, 102, 0.12), transparent 55%),
+        radial-gradient(circle at 70% 80%, rgba(255, 255, 255, 0.06), transparent 60%);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: 'Noto Serif', 'Times New Roman', serif;
+      font-weight: 600;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .page {
       display: flex;
       flex-direction: column;
+      gap: 0;
+    }
+
+    .section {
+      padding: 6rem 7vw;
+    }
+
+    .section-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.32em;
+      font-size: 0.75rem;
+      color: rgba(245, 242, 237, 0.5);
+      margin-bottom: 1.2rem;
+      display: inline-flex;
       align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 2rem;
-      position: relative;
+      gap: 0.6rem;
+    }
+
+    .eyebrow::before {
+      content: '';
+      width: 40px;
+      height: 1px;
+      background: rgba(245, 242, 237, 0.35);
+    }
+
+    .lead {
+      font-size: clamp(1.05rem, 2.2vw, 1.3rem);
+      color: var(--muted-ink);
+      line-height: 1.7;
+    }
+
+    .headline {
+      font-size: clamp(2.8rem, 6vw, 4.6rem);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.4rem;
+    }
+
+    .subheadline {
+      font-size: clamp(1.2rem, 2.6vw, 1.6rem);
+      color: var(--muted-ink);
+      margin-bottom: 2rem;
+    }
+
+    .topbar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 2rem 7vw 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 100;
+      transition: background 0.3s ease, backdrop-filter 0.3s ease, padding 0.3s ease;
+    }
+
+    .topbar.scrolled {
+      position: fixed;
+      background: rgba(18, 18, 18, 0.8);
+      backdrop-filter: blur(20px);
+      padding: 1.2rem 7vw;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .brand {
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .brand-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.6rem;
+      font-size: 0.95rem;
+      color: rgba(245, 242, 237, 0.7);
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      transition: color 0.2s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .nav-links a:hover {
+      color: var(--ink);
+    }
+
+    .nav-links a:active {
+      color: var(--accent);
+    }
+
+    .hero {
+      min-height: 95vh;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      align-items: center;
+      gap: 3rem;
+      padding-top: 7rem;
     }
 
     .hero-content {
       display: flex;
       flex-direction: column;
-      align-items: center;
-      max-width: 600px;
-      width: 100%;
-      opacity: 0;
-      transform: translateY(30px);
-      animation: fadeInUp 0.8s ease forwards;
+      gap: 1.2rem;
+      position: relative;
+      z-index: 2;
     }
 
-    @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .app-icon {
-      width: 140px;
-      height: 140px;
-      border-radius: 28px;
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-      margin-bottom: 2rem;
-      transition: transform 0.3s ease;
-      animation: fadeInUp 0.8s ease 0.2s forwards;
-      opacity: 0;
-    }
-
-    .app-icon:hover {
-      transform: scale(1.05);
-    }
-
-    h1 {
-      font-size: clamp(2.5rem, 6vw, 4rem);
-      font-weight: 700;
-      margin-bottom: 1rem;
-      letter-spacing: -0.02em;
-      animation: fadeInUp 0.8s ease 0.4s forwards;
-      opacity: 0;
-    }
-
-    .tagline {
-      font-size: clamp(1rem, 2vw, 1.25rem);
-      color: rgba(31, 36, 48, 0.7);
-      margin-bottom: 3rem;
-      line-height: 1.6;
-      animation: fadeInUp 0.8s ease 0.6s forwards;
-      opacity: 0;
-    }
-
-    .cta-buttons {
+    .hero-copy {
       display: flex;
       flex-direction: column;
-      gap: 1rem;
-      width: 100%;
-      max-width: 380px;
-      align-items: center;
-      animation: fadeInUp 0.8s ease 0.8s forwards;
-      opacity: 0;
+      gap: 1.4rem;
     }
 
-    .app-store-buttons {
+    .cta-row {
       display: flex;
-      gap: 1rem;
       flex-wrap: wrap;
-      justify-content: center;
-      margin-bottom: 1rem;
+      align-items: center;
+      gap: 1.5rem;
+      margin-top: 1rem;
     }
 
     .store-badge {
       display: inline-block;
-      height: 64px;
+      height: 60px;
       transition: all 0.3s ease;
-      filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.2));
+      filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.45));
+      -webkit-tap-highlight-color: transparent;
     }
 
     .store-badge:hover {
-      transform: translateY(-4px) scale(1.05);
-      filter: drop-shadow(0 10px 24px rgba(0, 0, 0, 0.3));
+      transform: translateY(-4px) scale(1.04);
+    }
+
+    .store-badge:active {
+      transform: translateY(-2px) scale(1.02);
     }
 
     .store-badge img {
       height: 100%;
       width: auto;
-    }
-
-    .footer-section .store-badge {
-      height: 52px;
+      user-select: none;
+      -webkit-user-drag: none;
     }
 
     .secondary-link {
-      display: inline-block;
-      padding: 0.75rem 1.5rem;
-      color: rgba(31, 36, 48, 0.7);
       text-decoration: none;
-      font-weight: 500;
+      color: var(--muted-ink);
       font-size: 0.95rem;
-      transition: all 0.2s ease;
-      border-radius: 8px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      transition: color 0.2s ease;
     }
 
     .secondary-link:hover {
-      color: var(--primary-color);
-      background: rgba(255, 255, 255, 0.3);
+      color: var(--ink);
     }
 
-    /* Features Section */
-    .features {
-      min-height: 100vh;
+    .hero-details {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .detail-card {
+      padding: 1rem 1.2rem;
+      border-radius: 14px;
+      background: var(--panel);
+      border: 1px solid var(--panel-stroke);
+      font-size: 0.95rem;
+      color: var(--muted-ink);
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 650px;
+      display: grid;
+      place-items: center;
+      z-index: 1;
+    }
+
+    .device-stack {
+      position: relative;
+      width: min(55vw, 650px);
+      height: 650px;
+      perspective: 1000px;
+      margin: 0 auto;
+    }
+
+    .image-placeholder {
+      display: grid;
+      place-items: center;
+      text-align: center;
+      border-radius: 24px;
+      border: 1px solid var(--panel-stroke);
+      background: linear-gradient(150deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+      color: rgba(245, 242, 237, 0.65);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.75rem;
+      padding: 1rem;
+    }
+
+    .image-placeholder .ph-number {
+      display: block;
+      font-size: 2.3rem;
+      color: var(--accent-warm);
+      margin-bottom: 0.4rem;
+      font-family: 'Noto Serif', 'Times New Roman', serif;
+    }
+
+    .screenshot-card {
+      position: absolute;
+      width: 280px;
+      cursor: grab;
+      border-radius: 24px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.05);
+      transition: box-shadow 0.3s ease;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: none;
+      background: rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(10px);
+      will-change: transform;
+      opacity: 1;
+    }
+
+    .screenshot-card.wide {
+      width: 480px;
+    }
+
+    .screenshot-card:hover {
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+    }
+
+    .screenshot-card.dragging {
+      cursor: grabbing;
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.7);
+      z-index: 1000 !important;
+    }
+
+    .screenshot-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 24px;
+      pointer-events: none;
+    }
+
+    .method-grid {
+      display: flex;
+      overflow-x: auto;
+      overflow-y: hidden;
+      gap: 3rem;
+      margin-top: 4rem;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      padding-bottom: 1rem;
+      padding-left: 7vw;
+      padding-right: 7vw;
+      margin-left: -7vw;
+      margin-right: -7vw;
+    }
+
+    .method-grid::-webkit-scrollbar {
+      display: none;
+    }
+
+    .method-card {
+      flex: 0 0 min(400px, 35vw);
       display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 4rem 2rem;
-      opacity: 0;
-      transform: translateY(50px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
+      gap: 0;
+      position: relative;
+      scroll-snap-align: center;
     }
 
-    .features.visible {
-      opacity: 1;
-      transform: translateY(0);
+    .method-text-card {
+      padding: 2rem;
+      border-radius: 20px;
+      border: 1px solid var(--panel-stroke);
+      background: var(--panel);
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
     }
 
-    .features h2 {
-      font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 700;
-      margin-bottom: 3rem;
-      text-align: center;
+    .method-card h3 {
+      font-size: 1.8rem;
+      color: var(--ink);
+      margin-bottom: 0.5rem;
     }
 
-    .feature-grid {
+    .method-card p {
+      color: var(--muted-ink);
+      line-height: 1.7;
+      font-size: 1rem;
+    }
+
+    .method-visual {
+      margin-bottom: 2rem;
+      aspect-ratio: 9 / 19.5;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4),
+                  0 0 0 1px rgba(255, 255, 255, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .method-visual:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5),
+                  0 0 0 1px rgba(255, 255, 255, 0.08);
+    }
+
+    .method-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+    }
+
+    .split-section {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      max-width: 1200px;
-      width: 100%;
+      gap: 3rem;
+      align-items: center;
     }
 
-    .feature-card {
-      background: rgba(255, 255, 255, 0.85);
-      backdrop-filter: blur(10px);
-      padding: 2.5rem 2rem;
+    .split-copy h2 {
+      font-size: clamp(2.2rem, 4vw, 3.4rem);
+      margin-bottom: 1.2rem;
+    }
+
+    .split-copy p {
+      color: var(--muted-ink);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+    .bullet-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      color: var(--muted-ink);
+    }
+
+    .bullet-list li::before {
+      content: '\2022';
+      color: var(--accent);
+      margin-right: 0.6rem;
+    }
+
+    .visual-block {
+      aspect-ratio: 4 / 5;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+    }
+
+    .insights-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.8rem;
+      margin-top: 2.5rem;
+    }
+
+    .insight-card {
+      padding: 1.8rem;
       border-radius: 20px;
-      box-shadow: 0 8px 30px rgba(31, 36, 48, 0.1);
-      transition: all 0.3s ease;
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      border: 1px solid var(--panel-stroke);
+      background: var(--panel);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
     }
 
-    .feature-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 40px rgba(31, 36, 48, 0.2);
+    .insight-card h4 {
+      font-size: 1.3rem;
     }
 
-    .feature-icon {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
-
-    .feature-card h3 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      font-weight: 600;
-    }
-
-    .feature-card p {
-      color: rgba(31, 36, 48, 0.7);
+    .insight-card p {
+      color: var(--muted-ink);
       line-height: 1.6;
     }
 
-    /* Footer Section */
-    .footer-section {
-      min-height: 50vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 4rem 2rem;
-      text-align: center;
-      opacity: 0;
-      transform: translateY(50px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
+    .insight-visual {
+      aspect-ratio: 16 / 10;
     }
 
-    .footer-section.visible {
-      opacity: 1;
+    .feature-stack {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+      margin-top: 2.5rem;
+    }
+
+    .feature-tile {
+      padding: 2rem;
+      border-radius: 22px;
+      border: 1px solid var(--panel-stroke);
+      background: linear-gradient(140deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .feature-tile p {
+      color: var(--muted-ink);
+      line-height: 1.6;
+    }
+
+    .wide-visual {
+      aspect-ratio: 16 / 9;
+      box-shadow: 0 28px 70px rgba(0, 0, 0, 0.55);
+    }
+
+    .roadmap-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .roadmap-card {
+      padding: 1.6rem;
+      border-radius: 18px;
+      border: 1px solid var(--panel-stroke);
+      background: var(--panel);
+    }
+
+    .roadmap-card span {
+      display: block;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: rgba(245, 242, 237, 0.5);
+      margin-bottom: 0.8rem;
+    }
+
+    .roadmap-card h4 {
+      font-size: 1.3rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .roadmap-card p {
+      color: var(--muted-ink);
+      line-height: 1.6;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      margin-top: 2rem;
+    }
+
+    .contact-link {
+      padding: 0.9rem 1.4rem;
+      border-radius: 999px;
+      border: 1px solid var(--panel-stroke);
+      background: var(--panel);
+      text-decoration: none;
+      font-size: 0.95rem;
+      color: var(--ink);
+      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .contact-link:hover {
+      transform: translateY(-2px);
+      border-color: rgba(255, 255, 255, 0.4);
+      background: rgba(255, 140, 66, 0.1);
+    }
+
+    .contact-link:active {
       transform: translateY(0);
     }
 
-    .footer-store-buttons {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin: 2rem 0;
+    .contact-icon {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
+
+    .footer-section {
+      padding: 4rem 7vw 5rem;
+      text-align: center;
     }
 
     .footer-links {
       display: flex;
-      gap: 2rem;
-      margin-top: 2rem;
-      flex-wrap: wrap;
       justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-top: 2rem;
     }
 
     .footer-links a {
-      color: rgba(31, 36, 48, 0.7);
       text-decoration: none;
-      font-weight: 500;
+      color: var(--muted-ink);
       transition: color 0.2s ease;
     }
 
     .footer-links a:hover {
-      color: var(--primary-color);
+      color: var(--ink);
     }
 
     footer {
-      font-size: 0.9rem;
-      color: rgba(31, 36, 48, 0.6);
-      padding: 2rem;
-    }
-
-    /* Scroll indicator */
-    .scroll-indicator {
-      position: absolute;
-      bottom: 2rem;
-      left: 50%;
-      transform: translateX(-50%);
-      animation: bounce 2s infinite;
-    }
-
-    @keyframes bounce {
-      0%, 20%, 50%, 80%, 100% {
-        transform: translateX(-50%) translateY(0);
-      }
-      40% {
-        transform: translateX(-50%) translateY(-10px);
-      }
-      60% {
-        transform: translateX(-50%) translateY(-5px);
-      }
-    }
-
-    .scroll-indicator::after {
-      content: '↓';
-      font-size: 2rem;
-      color: rgba(31, 36, 48, 0.4);
+      margin-top: 2rem;
+      font-size: 0.85rem;
+      color: rgba(245, 242, 237, 0.6);
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -305,116 +626,745 @@
       }
     }
 
-    @media (max-width: 768px) {
-      .feature-grid {
+    /* Hamburger menu styles */
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--ink);
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: 0.5rem;
+      z-index: 100;
+    }
+
+    .nav-links.mobile-hidden {
+      display: flex;
+    }
+
+    @media (max-width: 960px) {
+      .topbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        padding: 1.2rem 6vw;
+        margin: 0;
+        flex-direction: row;
+        gap: 1rem;
+        z-index: 100;
+      }
+
+      .topbar.scrolled {
+        padding: 1.2rem 6vw;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        position: fixed;
+        top: 80px;
+        left: 0;
+        right: 0;
+        background: rgba(18, 18, 18, 0.95);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        padding: 2rem 6vw;
+        gap: 1.5rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        font-size: 1.1rem;
+        transform: translateY(-100%);
+        opacity: 0;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        pointer-events: none;
+      }
+
+      .nav-links.mobile-open {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .nav-links a {
+        padding: 0.5rem 0;
+      }
+
+      .hero {
         grid-template-columns: 1fr;
+        padding-top: 5rem;
+        min-height: auto;
+        gap: 2rem;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        overflow: visible;
+      }
+
+      .hero-content {
+        text-align: center;
+        align-items: center;
+        width: 100%;
+        position: relative;
+        z-index: 2;
+      }
+
+      .hero-copy {
+        align-items: center;
+      }
+
+      .hero-visual {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        overflow: visible;
+        z-index: 1;
+      }
+
+      .section {
+        padding: 4rem 6vw;
+        overflow: hidden;
+      }
+
+      .section.hero {
+        overflow: visible;
+      }
+
+      .device-stack {
+        width: 100%;
+        max-width: 88vw;
+        height: 450px;
+        margin: 0 auto;
+        position: relative;
+        left: auto;
+        transform: none;
+        overflow: visible;
+      }
+
+      .screenshot-card {
+        width: 200px;
+      }
+
+      .screenshot-card.wide {
+        width: 360px;
+      }
+
+      .hero-visual {
+        min-height: 450px;
+      }
+
+      .headline {
+        font-size: clamp(2.2rem, 9vw, 3.5rem);
+      }
+
+      .split-section {
+        gap: 2.5rem;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .topbar {
+        padding: 0.8rem 5vw;
+      }
+
+      .brand {
+        font-size: 1rem;
+      }
+
+      .brand-icon {
+        width: 28px;
+        height: 28px;
+      }
+
+      .section {
+        padding: 3rem 5vw;
+        overflow: hidden;
+      }
+
+      .section.hero {
+        overflow: visible;
+      }
+
+      .section-inner {
+        text-align: center;
+      }
+
+      .hero {
+        padding-top: 4.5rem;
+        gap: 1.5rem;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        overflow: visible;
+      }
+
+      .hero-content {
+        text-align: center;
+        align-items: center;
+        width: 100%;
+        max-width: 100%;
+        position: relative;
+        z-index: 2;
+      }
+
+      .hero-copy {
+        align-items: center;
+      }
+
+      .hero-visual {
+        position: relative;
+        width: 100%;
+        max-width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        overflow: visible;
+        z-index: 1;
+      }
+
+      .eyebrow {
+        font-size: 0.65rem;
+        letter-spacing: 0.25em;
+        justify-content: center;
+      }
+
+      .eyebrow::before {
+        width: 30px;
+      }
+
+      .headline {
+        font-size: clamp(2rem, 10vw, 2.8rem);
+        margin-bottom: 1rem;
+        width: 100%;
+      }
+
+      .subheadline {
+        font-size: clamp(1.05rem, 4.5vw, 1.3rem);
+        margin-bottom: 1.5rem;
+        width: 100%;
+      }
+
+      .lead {
+        font-size: clamp(0.95rem, 3.8vw, 1.15rem);
+        width: 100%;
+      }
+
+      .hero-details {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+        margin-top: 1.5rem;
+        width: 100%;
+        max-width: 100%;
+      }
+
+      .detail-card {
+        padding: 0.85rem 1rem;
+        font-size: 0.9rem;
+        text-align: center;
+        width: 100%;
+      }
+
+      .cta-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 1.5rem;
+        width: 100%;
+        max-width: 100%;
+      }
+
+      .store-badge {
+        height: 50px;
+        width: fit-content;
+      }
+
+      .secondary-link {
+        text-align: center;
+        padding: 0.75rem 1.5rem;
+      }
+
+      .device-stack {
+        width: 100%;
+        max-width: 90vw;
+        height: 500px;
+        margin: 0 auto;
+        position: relative;
+        left: auto;
+        transform: none;
+        overflow: visible;
+      }
+
+      .screenshot-card {
+        width: 150px;
+      }
+
+      .screenshot-card.wide {
+        width: 280px;
+      }
+
+      .hero-visual {
+        min-height: 500px;
+      }
+
+      .method-grid {
+        gap: 2rem;
+        margin-top: 3rem;
+        padding-left: 5vw;
+        padding-right: 5vw;
+        margin-left: -5vw;
+        margin-right: -5vw;
+      }
+
+      .method-card {
+        flex: 0 0 85vw;
+        max-width: 85vw;
+        text-align: center;
+      }
+
+      .method-text-card {
+        padding: 1.5rem;
+      }
+
+      .method-card h3 {
+        font-size: 1.5rem;
+      }
+
+      .method-card p {
+        font-size: 0.95rem;
+      }
+
+      .method-visual {
+        margin-bottom: 1.5rem;
+        margin-top: 0;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .feature-stack,
+      .insights-grid,
+      .roadmap-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+        margin-top: 2rem;
+      }
+
+      .feature-tile,
+      .insight-card,
+      .roadmap-card {
+        padding: 1.5rem;
+      }
+
+      .feature-tile h3 {
+        font-size: 1.3rem;
+      }
+
+      .split-section {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .split-copy {
+        text-align: center;
+      }
+
+      .split-copy h2 {
+        font-size: clamp(1.8rem, 7vw, 2.5rem);
+        margin-bottom: 1rem;
+      }
+
+      .split-copy p {
+        margin-bottom: 1.2rem;
+      }
+
+      .bullet-list {
+        text-align: left;
+        display: inline-block;
+      }
+
+      .visual-block,
+      .wide-visual {
+        aspect-ratio: 3 / 4;
+      }
+
+      .contact-links {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .contact-link {
+        justify-content: center;
+        padding: 1rem 1.2rem;
+      }
+
+      .footer-section {
+        padding: 3rem 5vw 4rem;
       }
 
       .footer-links {
+        gap: 1.5rem;
         flex-direction: column;
-        gap: 1rem;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .method-card {
+        flex: 0 0 60vw;
+        max-width: 60vw;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .headline {
+        font-size: 1.8rem;
+      }
+
+      .device-stack {
+        width: 100%;
+        max-width: 90vw;
+        height: 300px;
+        margin: 0 auto;
+        position: relative;
+        left: auto;
+        transform: none;
+        overflow: visible;
+      }
+
+      .hero-visual {
+        min-height: 300px;
+      }
+
+      .screenshot-card {
+        width: 130px;
+      }
+
+      .screenshot-card.wide {
+        width: 240px;
       }
     }
   </style>
 </head>
 <body>
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-content">
-      <img src="appIcon-seperate-no.png" alt="Projectholic App Icon" class="app-icon">
-      <h1>Project-based Everything</h1>
-      <p class="tagline">Name it. Own it. Complete it. Projects with a clear name are 180% more likely to succeed.</p>
-      <div class="cta-buttons">
-        <div class="app-store-buttons">
-          <a href="https://apps.apple.com/app/id6745497754" class="store-badge" target="_blank" rel="noopener">
-            <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1234567890" alt="Download on the App Store">
+  <div class="page">
+    <header class="topbar">
+      <div class="brand">
+        <img src="images/appIcon-20260112.png" alt="Projectholic app icon" class="brand-icon">
+        Projectholic
+      </div>
+      <button class="menu-toggle" aria-label="Toggle menu" id="menuToggle">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="3" y1="6" x2="21" y2="6" class="menu-line-1"></line>
+          <line x1="3" y1="12" x2="21" y2="12" class="menu-line-2"></line>
+          <line x1="3" y1="18" x2="21" y2="18" class="menu-line-3"></line>
+        </svg>
+      </button>
+      <nav class="nav-links" id="navLinks">
+        <a href="#method">Method</a>
+        <a href="#features">Features</a>
+        <a href="#roadmap">Roadmap</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="section hero">
+      <div class="hero-content">
+        <span class="eyebrow">Think first, schedule later</span>
+        <div class="hero-copy">
+          <h1 class="headline">Turn Goals into Projects</h1>
+          <p class="subheadline">Finish what you started. From intent to action, use a clear method: plan -> schedule -> finish.</p>
+          <p class="lead">Projectholic turns ambitious goals into structured projects. It helps you define the work, set realistic schedules, and track progress without losing momentum. Stay focused on the outcome while the calendar stays grounded in reality.</p>
+        </div>
+        <div class="cta-row">
+          <div style="display: flex; flex-direction: column; gap: 0.5rem; align-items: center;">
+            <a href="https://apps.apple.com/app/id6745497754" class="store-badge" target="_blank" rel="noopener">
+              <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1234567890" alt="Download on the App Store">
+            </a>
+            <span style="font-size: 0.85rem; color: var(--muted-ink); letter-spacing: 0.05em;">Available on iPhone, iPad and Mac</span>
+          </div>
+          <a href="#method" class="secondary-link">Explore the method</a>
+        </div>
+        <div class="hero-details">
+          <div class="detail-card">Project-based calendar</div>
+          <div class="detail-card">Time is your budget</div>
+          <div class="detail-card">Track progress over time</div>
+          <div class="detail-card">Power view on iPad and Mac</div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="device-stack" id="cardStack">
+          <div class="screenshot-card" style="left: 200px; top: 180px; transform: rotate(-6deg); z-index: 1;">
+            <img src="images/iPhone screenshot 7.jpg" alt="Projectholic app view">
+          </div>
+          <div class="screenshot-card" style="left: 220px; top: 160px; transform: rotate(10deg); z-index: 2;">
+            <img src="images/iPhone screenshot 8.jpg" alt="Projectholic recurring tasks">
+          </div>
+          <div class="screenshot-card wide" style="left: 150px; top: 180px; transform: rotate(-4deg); z-index: 3;">
+            <img src="images/mac screenshot 1.jpg" alt="Projectholic Mac view">
+          </div>
+          <div class="screenshot-card" style="left: 240px; top: 190px; transform: rotate(14deg); z-index: 4;">
+            <img src="images/iPhone screenshot 4.jpg" alt="Projectholic tasks">
+          </div>
+          <div class="screenshot-card" style="left: 210px; top: 170px; transform: rotate(-9deg); z-index: 5;">
+            <img src="images/iPhone screenshot 5.jpg" alt="Projectholic time budget">
+          </div>
+          <div class="screenshot-card" style="left: 230px; top: 165px; transform: rotate(7deg); z-index: 6;">
+            <img src="images/ipad screenshot 6.jpg" alt="Projectholic iPad progress">
+          </div>
+          <div class="screenshot-card wide" style="left: 180px; top: 175px; transform: rotate(-11deg); z-index: 7;">
+            <img src="images/mac screenshot 7.jpg" alt="Projectholic Mac insights">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="method" class="section reveal">
+      <div class="section-inner">
+        <span class="eyebrow">From intent to action</span>
+        <h2 class="headline">Plan -> schedule -> finish</h2>
+        <p class="lead">Projectholic keeps the sequence simple. Think through the work, place it on the calendar, then finish with clarity. Each step stays lightweight, so you move forward without over-planning.</p>
+        <div class="method-grid">
+          <div class="method-card">
+            <div class="method-visual">
+              <img src="images/iPhone screenshot 4.jpg" alt="Plan">
+            </div>
+            <div class="method-text-card">
+              <h3>Plan</h3>
+              <p>Turn your goal into a project. Define milestones, key tasks, and the outcome you want to achieve.</p>
+            </div>
+          </div>
+          <div class="method-card">
+            <div class="method-visual">
+              <img src="images/iPhone screenshot 5.jpg" alt="Schedule">
+            </div>
+            <div class="method-text-card">
+              <h3>Schedule</h3>
+              <p>Place tasks where they fit. The calendar highlights your true capacity so time stays realistic.</p>
+            </div>
+          </div>
+          <div class="method-card">
+            <div class="method-visual">
+              <img src="images/iPhone screenshot 6.jpg" alt="Finish">
+            </div>
+            <div class="method-text-card">
+              <h3>Finish</h3>
+              <p>Track progress over time, adjust with confidence, and close projects with a clear finish line.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="section reveal">
+      <div class="section-inner">
+        <span class="eyebrow">Feature Highlights</span>
+        <div class="split-section">
+          <img src="images/iPhone screenshot 5.jpg" alt="Project-based calendar" class="visual-block" style="border-radius: 20px; width: 100%; height: 100%; object-fit: cover;">
+          <div class="split-copy">
+            <h2>Project-based calendar</h2>
+            <p>The calendar is organized by project, not chaos. Every task lives under a clear objective so your week stays aligned with what matters.</p>
+            <ul class="bullet-list">
+              <li>Group tasks by project and milestone</li>
+              <li>See timelines without switching contexts</li>
+              <li>Balance workload across multiple projects</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <div class="section-inner split-section">
+        <img src="images/iPhone screenshot 6.jpg" alt="Time budget view" class="visual-block" style="border-radius: 20px; width: 100%; height: 100%; object-fit: cover;">
+        <div class="split-copy">
+          <h2>Time is your budget</h2>
+          <p>Projects thrive when you respect time constraints. Budget hours like a resource, then let the schedule reflect reality without guesswork.</p>
+          <ul class="bullet-list">
+            <li>Allocate time across projects and roles</li>
+            <li>Spot overload before it happens</li>
+            <li>Keep momentum without burnout</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <div class="section-inner split-section">
+        <img src="images/iPhone screenshot 7.jpg" alt="Progress tracking" class="visual-block" style="border-radius: 20px; width: 100%; height: 100%; object-fit: cover;">
+        <div class="split-copy">
+          <h2>Progress you can see</h2>
+          <p>Move beyond checklists. Visual progress shows momentum, reveals patterns, and keeps your attention on finishing.</p>
+          <ul class="bullet-list">
+            <li>Track velocity and completion trends</li>
+            <li>Spot blockers and refine scope</li>
+            <li>Understand where your time is actually going</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <div class="section-inner split-section">
+        <img src="images/iPhone screenshot 8.jpg" alt="Recurring tasks" class="visual-block" style="border-radius: 20px; width: 100%; height: 100%; object-fit: cover;">
+        <div class="split-copy">
+          <h2>Recurring tasks, simplified</h2>
+          <p>Routines keep life stable. Projectholic lets you build recurring tasks that adapt to your schedule without extra effort.</p>
+          <ul class="bullet-list">
+            <li>Flexible repeat rules</li>
+            <li>Automatic rescheduling</li>
+            <li>Clear history of completions</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <div class="section-inner split-section">
+        <img src="images/iPhone screenshot 9.jpg" alt="Share tasks and follow up" class="visual-block" style="border-radius: 20px; width: 100%; height: 100%; object-fit: cover;">
+        <div class="split-copy">
+          <h2>Share tasks and follow up</h2>
+          <p>Projects move faster when everyone is aligned. Share tasks, assign owners, and keep follow-ups clear with one source of truth.</p>
+          <ul class="bullet-list">
+            <li>Assign tasks and set expectations</li>
+            <li>Follow up without chasing messages</li>
+            <li>Keep collaboration focused on outcomes</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <div class="section-inner split-section">
+        <img src="images/ipad screenshot 4.jpg" alt="iPad and Mac power view" class="visual-block" style="border-radius: 20px; width: 100%; height: 100%; object-fit: cover;">
+        <div class="split-copy">
+          <h2>Power view on iPad and Mac</h2>
+          <p>When you need the full picture, open a wide, immersive layout built for deep focus and complex projects.</p>
+          <ul class="bullet-list">
+            <li>Wide, immersive layout for complex work</li>
+            <li>Built for deep focus and planning</li>
+            <li>Full context across all your projects</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="roadmap" class="section reveal">
+      <div class="section-inner">
+        <span class="eyebrow">Roadmap</span>
+        <h2 class="headline">What is coming next</h2>
+        <p class="lead">Major features planned for 2026. From calendar sync to an AI project manager that thinks like your PM.</p>
+        <div class="roadmap-grid">
+          <div class="roadmap-card">
+            <span>2026 Q1</span>
+            <h4>iCloud Calendar & Smart Notifications</h4>
+            <p>Native sync with Apple Calendar. Intelligent deadline warnings that alert you when projects are at risk.</p>
+          </div>
+          <div class="roadmap-card">
+            <span>2026 Q2</span>
+            <h4>Project Templates & Task Dependencies</h4>
+            <p>Pre-built project structures you can reuse. Link tasks that depend on each other and visualize what's blocking progress.</p>
+          </div>
+          <div class="roadmap-card">
+            <span>2026 Q3</span>
+            <h4>AI Quick Add with Natural Language</h4>
+            <p>Type or speak naturally: "Review designs Thursday 2-4pm" and AI creates structured tasks with time blocks instantly.</p>
+          </div>
+          <div class="roadmap-card">
+            <span>2026 Q4</span>
+            <h4>AI Project Manager</h4>
+            <p>Your personal PM that reviews projects, identifies risks, and suggests next steps. Chat to get insights and stay on track.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section reveal">
+      <div class="section-inner">
+        <span class="eyebrow">Contact</span>
+        <h2 class="headline">Stay connected</h2>
+        <p class="lead">Follow updates, share feedback, and connect with the community.</p>
+        <div class="contact-links">
+          <a class="contact-link" href="https://x.com/feioustudio" target="_blank" rel="noopener">
+            <svg class="contact-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
+            X / @feioustudio
+          </a>
+          <a class="contact-link" href="https://www.reddit.com/r/Projectholic/" target="_blank" rel="noopener">
+            <svg class="contact-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/>
+            </svg>
+            Reddit / r/Projectholic
           </a>
         </div>
-        <a href="#features" class="secondary-link">Explore Features ↓</a>
       </div>
-    </div>
-    <div class="scroll-indicator"></div>
-  </section>
+    </section>
 
-  <!-- Features Section -->
-  <section id="features" class="features">
-    <h2>Professional Power, Zero Hassle</h2>
-    <div class="feature-grid">
-      <div class="feature-card">
-        <div class="feature-icon">⚡</div>
-        <h3>Goals → Projects</h3>
-        <p>Boost completion by 50% instantly. Anything you want to achieve becomes real when you turn it into a project.</p>
+    <section class="footer-section">
+      <div class="section-inner">
+        <h2 class="headline">Start your first project</h2>
+        <p class="lead">Turn intent into action.</p>
+        <div class="cta-row" style="justify-content: center; margin-top: 2rem;">
+          <div style="display: flex; flex-direction: column; gap: 0.5rem; align-items: center;">
+            <a href="https://apps.apple.com/app/id6745497754" class="store-badge" target="_blank" rel="noopener">
+              <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1234567890" alt="Download on the App Store">
+            </a>
+            <span style="font-size: 0.85rem; color: var(--muted-ink); letter-spacing: 0.05em;">Available on iPhone, iPad and Mac</span>
+          </div>
+        </div>
+        <div class="footer-links">
+          <a href="terms-of-use.html">Terms of Use</a>
+          <a href="privacy-policy.html">Privacy Policy</a>
+        </div>
+        <footer>All Rights Reserved @ Feioustudio</footer>
       </div>
-      <div class="feature-card">
-        <div class="feature-icon">📊</div>
-        <h3>Gantt View</h3>
-        <p>Pro power, simple to use. See the big picture and plan visually on iPad & Mac with interfaces built for focus.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">🤖</div>
-        <h3>Auto Schedule</h3>
-        <p>Smart task types, zero hassle. Multi-day tasks auto-arrange to skip weekends and fit your life.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">⏰</div>
-        <h3>15-Min Blocks</h3>
-        <p>Plan with zero burden. Break your day into manageable chunks that actually get done.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">💰</div>
-        <h3>Time = Budget</h3>
-        <p>Manage life like a project. See where your hours and energy are going with time-budgeted views.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">👥</div>
-        <h3>For Leaders</h3>
-        <p>Delegate, track, and verify. Perfect for entrepreneurs managing collaborators and providers.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">🔄</div>
-        <h3>Recurring Tasks</h3>
-        <p>Flexible rules, endless options. Create patterns that adapt to your schedule automatically.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">📈</div>
-        <h3>Burn-down & Burn-up</h3>
-        <p>Track progress like a pro. Visualize momentum and stay motivated with real-time charts.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">🎯</div>
-        <h3>Project Everything</h3>
-        <p>Turn any idea into a project. Building your body, starting a business, or mastering a skill—make it happen.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer Section -->
-  <section id="download" class="footer-section">
-    <h2>Start Your First Project</h2>
-    <p class="tagline">Give your idea a name. Own it. See it through.<br>Available on iPad, Mac & iPhone</p>
-    <div class="footer-store-buttons">
-      <a href="https://apps.apple.com/app/id6745497754" class="store-badge" target="_blank" rel="noopener">
-        <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1234567890" alt="Download on the App Store">
-      </a>
-    </div>
-    <div class="footer-links">
-      <a href="terms-of-use.html">Terms of Use</a>
-      <a href="privacy-policy.html">Privacy Policy</a>
-    </div>
-    <footer>All Rights Reserved @ Feioustudio</footer>
-  </section>
+    </section>
+  </div>
 
   <script>
-    // Prevent auto-scroll on page load
-    if (window.location.hash && !sessionStorage.getItem('allowScroll')) {
-      history.scrollRestoration = 'manual';
-      window.location.hash = '';
-    }
+    // Header scroll effect
+    const topbar = document.querySelector('.topbar');
+    let lastScrollTop = 0;
+
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+      if (scrollTop > 50) {
+        topbar.classList.add('scrolled');
+      } else {
+        topbar.classList.remove('scrolled');
+      }
+
+      lastScrollTop = scrollTop;
+    });
+
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('mobile-open');
+    });
+
+    // Close menu when clicking a link
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('mobile-open');
+      });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
+        navLinks.classList.remove('mobile-open');
+      }
+    });
 
     // Scroll reveal animation
     const observerOptions = {
-      threshold: 0.2,
-      rootMargin: '0px 0px -100px 0px'
+      threshold: 0.18,
+      rootMargin: '0px 0px -120px 0px'
     };
 
     const observer = new IntersectionObserver((entries) => {
@@ -425,29 +1375,315 @@
       });
     }, observerOptions);
 
-    // Observe all sections that need scroll animation
-    document.querySelectorAll('.features, .footer-section').forEach(section => {
+    document.querySelectorAll('.reveal').forEach(section => {
       observer.observe(section);
     });
 
-    // Hide scroll indicator on scroll
-    let scrolled = false;
-    window.addEventListener('scroll', () => {
-      if (!scrolled) {
-        scrolled = true;
-        const indicator = document.querySelector('.scroll-indicator');
-        if (indicator) {
-          indicator.style.opacity = '0';
-          indicator.style.transition = 'opacity 0.3s ease';
+    // ============================================
+    // CARD DROP PHYSICS ENGINE
+    // ============================================
+
+    // Physics parameters - tweak these for different effects
+    const PHYSICS = {
+      dropHeight: 250,           // Initial Z position (cm above table)
+      gravity: 980,              // Gravity acceleration (cm/s²)
+      airResistance: 0.015,      // Air drag coefficient
+      restitution: 0.28,         // Bounce coefficient (0 = no bounce, 1 = perfect bounce)
+      restitutionVariation: 0.12, // Randomize bounce per card
+      friction: 0.75,            // Friction coefficient (poker cards are slippery)
+      frictionVariation: 0.15,   // Slight variation per card
+      angularDamping: 0.94,      // Rotational friction
+      minVelocity: 0.5,          // Stop simulation when velocity is this low
+      scaleAtStart: 1.5,         // Scale when close to viewer (high Z)
+      scaleAtTable: 1.0,         // Scale when on table (Z = 0)
+      initialStackRadius: 3,     // How tightly cards are stacked initially (px)
+      impactScatterForce: 900,   // How much cards scatter on impact
+      randomSpinForce: 255,       // Random spin during fall (deg/s)
+      initialDriftForce: 150,     // Small initial sideways force during drop
+    };
+
+    class CardPhysics {
+      constructor(element, index, totalCards, containerWidth, containerHeight) {
+        this.element = element;
+        this.index = index;
+
+        // Get initial center position from inline styles
+        const left = parseInt(element.style.left) || 0;
+        const top = parseInt(element.style.top) || 0;
+
+        // On mobile, center all cards in the container
+        if (isMobile) {
+          // All cards drop from the center of the container on mobile
+          this.centerX = containerWidth / 2;
+          this.centerY = containerHeight / 2;
+        } else {
+          this.centerX = left;
+          this.centerY = top;
+        }
+
+        // Physics state - Position
+        this.x = (Math.random() - 0.5) * PHYSICS.initialStackRadius;
+        this.y = (Math.random() - 0.5) * PHYSICS.initialStackRadius;
+        this.z = PHYSICS.dropHeight; // Start high (close to viewer)
+
+        // Physics state - Velocity (start with tiny drift)
+        const driftAngle = Math.random() * Math.PI * 2;
+        const driftMagnitude = PHYSICS.initialDriftForce * (0.5 + Math.random() * 0.5);
+        this.vx = Math.cos(driftAngle) * driftMagnitude;
+        this.vy = Math.sin(driftAngle) * driftMagnitude;
+        this.vz = 0; // Dropped, not thrown
+
+        // Physics state - Rotation
+        this.rotation = (Math.random() - 0.5) * 2; // Tiny initial tilt
+        this.angularVelocity = (Math.random() - 0.5) * PHYSICS.randomSpinForce;
+
+        // Individual card properties (randomized)
+        this.restitution = PHYSICS.restitution + (Math.random() - 0.5) * PHYSICS.restitutionVariation;
+        this.friction = PHYSICS.friction + (Math.random() - 0.5) * PHYSICS.frictionVariation;
+        this.mass = 1; // Normalized mass
+
+        // Random scatter direction (set on impact)
+        this.scatterAngle = Math.random() * Math.PI * 2;
+        this.hasLanded = false;
+        this.isResting = false;
+
+        // Slight delay per card
+        this.delay = index * 0.015; // 15ms between each card
+        this.time = -this.delay;
+      }
+
+      update(deltaTime) {
+        this.time += deltaTime;
+        if (this.time < 0) return; // Wait for delay
+        if (this.isResting) return; // Already stopped
+
+        const dt = deltaTime;
+
+        // === PHYSICS SIMULATION ===
+
+        // 1. Apply gravity (falling away from viewer, Z decreases)
+        this.vz -= PHYSICS.gravity * dt;
+
+        // 2. Apply air resistance (subtle drag while falling)
+        if (this.z > 0) {
+          const dragForce = PHYSICS.airResistance;
+          this.vx *= (1 - dragForce);
+          this.vy *= (1 - dragForce);
+          this.vz *= (1 - dragForce * 0.5); // Less drag on Z axis
+
+          // Tiny random air currents
+          this.vx += (Math.random() - 0.5) * 0.5;
+          this.vy += (Math.random() - 0.5) * 0.5;
+        }
+
+        // 3. Update position
+        this.x += this.vx * dt;
+        this.y += this.vy * dt;
+        this.z += this.vz * dt;
+
+        // 4. Update rotation
+        this.rotation += this.angularVelocity * dt;
+        this.angularVelocity *= PHYSICS.angularDamping;
+
+        // 5. Collision with table (z = 0)
+        if (this.z <= 0 && this.vz < 0) {
+          this.z = 0;
+
+          // Bounce
+          this.vz = -this.vz * this.restitution;
+
+          // First impact - convert downward energy to scatter
+          if (!this.hasLanded) {
+            this.hasLanded = true;
+            const impactEnergy = Math.abs(this.vz);
+
+            // Scatter in random direction
+            const scatterForce = PHYSICS.impactScatterForce * (0.8 + Math.random() * 0.4);
+            this.vx += Math.cos(this.scatterAngle) * scatterForce;
+            this.vy += Math.sin(this.scatterAngle) * scatterForce;
+
+            // Add spin from impact
+            this.angularVelocity += (Math.random() - 0.5) * 40;
+          }
+
+          // Stop bouncing if energy is too low
+          if (Math.abs(this.vz) < 5) {
+            this.vz = 0;
+            this.z = 0;
+          }
+        }
+
+        // 6. Apply friction when sliding on table
+        if (this.z <= 0.1) {
+          this.vx *= this.friction;
+          this.vy *= this.friction;
+        }
+
+        // 7. Check if card has come to rest
+        const totalVelocity = Math.sqrt(this.vx * this.vx + this.vy * this.vy + this.vz * this.vz);
+        if (this.hasLanded && totalVelocity < PHYSICS.minVelocity && Math.abs(this.angularVelocity) < 0.5) {
+          this.isResting = true;
+          this.vx = this.vy = this.vz = 0;
+          this.angularVelocity = 0;
+          this.z = 0;
         }
       }
+
+      render() {
+        // Calculate scale based on Z (perspective)
+        // High Z (close to viewer) = large scale
+        // Z = 0 (on table) = normal scale
+        const scaleProgress = 1 - (this.z / PHYSICS.dropHeight);
+        const scale = PHYSICS.scaleAtStart - (PHYSICS.scaleAtStart - PHYSICS.scaleAtTable) * scaleProgress;
+
+        // Calculate shadow blur based on height
+        const shadowBlur = Math.max(20, 20 + this.z * 0.3);
+        const shadowSpread = Math.max(50, 50 + this.z * 0.5);
+
+        // Apply transform and position
+        const finalX = this.centerX + this.x;
+        const finalY = this.centerY + this.y;
+
+        // On mobile, override left/top to use our calculated position
+        if (isMobile) {
+          this.element.style.left = `${finalX}px`;
+          this.element.style.top = `${finalY}px`;
+          this.element.style.transform = `translate(-50%, -50%) rotate(${this.rotation}deg) scale(${scale})`;
+        } else {
+          this.element.style.transform = `translate(${this.x}px, ${this.y}px) rotate(${this.rotation}deg) scale(${scale})`;
+        }
+
+        this.element.style.boxShadow = `0 ${shadowBlur}px ${shadowSpread}px rgba(0, 0, 0, ${0.3 + this.z / PHYSICS.dropHeight * 0.2}), 0 0 0 1px rgba(255, 255, 255, 0.05)`;
+      }
+    }
+
+    // Initialize physics for all cards
+    const cardElements = document.querySelectorAll('.screenshot-card');
+    const cardPhysicsObjects = [];
+    const isMobile = window.innerWidth <= 600;
+
+    // Get container dimensions
+    const cardStack = document.getElementById('cardStack');
+    const containerWidth = cardStack.offsetWidth;
+    const containerHeight = cardStack.offsetHeight;
+
+    // Adjust physics for mobile devices
+    if (isMobile) {
+      PHYSICS.dropHeight = 150;
+      PHYSICS.impactScatterForce = 200;
+      PHYSICS.randomSpinForce = 120;
+      PHYSICS.initialDriftForce = 50;
+    }
+
+    cardElements.forEach((card, index) => {
+      const physics = new CardPhysics(card, index, cardElements.length, containerWidth, containerHeight);
+      cardPhysicsObjects.push(physics);
     });
 
-    // Allow intentional scrolling from links
-    document.querySelectorAll('a[href^="#"]').forEach(link => {
-      link.addEventListener('click', () => {
-        sessionStorage.setItem('allowScroll', 'true');
+    // Animation loop
+    let lastTime = performance.now();
+    let animationRunning = true;
+
+    function animate(currentTime) {
+      if (!animationRunning) return;
+
+      const deltaTime = Math.min((currentTime - lastTime) / 1000, 0.033); // Cap at 30fps for stability
+      lastTime = currentTime;
+
+      let allResting = true;
+
+      cardPhysicsObjects.forEach(cardPhysics => {
+        cardPhysics.update(deltaTime);
+        cardPhysics.render();
+
+        if (!cardPhysics.isResting) {
+          allResting = false;
+        }
       });
+
+      // Continue animation if any card is still moving
+      if (!allResting) {
+        requestAnimationFrame(animate);
+      } else {
+        animationRunning = false;
+      }
+    }
+
+    // Start animation
+    requestAnimationFrame(animate);
+
+    // ============================================
+    // INTERACTIVE CARD DRAGGING
+    // ============================================
+
+    // Interactive card stack
+    let highestZIndex = 7;
+
+    cardElements.forEach((card, cardIndex) => {
+      let isDragging = false;
+      let currentX;
+      let currentY;
+      let initialX;
+      let initialY;
+
+      card.addEventListener('mousedown', dragStart);
+      card.addEventListener('touchstart', dragStart);
+      document.addEventListener('mousemove', drag);
+      document.addEventListener('touchmove', drag);
+      document.addEventListener('mouseup', dragEnd);
+      document.addEventListener('touchend', dragEnd);
+
+      function dragStart(e) {
+        // Wait for animation to finish before allowing drag
+        const cardPhysics = cardPhysicsObjects[cardIndex];
+        if (!cardPhysics.isResting) return;
+
+        // Bring card to front
+        highestZIndex++;
+        card.style.zIndex = highestZIndex;
+
+        // Get current position from physics
+        if (e.type === 'touchstart') {
+          initialX = e.touches[0].clientX - cardPhysics.x;
+          initialY = e.touches[0].clientY - cardPhysics.y;
+        } else {
+          initialX = e.clientX - cardPhysics.x;
+          initialY = e.clientY - cardPhysics.y;
+        }
+
+        if (e.target === card || card.contains(e.target)) {
+          isDragging = true;
+          card.classList.add('dragging');
+        }
+      }
+
+      function drag(e) {
+        if (isDragging) {
+          e.preventDefault();
+
+          const cardPhysics = cardPhysicsObjects[cardIndex];
+
+          if (e.type === 'touchmove') {
+            currentX = e.touches[0].clientX - initialX;
+            currentY = e.touches[0].clientY - initialY;
+          } else {
+            currentX = e.clientX - initialX;
+            currentY = e.clientY - initialY;
+          }
+
+          // Update physics position
+          cardPhysics.x = currentX;
+          cardPhysics.y = currentY;
+          cardPhysics.render();
+        }
+      }
+
+      function dragEnd(e) {
+        if (isDragging) {
+          isDragging = false;
+          card.classList.remove('dragging');
+        }
+      }
     });
   </script>
 </body>
