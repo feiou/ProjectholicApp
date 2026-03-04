@@ -1,0 +1,1807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projectholic Docs</title>
+  <meta name="description" content="Projectholic documentation and user manual." />
+  <link rel="icon" type="image/png" href="../images/appIcon-20260112.png" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Noto+Serif:wght@500;600;700&display=swap');
+
+    :root {
+      --ink: #f5f2ed;
+      --muted-ink: rgba(245, 242, 237, 0.72);
+      --accent: #6db7ff;
+      --accent-soft: rgba(109, 183, 255, 0.18);
+      --panel: rgba(255, 255, 255, 0.06);
+      --panel-stroke: rgba(255, 255, 255, 0.12);
+      --code-bg: rgba(255, 255, 255, 0.07);
+      --header-h: 66px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Manrope', 'Segoe UI', sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 15% 15%, rgba(109, 183, 255, 0.2), transparent 52%),
+        radial-gradient(circle at 85% 5%, rgba(88, 225, 255, 0.12), transparent 45%),
+        radial-gradient(circle at 70% 80%, rgba(149, 173, 255, 0.12), transparent 60%),
+        linear-gradient(180deg, #13161d 0%, #0d1016 100%);
+      min-height: 100vh;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: var(--header-h);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      background: rgba(18, 18, 18, 0.88);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--panel-stroke);
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--ink);
+    }
+
+    .brand img {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      object-fit: cover;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .brand span {
+      font-family: 'Noto Serif', 'Times New Roman', serif;
+      font-size: 1.03rem;
+      letter-spacing: 0.02em;
+      font-weight: 600;
+    }
+
+    .topbar small {
+      color: var(--muted-ink);
+      font-size: 0.83rem;
+    }
+
+    .topbar-right {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .lang-toggle {
+      display: inline-flex;
+      gap: 6px;
+      padding: 4px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .lang-btn {
+      border: 0;
+      color: var(--muted-ink);
+      background: transparent;
+      font: inherit;
+      font-size: 0.78rem;
+      letter-spacing: 0.04em;
+      padding: 0.36rem 0.65rem;
+      border-radius: 999px;
+      cursor: pointer;
+    }
+
+    .lang-btn.active {
+      color: var(--ink);
+      background: rgba(109, 183, 255, 0.24);
+    }
+
+    .support-link {
+      color: var(--ink);
+      text-decoration: none;
+      font-size: 0.8rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 0.42rem 0.8rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      background: rgba(109, 183, 255, 0.12);
+      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+    }
+
+    .support-link:hover {
+      transform: translateY(-1px);
+      border-color: rgba(255, 255, 255, 0.42);
+      background: rgba(109, 183, 255, 0.2);
+    }
+
+    .layout {
+      max-width: 1360px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 280px minmax(0, 1fr);
+      gap: 28px;
+      padding: 24px;
+      position: relative;
+    }
+
+    .layout::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 20px;
+      pointer-events: none;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      box-shadow: inset 0 0 80px rgba(126, 190, 255, 0.04);
+    }
+
+    .sidebar {
+      position: sticky;
+      top: calc(var(--header-h) + 16px);
+      max-height: calc(100vh - var(--header-h) - 32px);
+      overflow: auto;
+      background: linear-gradient(155deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.04));
+      border: 1px solid var(--panel-stroke);
+      border-radius: 16px;
+      padding: 14px;
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .sidebar h2 {
+      margin: 6px 8px 12px;
+      font-family: 'Noto Serif', 'Times New Roman', serif;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--ink);
+    }
+
+    .toc {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .toc a {
+      color: var(--muted-ink);
+      text-decoration: none;
+      font-size: 0.94rem;
+      font-weight: 500;
+      line-height: 1.35;
+      border-radius: 8px;
+      padding: 7px 10px;
+      border: 1px solid transparent;
+      transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .toc a.toc-l0 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+    }
+
+    .toc a.toc-l1 {
+      font-size: 0.86rem;
+      font-weight: 500;
+      opacity: 0.88;
+    }
+
+    .toc a.toc-l2 {
+      font-size: 0.82rem;
+      font-weight: 500;
+      opacity: 0.8;
+    }
+
+    .toc a:hover,
+    .toc a.active {
+      color: var(--ink);
+      background: var(--accent-soft);
+      border-color: rgba(109, 183, 255, 0.3);
+    }
+
+    .content {
+      background: linear-gradient(160deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.04));
+      border: 1px solid var(--panel-stroke);
+      border-radius: 18px;
+      padding: 28px clamp(18px, 3vw, 40px) 36px;
+      box-shadow: 0 22px 56px rgba(0, 0, 0, 0.34);
+    }
+
+    .content h1,
+    .content h2,
+    .content h3,
+    .content h4 {
+      font-family: 'Noto Serif', 'Times New Roman', serif;
+      letter-spacing: 0.01em;
+    }
+
+    .content h1 {
+      font-size: clamp(1.9rem, 3.2vw, 2.4rem);
+      margin: 10px 0 10px;
+    }
+
+    .content h2 {
+      font-size: clamp(1.2rem, 2.3vw, 1.55rem);
+      margin: 8px 0 12px;
+    }
+
+    .content h3 {
+      font-size: 1.04rem;
+      margin: 18px 0 10px;
+      color: var(--ink);
+    }
+
+    .content p,
+    .content li {
+      line-height: 1.72;
+      color: var(--muted-ink);
+      font-size: 0.98rem;
+    }
+
+    .content ul,
+    .content ol {
+      padding-left: 20px;
+      margin: 9px 0 12px;
+    }
+
+    .content strong {
+      color: var(--ink);
+    }
+
+    .content hr {
+      border: 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      margin: 20px 0;
+    }
+
+    .content code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 0.86em;
+      color: #d8e9ff;
+      background: var(--code-bg);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      padding: 0.15em 0.42em;
+      border-radius: 6px;
+    }
+
+    .sf-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 1.35em;
+      height: 1.35em;
+      border-radius: 8px;
+      background: rgba(109, 183, 255, 0.14);
+      border: 1px solid rgba(109, 183, 255, 0.32);
+      vertical-align: middle;
+      margin: 0 0.08em;
+    }
+
+    .sf-icon img {
+      width: 0.95em;
+      height: 0.95em;
+      flex-shrink: 0;
+      filter: drop-shadow(0 0 3px rgba(109, 183, 255, 0.35));
+    }
+
+    .meta {
+      margin-top: 8px;
+      color: var(--muted-ink);
+      font-size: 0.86rem;
+    }
+
+    .doc-disclaimer {
+      margin-top: 16px;
+      font-size: 0.8rem;
+      line-height: 1.55;
+      color: rgba(245, 242, 237, 0.66);
+      border-top: 1px dashed rgba(255, 255, 255, 0.2);
+      padding-top: 12px;
+    }
+
+    .doc-disclaimer a {
+      color: #cfe5ff;
+      text-decoration: none;
+      border-bottom: 1px dotted rgba(207, 229, 255, 0.65);
+    }
+
+    .loading,
+    .error {
+      padding: 18px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--ink);
+    }
+
+    .doc-section {
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: linear-gradient(160deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.03));
+      border-radius: 14px;
+      padding: 16px 16px 14px;
+      margin: 20px 0;
+      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .doc-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, rgba(109, 183, 255, 0.7), rgba(88, 225, 255, 0.3));
+      opacity: 0.85;
+    }
+
+    .doc-section h2 {
+      margin-top: 2px;
+      color: #f7fbff;
+    }
+
+    .doc-section h3 {
+      color: #e4efff;
+    }
+
+    @media (max-width: 980px) {
+      .layout {
+        grid-template-columns: 1fr;
+        padding: 16px;
+        gap: 14px;
+      }
+
+      .sidebar {
+        position: static;
+        max-height: none;
+      }
+
+      .content {
+        padding: 22px 16px 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="https://projectholic.pro" aria-label="Projectholic Home">
+      <img src="../images/appIcon-20260112.png" alt="Projectholic logo" />
+      <span>Projectholic Docs</span>
+    </a>
+    <div class="topbar-right">
+      <div class="lang-toggle" role="group" aria-label="Language switcher">
+        <button class="lang-btn" id="langEn" type="button" data-lang="en">EN</button>
+        <button class="lang-btn" id="langZh" type="button" data-lang="zh-Hans">中文</button>
+      </div>
+      <a class="support-link" id="supportLink" href="mailto:feioustudio@gmail.com?subject=Projectholic%20Docs%20Issue">Contact support</a>
+    </div>
+  </header>
+
+  <main class="layout">
+    <aside class="sidebar">
+      <h2>Contents</h2>
+      <nav id="toc" class="toc" aria-label="Documentation sections"></nav>
+    </aside>
+
+    <article class="content" id="doc">
+      <div class="loading">Loading documentation...</div>
+    </article>
+  </main>
+
+  <script id="guide-markdown-en" type="text/plain">
+# Projectholic Complete User Manual (Display-Name Aligned)
+
+This is the full self-learn manual for end users.
+It is intentionally detailed and uses the same display labels shown in the app UI (from `Projectholic/en.lproj/Localizable.strings`).
+
+## 1. Product overview
+
+Projectholic is a project execution system combining:
+- `Projects` for project containers and goals
+- `Calendar` for daily/weekly execution
+- `Gantt` for timeline planning (iPad/Mac, Pro-oriented)
+- `Follow-up` for delegated/shared task tracking
+- `Stats` for progress and performance analysis
+- `Settings` for language, appearance, work hours, and data transfer
+
+## 2. What “full usage” looks like
+
+A complete workflow in Projectholic usually looks like this:
+1. Create a project in `Projects`
+2. Define phases/deliverables
+3. Add tasks with suitable `Type` (`Regular`, `Multi-day`, `Recurring`)
+4. Place tasks on schedule in `Calendar`/`Gantt`
+5. Run execution with `Start Focus`
+6. Close loops in `Daily Summary` and `Day-End Review`
+7. Review outcomes in `Stats`
+
+## 3. First launch experience
+
+On first launch, Projectholic shows a guided project setup flow.
+
+Typical steps include:
+1. Intro
+2. Project name and color
+3. Outcome / direction
+4. Deliverables/phases
+5. Starter tasks
+6. Optional settings such as deadline, budget, weekend strategy
+
+What users should do after onboarding:
+1. Open the created project in `Projects`
+2. Add at least 3 tasks (one for each `Type`)
+3. Schedule them immediately in `Calendar`
+
+## 4. Navigation model by device
+
+## iPhone tabs
+- `Projects`
+- `Calendar`
+- `Follow-up`
+- `Stats`
+- `Settings`
+
+## iPad/Mac sidebar tabs
+- `Projects`
+- `Gantt`
+- `Calendar`
+- `Follow-up`
+- `Stats`
+- `Settings`
+
+Notes:
+- On iPhone, `Month` is represented through calendar experiences rather than a dedicated tab.
+- On iPad/Mac, `Gantt` and month-style `Calendar` are separated for planning clarity.
+
+## 5. Projects screen deep guide
+
+`Projects` is the project library and entry point for creation.
+
+Top bar controls:
+- Sort tile (`chevron.up.chevron.down`)
+- Add tile (`plus`)
+
+Add options:
+- `Guided (PMBOK)`
+- `Quick Add`
+
+Search and filtering:
+- Search placeholder: `Search projects...`
+- Tag-based filtering: `Filter by tags`
+- Tag tokens also work with search text
+
+Context menu on a project card:
+- `Star Project` / `Unstar Project`
+- `Tags`
+- `Edit Project`
+- `Copy Project`
+- delete action
+
+Copy options (when prompted):
+- `Copy Project & Tasks`
+- `Copy Project Only`
+
+Subscription behavior:
+- Free tier can create first project.
+- Additional project creation may trigger a Pro gate.
+
+## 6. Project detail architecture (`Plan` and `Timeline`)
+
+Inside a project, users switch between:
+- `Plan`
+- `Timeline`
+
+`Plan` is for structure:
+- phases
+- tasks
+- subtasks
+- editing project outcome/metadata
+
+`Timeline` is for sequence and timing:
+- order and schedule
+- collapse/expand timeline sections
+- status tracking across time
+
+Common in-project sections:
+- phase sections
+- unassigned phase section (`Inbox` from `phase_task_unassigned`)
+- `Unscheduled` task handling
+
+## 7. Phases and deliverables
+
+Phases are used to break projects into structured chunks.
+
+Users can:
+- add phase
+- edit phase
+- mark phase complete
+- reorder phases
+- delete phase
+
+On phase deletion, app may ask whether to:
+- remove phase only and keep tasks
+- remove phase with tasks
+
+This prevents accidental data loss when reorganizing.
+
+## 8. Task creation and edit fundamentals
+
+Task editor can set:
+- title
+- notes
+- project linkage
+- plan date/time
+- duration
+- due date
+- subtasks
+- reminder/calendar sync overrides
+- task `Type`
+
+Primary edit actions users see:
+- `Edit Task`
+- `Copy Task`
+- `Delete Task`
+
+Task completion controls:
+- `circle` means incomplete
+- `checkmark.circle.fill` means complete
+
+## 9. Task `Type` concept
+
+UI label: `Type`
+
+Available display values:
+- `Regular`
+- `Multi-day`
+- `Recurring`
+
+Each type changes scheduling behavior and visual indicators.
+
+## 10. `Regular` tasks
+
+Use when work should be represented as a single normal task.
+
+Typical behavior:
+- appears as one block when scheduled
+- uses normal completion state
+- supports focus and sharing actions
+
+## 11. `Multi-day` tasks
+
+Use for large tasks that cannot fit one practical session/day.
+
+Behavior:
+- supports overflow schedule blocks
+- can auto-spread work using constraints
+- supports per-block completion handling
+
+Typical auto constraints:
+- start date
+- max minutes/day
+- min block minutes
+- max block minutes
+- skip weekends
+
+Visual cues for multi-day continuation:
+- backward arrow variant: continuing from previous day
+- forward arrow variant: continuing into next day
+
+## 12. `Recurring` tasks
+
+Use for repeated obligations or routines.
+
+Recurring settings include concepts like:
+- `Repeats`
+- `Every`
+- `End Condition`
+- `Never`
+- `On Date`
+- `Count`
+
+Users can define daily/weekly/monthly/yearly patterns.
+Instances can be managed from timeline/calendar views.
+
+## 13. Calendar execution guide (`Calendar`)
+
+`Calendar` is the daily operating screen.
+
+Core operations:
+- open scheduled tasks
+- edit schedule rapidly
+- complete tasks from timeline blocks
+- inspect day workloads
+
+Top area includes date controls and quick entries.
+Menu includes:
+- `Daily Summary`
+- `Day-End Review`
+
+Task block interactions:
+- single tap: open task editor/details
+- double tap: quick launch focus (auto-start path)
+- long press: context menu actions
+
+## 14. Multi-project planning guide (`Gantt`)
+
+`Gantt` is designed for timeline-level planning.
+
+Users can:
+- inspect multiple projects in one timeline
+- zoom timeline density
+- filter by project or tags
+- jump through time ranges
+- open tasks from gantt rows
+
+Toolbar controls include:
+- filter (`line.3.horizontal.decrease.circle`)
+- zoom out (`minus.magnifyingglass`)
+- zoom in (`plus.magnifyingglass`)
+
+If access is gated, users may see Pro upgrade UI.
+
+## 15. Month planning (iPad/Mac `Calendar`)
+
+Month view supports:
+- selecting date cells
+- opening day panel
+- filtering by projects and tags
+
+Filter sheet actions:
+- `Clear`
+- `Done`
+
+Useful when users want mid-level planning without full gantt complexity.
+
+## 16. Focus workflow (`Start Focus`)
+
+Focus is task-linked.
+
+Entry points:
+- task context menu (`Start Focus`)
+- double-tap task block
+
+Session lifecycle:
+- start
+- pause
+- resume
+- stop
+
+Additional behavior:
+- active sessions can be minimized
+- minimized session can be resumed via floating indicator
+- history/logging preserved on task level
+
+## 17. `Follow-up` (shared/delegated tasks)
+
+`Follow-up` is where delegated tasks are monitored.
+
+Capabilities:
+- view shared tasks
+- sort/group by date/person
+- open task details
+- reassign to another person
+- stop sharing
+- mark completion
+
+Related symbols users often ask about:
+- `person.2.fill`
+- `person.2.arrow.trianglehead.counterclockwise`
+- `xmark.circle`
+
+## 18. `Stats` interpretation guide
+
+`Stats` provides:
+- month-level view
+- quarter-level view
+- year-level view
+- project-level drill-ins
+
+How to use as a user:
+1. check trend quality
+2. compare project completion behavior
+3. identify overcommitment or delayed execution patterns
+
+## 19. `Settings` full walkthrough
+
+Main sections users will see:
+- `Subscription Status`
+- `General`
+- `Learn`
+- `About`
+- `Support & Sharing`
+- data transfer section
+- `Purchases`
+
+High-value controls:
+- `Language`
+- `Appearance`
+- `Default Tab`
+- `Work Hours`
+
+Learning/support entries:
+- `Projectholic 101`
+- `View Onboarding`
+
+Data transfer:
+- export project data
+- import project data
+- choose import identity behavior
+
+## 20. Cloud sync help (`iCloud Status`)
+
+Cloud menu title is `iCloud Status`.
+
+Common user-facing labels:
+- `Cloud Sync Requires Pro`
+- `Upgrade to Sync`
+- `Uploading...`
+- `Downloading...`
+- `Sync Failed`
+- `Sync Complete`
+- `Refresh`
+- `Sync Status`
+
+When users report sync issues, ask them to:
+1. open `iCloud Status`
+2. read current state label
+3. tap `Refresh`
+4. check iCloud sign-in status if needed
+
+## 21. Context menus: exact actions
+
+## Task context menu
+Possible actions include:
+- `Start Focus`
+- `Edit Task`
+- `Copy Task`
+- `Delete Task`
+- completion toggle (in some contexts)
+
+## Project context menu
+Possible actions include:
+- `Star Project` / `Unstar Project`
+- `Tags`
+- `Edit Project`
+- `Copy Project`
+- delete action
+
+## 22. Button and icon reference (quick answers)
+
+When a user asks “what does this button do?”, use this mapping:
+- `xmark`: close current sheet/page
+- `chevron.right`: open details / drill-down
+- `ellipsis`: open additional actions
+- `square.and.pencil`: edit action (`Edit Task`/edit context)
+- `doc.on.doc`: copy/duplicate (`Copy Task`/`Copy Project`)
+- `trash`: delete action
+- `plus`, `plus.circle`, `plus.circle.fill`: add action
+- `checkmark.circle.fill` / `circle`: completion state
+- `timer`: focus action (`Start Focus`)
+- `line.3.horizontal.decrease.circle`: filter panel
+- `sparkles`: guided/help/upgrade highlight entry
+- `lock.fill`: locked/Pro-gated state
+
+## 23. Icon legend by area
+
+## Navigation
+- `folder.fill` => `Projects`
+- `calendar` => `Calendar`
+- `person.2.fill` => `Follow-up`
+- `chart.xyaxis.line` => `Stats`
+- `gear` => `Settings`
+- `chart.bar.yaxis` => `Gantt`
+
+## Task type indicators
+- `repeat` / `repeat.circle.fill` => `Recurring`
+- `repeat.1` / `repeat.1.circle.fill` => first recurring occurrence
+- `arrow.backward(.circle.fill)` => multi-day block from previous day
+- `arrow.forward(.circle.fill)` => multi-day block into next day
+
+## Completion states
+- `circle` => incomplete
+- `checkmark.circle.fill` => complete
+- `square` => subtask/block incomplete
+- `checkmark.square.fill` => subtask/block complete
+
+## Cloud states
+- `icloud` + lock badge => Pro needed for sync
+- `icloud.slash` => sign-in issue
+- rotating cloud arrows => active sync
+- `checkmark` cloud/circle => sync success
+- warning/error cloud icons => sync issue
+
+## 24. Daily user routines
+
+## Routine A: Fast daily execution
+1. Open `Calendar`
+2. Check scheduled blocks
+3. Start one priority task with `Start Focus`
+4. Mark completions inline
+5. End with `Daily Summary`
+
+## Routine B: Weekly planning
+1. Open `Projects`
+2. Adjust project structure in `Plan`
+3. Open `Gantt` (or `Calendar` month on iPad/Mac)
+4. Rebalance tasks across days
+5. Validate in `Stats`
+
+## Routine C: Delegation follow-up
+1. Open `Follow-up`
+2. Group by person/date
+3. Reassign or stop sharing where needed
+4. Confirm completion status
+
+## 25. Suggested learning order for new users
+
+1. Learn `Projects` creation and sorting
+2. Learn task `Type` differences
+3. Learn `Calendar` block editing
+4. Learn `Start Focus` and session lifecycle
+5. Learn `Follow-up` delegation operations
+6. Learn `Stats` interpretation basics
+7. Configure `Settings` defaults and `Work Hours`
+
+## 26. Troubleshooting reference
+
+## “I can’t find a task”
+Check:
+- date range
+- active filters
+- `Unscheduled` area
+- `Inbox`/unassigned phase area
+
+## “I cannot add more projects”
+Likely free-tier limitation after first project.
+
+## “Sync is not updating”
+Check `iCloud Status` labels and use `Refresh`.
+
+## “My long task schedule looks wrong”
+Open task editor, verify `Type` is `Multi-day`, then validate spread constraints.
+
+## “Recurring behavior is unexpected”
+Open recurring settings and check `Every`, `End Condition`, and selected pattern.
+
+## 27. Support-answer template for UI questions
+
+When users ask about a specific control:
+1. Ask where they are (`Projects`, `Calendar`, `Gantt`, `Follow-up`, `Stats`, `Settings`)
+2. Identify icon shape and nearby label
+3. Map to section 22 and 23
+4. If destructive action, explain confirmation impact
+
+## 28. Glossary
+
+- Project: top-level container in `Projects`
+- Phase: deliverable segment inside a project
+- `Regular`: one-time task type
+- `Multi-day`: long task spread over time blocks
+- `Recurring`: rule-based repeating task
+- `Unscheduled`: task without scheduled slot
+- Focus session: timed work record started via `Start Focus`
+- `Follow-up`: shared/delegated task tracking screen
+  </script>
+  <script id="guide-markdown-zh-Hans" type="text/plain">
+# Projectholic 完整用户手册（简体中文）
+
+本手册为完整版本，面向自学用户。
+术语统一使用应用界面中的中文显示名（参考 `Projectholic/zh-Hans.lproj/Localizable.strings`）。
+
+## 1. 产品总览
+
+Projectholic 是一个把项目管理与执行排程结合起来的系统，核心模块包括：
+- `项目`
+- `日历`
+- `甘特图`（iPad/Mac 侧重）
+- `跟进`
+- `数据`
+- `设置`
+
+## 2. 完整使用路径是什么
+
+常见完整闭环如下：
+1. 在 `项目` 新建项目
+2. 规划阶段/交付物
+3. 按 `任务类型` 添加任务（`一般` / `多日` / `重复`）
+4. 在 `日历` / `甘特图` 排程
+5. 用 `进入专注` 执行
+6. 用 `每日摘要` 与 `日终回顾` 做复盘
+7. 在 `数据` 查看趋势
+
+## 3. 首次启动
+
+首次启动会进入引导创建流程，通常包括：
+1. 介绍
+2. 项目名称与颜色
+3. 目标与方向
+4. 交付物/阶段
+5. 起始任务
+6. 可选配置（截止日期、工时、周末策略）
+
+建议完成引导后立刻做三件事：
+1. 进入 `项目`
+2. 新建三种类型任务
+3. 到 `日历` 完成首次排程
+
+## 4. 不同设备的导航结构
+
+## iPhone 标签页
+- `项目`
+- `日历`
+- `跟进`
+- `数据`
+- `设置`
+
+## iPad / Mac 侧边栏
+- `项目`
+- `甘特图`
+- `日历`
+- `跟进`
+- `数据`
+- `设置`
+
+说明：
+- iPhone 上以标签切换为主。
+- iPad/Mac 上 `甘特图` 与月历型 `日历` 分离。
+
+## 5. 项目页（`项目`）详解
+
+`项目` 是项目库和创建入口。
+
+顶部常用控件：
+- 排序（`chevron.up.chevron.down`）
+- 新建（`plus`）
+
+新增方式：
+- `引导式（PMBOK）`
+- `快速添加`
+
+搜索与筛选：
+- 搜索框：`搜索项目...`
+- 标签筛选：`按标签筛选`
+
+项目卡片长按/右键菜单：
+- `收藏项目` / `取消收藏`
+- `标签`
+- `编辑项目`
+- `复制项目`
+- 删除
+
+复制选项：
+- `复制项目和任务`
+- `仅复制项目`
+
+订阅限制提示：
+- 免费层通常可创建首个项目。
+- 继续创建可能触发 Pro 限制。
+
+## 6. 项目详情结构（`计划` / `时间线`）
+
+项目详情通常有两种工作视图：
+- `计划`
+- `时间线`
+
+`计划` 侧重结构与内容：
+- 阶段
+- 任务
+- 子任务
+- 项目目标/说明
+
+`时间线` 侧重顺序与排程：
+- 任务先后
+- 时间安排
+- 进度状态
+
+常见分区：
+- 阶段分区
+- `独立任务`（未归类阶段）
+- `未安排` 任务区
+
+## 7. 阶段（交付物）使用规则
+
+阶段用于把项目拆解成清晰里程碑。
+
+可执行动作：
+- 新增阶段
+- 编辑阶段
+- 阶段完成切换
+- 阶段重排
+- 删除阶段
+
+删除阶段时通常会出现选择：
+- 仅删除阶段，保留任务
+- 连同任务一起删除
+
+## 8. 任务创建与编辑基础
+
+任务编辑可设置：
+- 标题
+- 备注
+- 所属项目
+- 计划时间
+- 时长
+- 截止时间
+- 子任务
+- 提醒与日历同步覆盖项
+- `任务类型`
+
+常见动作按钮：
+- `编辑任务`
+- `复制任务`
+- `删除任务`
+
+完成状态图标：
+- `circle`：未完成
+- `checkmark.circle.fill`：已完成
+
+## 9. `任务类型` 核心概念
+
+编辑器中的字段名：`任务类型`。
+
+可选显示值：
+- `一般`
+- `多日`
+- `重复`
+
+不同类型会改变排程方式与图标提示。
+
+## 10. `一般` 任务
+
+适用于一次性、常规任务。
+
+特点：
+- 一般表现为单块任务
+- 支持专注、复制、删除、完成切换
+
+## 11. `多日` 任务
+
+适用于总时长较长、需要跨天拆分的任务。
+
+特点：
+- 可自动分配到多天
+- 支持按块完成
+- 可在自动分配基础上手动微调
+
+常见自动参数：
+- 开始日期
+- 每日最大分钟
+- 最小块时长
+- 最大块时长
+- 是否跳过周末
+
+跨天提示图标：
+- 向后箭头：从前一天延续
+- 向前箭头：延续到下一天
+
+## 12. `重复` 任务
+
+适用于固定节律任务。
+
+`重复设置` 中常见术语：
+- `每`
+- `结束条件`
+- `永不`
+- `在日期`
+- `次数`
+
+可按天/周/月/年配置规则。
+
+## 13. `日历` 执行指南
+
+`日历` 是日常执行主场景。
+
+你可以：
+- 打开任务并编辑
+- 快速勾选完成
+- 查看当天排程密度
+- 从顶部菜单进入：
+  - `每日摘要`
+  - `日终回顾`
+
+任务块交互：
+- 单击：打开详情/编辑
+- 双击：快速进入专注（自动开始路径）
+- 长按：打开任务菜单
+
+## 14. `甘特图` 规划指南
+
+`甘特图` 更适合跨项目时间规划。
+
+可执行操作：
+- 多项目时间线浏览
+- 缩放时间粒度
+- 按项目/标签筛选
+- 在时间范围内跳转
+- 打开任务详情
+
+工具栏常见按钮：
+- 筛选（`line.3.horizontal.decrease.circle`）
+- 缩小（`minus.magnifyingglass`）
+- 放大（`plus.magnifyingglass`）
+
+## 15. iPad/Mac 的月历 `日历`
+
+该视图适合中观排期。
+
+能力：
+- 按天查看任务密度
+- 打开当天侧边面板
+- 项目与标签筛选
+
+筛选面板按钮：
+- `清除`
+- `完成`
+
+## 16. 专注流程（`进入专注`）
+
+专注计时与任务绑定。
+
+入口：
+- 任务菜单 `进入专注`
+- 任务块双击快捷进入
+
+会话生命周期：
+- 开始
+- 暂停
+- 继续
+- 结束
+
+附加行为：
+- 支持最小化
+- 可从悬浮状态恢复
+- 任务层保存专注历史
+
+## 17. 跟进模块（`跟进`）
+
+`跟进` 用于查看委派/共享任务。
+
+可执行：
+- 查看共享任务
+- 按人/按日期分组
+- 打开任务详情
+- 重新指派
+- 取消共享
+- 标记完成
+
+常见图标：
+- `person.2.fill`
+- `person.2.arrow.trianglehead.counterclockwise`
+- `xmark.circle`
+
+## 18. 数据模块（`数据`）
+
+`数据` 用于趋势与绩效观察。
+
+入口通常包括：
+- 月视角
+- 季视角
+- 年视角
+- 项目级明细
+
+建议使用方式：
+1. 看是否按计划推进
+2. 看哪个项目偏离较大
+3. 看整体完成节奏
+
+## 19. 设置模块（`设置`）完整说明
+
+常见分区：
+- `订阅状态`
+- `通用`
+- `学习`
+- `关于`
+- `支持与分享`
+- 数据导入导出相关分区
+- `购买`
+
+建议优先设置：
+- `语言`
+- `外观`
+- `默认标签页`
+- `工作时间`
+
+学习入口：
+- `Projectholic 入门`
+- `查看应用指南`
+
+## 20. 云同步说明（`iCloud 状态`）
+
+云菜单标题：`iCloud 状态`。
+
+常见状态文案：
+- `云同步需要Pro版`
+- `升级以同步`
+- `上传中...`
+- `下载中...`
+- `同步失败`
+- `同步完成`
+- `刷新`
+- `同步状态`
+
+遇到同步问题时建议：
+1. 打开 `iCloud 状态`
+2. 确认当前状态文案
+3. 点击 `刷新`
+4. 检查 iCloud 登录状态
+
+## 21. 菜单动作（精确文案）
+
+## 任务菜单常见项
+- `进入专注`
+- `编辑任务`
+- `复制任务`
+- `删除任务`
+- 完成切换（部分视图显示）
+
+## 项目菜单常见项
+- `收藏项目` / `取消收藏`
+- `标签`
+- `编辑项目`
+- `复制项目`
+- 删除
+
+## 22. 按钮与图标速查（用户提问直答）
+
+当用户问“这个按钮干嘛用”：
+- `xmark`：关闭当前页面/弹窗
+- `chevron.right`：进入详情
+- `ellipsis`：更多操作
+- `square.and.pencil`：编辑（如 `编辑任务`）
+- `doc.on.doc`：复制（任务或项目）
+- `trash`：删除
+- `plus` 系列：新增
+- `checkmark.circle.fill` / `circle`：完成状态切换
+- `timer`：专注动作（`进入专注`）
+- `line.3.horizontal.decrease.circle`：筛选
+- `sparkles`：引导/亮点/升级相关入口
+- `lock.fill`：功能受限或需 Pro
+
+## 23. 图标图例（按区域）
+
+## 导航
+- `folder.fill` => `项目`
+- `calendar` => `日历`
+- `person.2.fill` => `跟进`
+- `chart.xyaxis.line` => `数据`
+- `gear` => `设置`
+- `chart.bar.yaxis` => `甘特图`
+
+## 任务类型提示
+- `repeat` / `repeat.circle.fill` => `重复`
+- `repeat.1` / `repeat.1.circle.fill` => 首次重复实例
+- `arrow.backward(.circle.fill)` => 多日任务从前一天延续
+- `arrow.forward(.circle.fill)` => 多日任务延续到下一天
+
+## 完成状态
+- `circle` => 未完成
+- `checkmark.circle.fill` => 已完成
+- `square` => 子任务/块未完成
+- `checkmark.square.fill` => 子任务/块已完成
+
+## 云同步
+- 带锁云图标 => 同步需 Pro
+- `icloud.slash` => 登录或账户状态异常
+- 旋转云箭头 => 同步中
+- 勾选云/勾选圆 => 同步成功
+- 感叹号/叉号云 => 同步异常
+
+## 24. 用户日常使用范式
+
+## 范式 A：每日执行
+1. 打开 `日历`
+2. 看今日任务块
+3. 对关键任务执行 `进入专注`
+4. 即时勾选完成
+5. 用 `每日摘要` 收尾
+
+## 范式 B：每周规划
+1. 打开 `项目`
+2. 在 `计划` 调整结构
+3. 用 `甘特图` 或月视图 `日历` 重排时间
+4. 到 `数据` 查看效果
+
+## 范式 C：委派管理
+1. 打开 `跟进`
+2. 按人/日期查看
+3. 重新指派或取消共享
+4. 确认完成情况
+
+## 25. 新手推荐学习顺序
+
+1. 先会 `项目` 新建与排序
+2. 理解三种 `任务类型`
+3. 学会 `日历` 中的任务块操作
+4. 学会 `进入专注`
+5. 学会 `跟进` 的委派闭环
+6. 学会在 `数据` 看趋势
+7. 完成 `设置` 里的 `工作时间` 与 `默认标签页`
+
+## 26. 问题排查手册
+
+## “我找不到任务”
+请检查：
+- 日期范围
+- 筛选条件
+- `未安排` 区域
+- `独立任务` 分区
+
+## “为什么不能继续新建项目”
+通常是免费层级限制。
+
+## “同步没更新”
+在 `iCloud 状态` 里先看状态，再点 `刷新`。
+
+## “多日任务排程怪怪的”
+打开任务确认：
+- `任务类型` 是 `多日`
+- 自动分配参数是否合理
+
+## “重复任务行为不符合预期”
+进入 `重复设置`，检查：
+- `每`
+- `结束条件`
+- 规则频率与终止条件
+
+## 27. 客服答复模板（针对按钮/图标问题）
+
+当用户问某个按钮：
+1. 先确认所在页面（`项目`/`日历`/`甘特图`/`跟进`/`数据`/`设置`）
+2. 确认图标外形与邻近文案
+3. 用本手册第 22/23 节映射
+4. 若是删除类操作，补充影响与确认提示
+
+## 28. 术语表
+
+- 项目：顶层容器（`项目`）
+- 阶段：项目内交付物分段
+- `一般`：一次性任务类型
+- `多日`：长任务跨天分配类型
+- `重复`：规则循环任务类型
+- `未安排`：尚未进入时间槽的任务
+- 专注会话：由 `进入专注` 启动的计时记录
+- `跟进`：委派/共享任务追踪页面
+  </script>
+  <script>
+    const iconMap = {
+      'arrow.backward': 'material-symbols:arrow-back',
+      'arrow.backward.circle.fill': 'material-symbols:arrow-circle-left',
+      'arrow.clockwise': 'material-symbols:refresh',
+      'arrow.forward': 'material-symbols:arrow-forward',
+      'arrow.forward.circle.fill': 'material-symbols:arrow-circle-right',
+      'arrow.trianglehead.2.clockwise.rotate.90.icloud': 'material-symbols:sync',
+      'bolt.fill': 'material-symbols:bolt',
+      'calendar': 'material-symbols:calendar-month',
+      'calendar.badge.minus': 'material-symbols:event-busy',
+      'calendar.badge.plus': 'material-symbols:event-available',
+      'calendar.circle': 'material-symbols:calendar-month',
+      'chart.bar.yaxis': 'material-symbols:bar-chart',
+      'chart.line.uptrend.xyaxis': 'material-symbols:show-chart',
+      'chart.xyaxis.line': 'material-symbols:monitoring',
+      'checkmark.circle': 'material-symbols:check-circle-outline',
+      'checkmark.circle.fill': 'material-symbols:check-circle',
+      'checkmark.icloud': 'material-symbols:cloud-done',
+      'checkmark.square.fill': 'material-symbols:check-box',
+      'chevron.right': 'material-symbols:chevron-right',
+      'chevron.up.chevron.down': 'material-symbols:unfold-more',
+      'circle': 'material-symbols:radio-button-unchecked',
+      'clock': 'material-symbols:schedule',
+      'clock.fill': 'material-symbols:schedule',
+      'doc.on.doc': 'material-symbols:content-copy',
+      'ellipsis': 'material-symbols:more-horiz',
+      'exclamationmark.icloud': 'mdi:cloud-alert-outline',
+      'exclamationmark.triangle.fill': 'material-symbols:warning',
+      'folder.fill': 'material-symbols:folder',
+      'gear': 'material-symbols:settings',
+      'hourglass': 'material-symbols:hourglass-top',
+      'icloud': 'material-symbols:cloud',
+      'icloud.and.arrow.down': 'material-symbols:cloud-download',
+      'icloud.slash': 'material-symbols:cloud-off',
+      'info.circle': 'material-symbols:info',
+      'line.3.horizontal.decrease.circle': 'material-symbols:filter-alt',
+      'location.fill': 'material-symbols:my-location',
+      'lock.fill': 'material-symbols:lock',
+      'minus.magnifyingglass': 'material-symbols:zoom-out',
+      'pencil': 'material-symbols:edit',
+      'person.2.arrow.trianglehead.counterclockwise': 'material-symbols:swap-horiz',
+      'person.2.fill': 'material-symbols:groups',
+      'person.fill': 'material-symbols:person',
+      'plus': 'material-symbols:add',
+      'plus.circle': 'material-symbols:add-circle-outline',
+      'plus.circle.fill': 'material-symbols:add-circle',
+      'plus.magnifyingglass': 'material-symbols:zoom-in',
+      'questionmark.circle': 'material-symbols:help',
+      'repeat': 'material-symbols:repeat',
+      'repeat.1': 'material-symbols:repeat-one',
+      'repeat.1.circle.fill': 'material-symbols:repeat-one',
+      'repeat.circle.fill': 'material-symbols:repeat',
+      'sparkles': 'material-symbols:auto-awesome',
+      'square': 'material-symbols:check-box-outline-blank',
+      'square.and.pencil': 'material-symbols:edit-square',
+      'square.grid.2x2': 'material-symbols:grid-view',
+      'star': 'material-symbols:star-outline',
+      'star.fill': 'material-symbols:star',
+      'tag': 'material-symbols:sell',
+      'timer': 'material-symbols:timer',
+      'trash': 'material-symbols:delete',
+      'xmark': 'material-symbols:close',
+      'xmark.circle': 'material-symbols:cancel',
+      'xmark.circle.fill': 'material-symbols:cancel'
+    };
+
+    const nonIconCode = new Set(['default', 'overflow', 'recurring', 'TaskTypeIcon', '#tag']);
+
+    function iconUrl(codeText) {
+      const mapped = iconMap[codeText];
+      if (!mapped) return null;
+      return `https://api.iconify.design/${mapped}.svg?color=%23d9ecff&width=18&height=18`;
+    }
+
+    function slugify(text) {
+      return text.toLowerCase().trim().replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-');
+    }
+
+    function applyIconChips(container) {
+      container.querySelectorAll('code').forEach((codeNode) => {
+        const raw = codeNode.textContent.trim();
+        if (!raw || nonIconCode.has(raw)) return;
+
+        if (raw.includes('+')) {
+          const parts = raw.split('+').map((part) => part.trim()).filter(Boolean);
+          if (parts.length < 2 || parts.some((part) => !iconMap[part])) return;
+
+          const group = document.createElement('span');
+          group.style.display = 'inline-flex';
+          group.style.alignItems = 'center';
+          group.style.gap = '0.2em';
+          group.title = raw;
+          parts.forEach((part, index) => {
+            const chip = document.createElement('span');
+            chip.className = 'sf-icon';
+
+            const img = document.createElement('img');
+            img.src = iconUrl(part);
+            img.alt = `${part} icon`;
+            img.loading = 'lazy';
+            chip.append(img);
+            group.appendChild(chip);
+
+            if (index < parts.length - 1) {
+              const dot = document.createElement('span');
+              dot.textContent = '·';
+              dot.style.opacity = '0.65';
+              dot.style.margin = '0 0.08em';
+              group.append(dot);
+            }
+          });
+
+          codeNode.replaceWith(group);
+          return;
+        }
+
+        if (raw.includes(' ')) return;
+        if (!raw.includes('.') && !iconMap[raw]) return;
+
+        const src = iconUrl(raw);
+        if (!src) return;
+
+        const chip = document.createElement('span');
+        chip.className = 'sf-icon';
+        chip.title = raw;
+
+        const img = document.createElement('img');
+        img.src = src;
+        img.alt = `${raw} icon`;
+        img.loading = 'lazy';
+        chip.append(img);
+        codeNode.replaceWith(chip);
+      });
+    }
+
+    function applySectionCards(container) {
+      const headings = [...container.querySelectorAll('h2')];
+      headings.forEach((heading) => {
+        const section = document.createElement('section');
+        section.className = 'doc-section';
+        heading.before(section);
+        section.appendChild(heading);
+
+        let next = section.nextSibling;
+        while (next && !(next.nodeType === 1 && next.tagName === 'H2')) {
+          const moving = next;
+          next = next.nextSibling;
+          section.appendChild(moving);
+        }
+      });
+    }
+
+    function buildToc(container) {
+      const toc = document.getElementById('toc');
+      toc.innerHTML = '';
+
+      const slugCounts = {};
+      const headings = [...container.querySelectorAll('h2, h3')];
+      headings.forEach((heading) => {
+        const base = slugify(heading.textContent || 'section');
+        const count = (slugCounts[base] || 0) + 1;
+        slugCounts[base] = count;
+        heading.id = count === 1 ? base : `${base}-${count}`;
+
+        const a = document.createElement('a');
+        a.href = `#${heading.id}`;
+        a.textContent = heading.textContent || '';
+
+        const text = (heading.textContent || '').trim();
+        const numbered = text.match(/^(\d+(?:\.\d+)+)\b/);
+        let depth = 0;
+        if (heading.tagName === 'H3') depth = 1;
+        if (numbered) {
+          const parts = numbered[1].split('.');
+          depth = Math.max(depth, parts.length - 1);
+        }
+        if (depth > 0) {
+          a.style.paddingLeft = `${10 + depth * 12}px`;
+        }
+        a.classList.add(`toc-l${Math.min(depth, 2)}`);
+
+        toc.appendChild(a);
+      });
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          const id = entry.target.getAttribute('id');
+          const link = toc.querySelector(`a[href="#${id}"]`);
+          if (!link) return;
+          if (entry.isIntersecting) {
+            toc.querySelectorAll('a').forEach((n) => n.classList.remove('active'));
+            link.classList.add('active');
+          }
+        });
+      }, { rootMargin: '-20% 0px -70% 0px', threshold: 0.01 });
+
+      headings.forEach((h) => observer.observe(h));
+    }
+
+    const langConfig = {
+      en: {
+        file: '../Ref/USER_GUIDE.md',
+        embeddedId: 'guide-markdown-en',
+        sourceLabel: 'Source: Ref/USER_GUIDE.md',
+        disclaimer: 'This document is AI-generated and may contain mistakes or outdated details. If something looks wrong, contact <a href="mailto:feioustudio@gmail.com?subject=Projectholic%20Docs%20Issue">feioustudio@gmail.com</a>.',
+        supportText: 'Contact support',
+        supportSubject: 'Projectholic Docs Issue (English)',
+        tocTitle: 'Contents'
+      },
+      'zh-Hans': {
+        file: '../Ref/USER_GUIDE_zh-Hans.md',
+        embeddedId: 'guide-markdown-zh-Hans',
+        sourceLabel: '来源：Ref/USER_GUIDE_zh-Hans.md',
+        disclaimer: '此文件由 AI 生成，可能存在错误或过时内容。如有问题，请联系 <a href="mailto:feioustudio@gmail.com?subject=Projectholic%20Docs%20Issue%20(Chinese)">feioustudio@gmail.com</a>。',
+        supportText: '联系支持',
+        supportSubject: 'Projectholic Docs Issue (Chinese)',
+        tocTitle: '目录'
+      }
+    };
+
+    async function loadMarkdown(lang) {
+      const config = langConfig[lang] || langConfig.en;
+      let markdown = '';
+      try {
+        const response = await fetch(config.file, { cache: 'no-cache' });
+        if (response.ok) markdown = await response.text();
+      } catch (fetchError) {
+        // Fallback below.
+      }
+
+      if (!markdown.trim()) {
+        const embedded = document.getElementById(config.embeddedId);
+        markdown = embedded ? embedded.textContent : '';
+      }
+
+      return markdown.trim();
+    }
+
+    function updateLanguageUI(lang) {
+      document.documentElement.lang = lang === 'zh-Hans' ? 'zh-Hans' : 'en';
+      document.getElementById('langEn').classList.toggle('active', lang === 'en');
+      document.getElementById('langZh').classList.toggle('active', lang === 'zh-Hans');
+
+      const config = langConfig[lang] || langConfig.en;
+      const supportLink = document.getElementById('supportLink');
+      supportLink.textContent = config.supportText;
+      supportLink.href = `mailto:feioustudio@gmail.com?subject=${encodeURIComponent(config.supportSubject)}`;
+      const sidebarTitle = document.querySelector('.sidebar h2');
+      if (sidebarTitle) sidebarTitle.textContent = config.tocTitle;
+    }
+
+    function escapeHtml(text) {
+      return text
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+
+    function formatInlineMarkdown(raw) {
+      const placeholders = [];
+      let tokenized = raw;
+
+      // Preserve backtick code spans.
+      tokenized = tokenized.replace(/`([^`]+)`/g, (_, inner) => {
+        const key = `%%PH_${placeholders.length}%%`;
+        placeholders.push(`<code>${escapeHtml(inner)}</code>`);
+        return key;
+      });
+
+      // Also treat quoted SF-symbol names like 'arrow.backward' or ‘arrow.backward’.
+      tokenized = tokenized.replace(/[\'‘’]([a-z][a-z0-9]*(?:\.[a-z0-9]+)+)[\'‘’]/gi, (_, inner) => {
+        const key = `%%PH_${placeholders.length}%%`;
+        placeholders.push(`<code>${escapeHtml(inner)}</code>`);
+        return key;
+      });
+
+      let html = escapeHtml(tokenized);
+      html = html.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+      html = html.replace(/%%PH_(\d+)%%/g, (_, idx) => placeholders[Number(idx)] || '');
+      return html;
+    }
+
+    function simpleMarkdownToHtml(markdown) {
+      const lines = markdown.replace(/\r\n/g, '\n').split('\n');
+      const out = [];
+      let inUl = false;
+      let inOl = false;
+      let inCode = false;
+      let paragraph = [];
+
+      const flushParagraph = () => {
+        if (!paragraph.length) return;
+        out.push(`<p>${paragraph.join(' ')}</p>`);
+        paragraph = [];
+      };
+      const closeLists = () => {
+        if (inUl) { out.push('</ul>'); inUl = false; }
+        if (inOl) { out.push('</ol>'); inOl = false; }
+      };
+
+      for (const rawLine of lines) {
+        const line = rawLine;
+        const trimmed = line.trim();
+
+        if (trimmed.startsWith('```')) {
+          flushParagraph();
+          closeLists();
+          if (!inCode) {
+            out.push('<pre><code>');
+            inCode = true;
+          } else {
+            out.push('</code></pre>');
+            inCode = false;
+          }
+          continue;
+        }
+
+        if (inCode) {
+          out.push(escapeHtml(line));
+          continue;
+        }
+
+        if (!trimmed) {
+          flushParagraph();
+          closeLists();
+          continue;
+        }
+
+        if (/^---+$/.test(trimmed)) {
+          flushParagraph();
+          closeLists();
+          out.push('<hr>');
+          continue;
+        }
+
+        const heading = trimmed.match(/^(#{1,6})\s+(.*)$/);
+        if (heading) {
+          flushParagraph();
+          closeLists();
+          const level = heading[1].length;
+          out.push(`<h${level}>${formatInlineMarkdown(heading[2])}</h${level}>`);
+          continue;
+        }
+
+        const ol = trimmed.match(/^(\d+)\.\s+(.*)$/);
+        if (ol) {
+          flushParagraph();
+          if (inUl) { out.push('</ul>'); inUl = false; }
+          if (!inOl) { out.push('<ol>'); inOl = true; }
+          out.push(`<li>${formatInlineMarkdown(ol[2])}</li>`);
+          continue;
+        }
+
+        const ul = trimmed.match(/^-\s+(.*)$/);
+        if (ul) {
+          flushParagraph();
+          if (inOl) { out.push('</ol>'); inOl = false; }
+          if (!inUl) { out.push('<ul>'); inUl = true; }
+          out.push(`<li>${formatInlineMarkdown(ul[1])}</li>`);
+          continue;
+        }
+
+        closeLists();
+        let text = formatInlineMarkdown(trimmed);
+        paragraph.push(text);
+      }
+
+      flushParagraph();
+      closeLists();
+      if (inCode) out.push('</code></pre>');
+      return out.join('\n');
+    }
+
+    function renderMarkdown(markdown) {
+      if (window.marked) {
+        if (typeof window.marked.parse === 'function') {
+          return window.marked.parse(markdown);
+        }
+        if (typeof window.marked === 'function') {
+          return window.marked(markdown);
+        }
+      }
+      return simpleMarkdownToHtml(markdown);
+    }
+
+    async function renderDocs(lang) {
+      const doc = document.getElementById('doc');
+
+      try {
+        const config = langConfig[lang] || langConfig.en;
+        const markdown = await loadMarkdown(lang);
+        if (!markdown) {
+          throw new Error('Guide content is unavailable.');
+        }
+
+        const html = renderMarkdown(markdown);
+        doc.innerHTML = `${html}<p class="meta">${config.sourceLabel}</p><p class="doc-disclaimer">${config.disclaimer}</p>`;
+
+        applyIconChips(doc);
+        applySectionCards(doc);
+        buildToc(doc);
+        updateLanguageUI(lang);
+      } catch (error) {
+        doc.innerHTML = `<div class="error">Could not load documentation. ${error.message}</div>`;
+      }
+    }
+
+    function initDocs() {
+      const browserLang = (navigator.language || '').toLowerCase();
+      const initialLang = browserLang.startsWith('zh') ? 'zh-Hans' : 'en';
+
+      document.getElementById('langEn').addEventListener('click', () => renderDocs('en'));
+      document.getElementById('langZh').addEventListener('click', () => renderDocs('zh-Hans'));
+
+      renderDocs(initialLang);
+    }
+
+    initDocs();
+  </script>
+</body>
+</html>
