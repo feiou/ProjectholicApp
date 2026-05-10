@@ -23,24 +23,24 @@
       "@type": "Article",
       "headline": "Best Apps for ADHD Freelancers",
       "datePublished": "2026-03-27",
-      "dateModified": "2026-03-27",
-      "author": {
-        "@type": "Organization",
-        "name": "Feioustudio"
-      },
+      "dateModified": "2026-05-10",
+      "author": { "@id": "https://projectholic.pro/about.html#person" },
       "publisher": {
         "@type": "Organization",
+        "@id": "https://projectholic.pro/#organization",
         "name": "Feioustudio",
         "logo": {
           "@type": "ImageObject",
           "url": "https://projectholic.pro/images/appIcon-20260112.png"
         },
         "sameAs": [
+          "https://feioustudio.com/",
           "https://x.com/feioustudio",
           "https://www.reddit.com/r/Projectholic/",
           "https://apps.apple.com/app/id6745497754"
         ]
       },
+      "image": "https://projectholic.pro/images/iPhone%20screenshot%208.jpg",
       "mainEntityOfPage": "https://projectholic.pro/blog/best-apps-for-adhd-freelancers.html",
       "description": "A practical list of apps for ADHD freelancers who need less friction, better visibility, and calmer follow-through."
     }
@@ -53,6 +53,46 @@
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://projectholic.pro/" },
         { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://projectholic.pro/blog/" },
         { "@type": "ListItem", "position": 3, "name": "Best Apps for ADHD Freelancers", "item": "https://projectholic.pro/blog/best-apps-for-adhd-freelancers.html" }
+      ]
+    }
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What apps work best for ADHD freelancers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A small core stack tends to work best: Todoist for fast capture, Projectholic for fitting tasks into real available time, Toggl Track for time visibility, Loom for low-friction updates, and Obsidian for notes. The pattern is low setup cost, clear visual state, and tools that remain usable after a scattered week, not the most powerful or customizable system."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why do ADHD freelancers struggle with traditional project management apps?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Traditional project management apps usually demand heavy setup, constant grooming, and perfect tagging habits. That maintenance cost is fragile for ADHD freelancers because skipping a few days makes the system feel unusable. The tools punish inconsistency instead of absorbing it, so people quietly abandon them. Lighter, more opinionated tools survive real freelance life better than highly customizable ones."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How should an ADHD freelancer set up their daily app stack?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Keep it small and give each tool one clear job. Use a fast capture app for incoming thoughts, a planning app that maps tasks against real available time, a time tracker for visibility when estimates drift, and a notes app for unfinished thinking. Avoid forcing one app to handle capture, planning, notes, and scheduling at once. Cleaner boundaries make the stack easier to trust."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What features matter most in an ADHD-friendly task app?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Look for fast capture without setup, clear visual state instead of buried lists, gentle structure for time and priorities, and a low penalty when you fall off for a day. The right app makes re-entry feel normal rather than shameful. If opening the app makes you feel behind immediately, it is the wrong tool, regardless of how powerful or popular it is."
+          }
+        }
       ]
     }
   </script>
@@ -112,6 +152,15 @@
     .meta { color: rgba(237, 245, 255, 0.58); font-size: 0.92rem; }
     .cta { margin-top: 22px; padding: 28px 0 0; border-top: 1px solid var(--stroke); }
     .cta h2 { margin-top: 0; }
+    .quick-answer { margin: 0 0 28px; padding: 18px 22px; border-radius: 14px; border: 1px solid var(--stroke); background: rgba(134, 199, 255, 0.07); }
+    .quick-answer-label { margin: 0 0 6px; text-transform: uppercase; letter-spacing: 0.18em; font-size: 0.72rem; color: var(--accent); }
+    .quick-answer-body { margin: 0; font-size: 1.02rem; line-height: 1.6; color: var(--text); }
+    .faq { margin-top: 48px; padding-top: 28px; border-top: 1px solid var(--stroke); }
+    .faq h2 { margin-top: 0; }
+    .faq details { padding: 14px 18px; border: 1px solid var(--stroke); border-radius: 12px; margin-bottom: 10px; background: rgba(255, 255, 255, 0.04); }
+    .faq summary { cursor: pointer; font-weight: 600; color: var(--text); }
+    .faq details[open] summary { margin-bottom: 8px; }
+    .faq p { margin: 0; }
   </style>
 </head>
 <body>
@@ -129,12 +178,22 @@
       <p>ADHD-friendly tools are usually simpler, more visible, and easier to re-enter after distraction. The goal is not to optimize every workflow. It is to make it easier to start, resume, and finish, especially when your workday is split across client messages, deadlines, admin, and creative energy that does not always arrive on command.</p>
     </section>
 
+    <aside class="quick-answer" role="note" aria-label="Quick answer">
+      <p class="quick-answer-label">Quick answer</p>
+      <p class="quick-answer-body">For ADHD freelancers, a small core stack works best: Todoist for fast capture, Projectholic for planning tasks against real available time, Toggl Track for visibility, Loom for low-friction updates, and Obsidian for notes. Prioritize low setup cost, clear visual state, and easy re-entry after a scattered week over feature depth.</p>
+    </aside>
+
+        <figure style="margin: 0 0 32px; padding: 0;">
+      <img src="../images/iPhone%20screenshot%208.jpg" alt="Projectholic iPhone view used as a low-friction capture tool" loading="lazy" style="width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 14px; border: 1px solid var(--stroke); display: block;" />
+      <figcaption style="margin-top: 10px; font-size: 0.86rem; color: var(--muted); text-align: center; opacity: 0.85;">Projectholic on iPhone as a calm capture and re-entry tool.</figcaption>
+    </figure>
+
     <article>
-      <h2>Why this matters more for freelancers</h2>
+      <h2 id="why-this-matters">Why does this matter more for ADHD freelancers?</h2>
       <p>Freelancers have a harder version of the productivity problem. You are not just managing tasks. You are managing switching costs. In one afternoon you might need to answer email, review a contract, estimate a project, finish deliverables, and remember to send an invoice. For people with ADHD traits, that kind of fragmented work can make even simple days feel unstable.</p>
       <p>That is why the right app stack matters. A good tool does not magically fix attention, but it can reduce the energy needed to re-enter work. It can make the next step visible. It can lower the shame loop that happens when a system becomes so complicated you stop using it for three days and then avoid opening it entirely.</p>
 
-      <h2>What tends to help</h2>
+      <h2 id="what-helps">What tends to help ADHD freelancers stay on track?</h2>
       <ul>
         <li>Fast capture with very little setup</li>
         <li>Clear visual state instead of buried lists</li>
@@ -143,11 +202,11 @@
       </ul>
       <p>The common pattern is surprisingly consistent. Tools work better when they make the current state obvious, when they let you dump something quickly without perfect categorization, and when they do not punish inconsistency. The best systems for ADHD freelancers are not always the most powerful systems. They are often the ones that remain usable on a scattered Tuesday.</p>
 
-      <h2>What usually does not help</h2>
+      <h2 id="what-does-not-help">What usually does not help?</h2>
       <p>Extremely customizable setups can look exciting at first and then become fragile. If your workflow depends on ten custom views, several linked databases, and a perfect tagging habit, it may work beautifully for two weeks and then quietly collapse. The issue is not discipline. The issue is maintenance burden.</p>
       <p>The more a tool asks you to remember before it becomes useful, the less likely it is to survive real freelance life. That is why I tend to prefer tools that are opinionated enough to reduce decisions, but flexible enough to fit different kinds of work.</p>
 
-      <h2>Apps I would actually recommend</h2>
+      <h2 id="apps-recommended">Which apps would I actually recommend for ADHD freelancers?</h2>
       <p><a href="https://todoist.com" target="_blank" rel="noopener">Todoist</a> is still one of the strongest options for quick capture and recurring reminders. It is fast, forgiving, and easy to reopen after you have ignored it for a while. That matters more than people admit. A lot of task managers feel productive only when you are already organized. Todoist still works when you are not.</p>
       <p><a href="https://www.toggl.com/track/" target="_blank" rel="noopener">Toggl Track</a> is useful if time blindness is part of the issue. Many freelancers underestimate how much anxiety comes from not knowing where the day actually went. You do not need to track every minute forever, but a few weeks of honest timing can clarify why estimates feel slippery or why admin work keeps swallowing creative hours.</p>
       <p><a href="https://www.loom.com" target="_blank" rel="noopener">Loom</a> is underrated for ADHD workflows because it lowers communication friction. When writing a careful update feels mentally expensive, a short video can be easier, faster, and clearer. It is especially helpful for client updates, design walkthroughs, or handing context back to yourself later.</p>
@@ -156,14 +215,34 @@
       <p><a href="https://cal.com" target="_blank" rel="noopener">Cal.com</a> helps reduce the coordination tax around meetings. Booking friction sounds minor, but it accumulates. Every back-and-forth email steals energy from the work you were trying to protect. The easier it is to contain scheduling, the easier it is to stay present with the actual project.</p>
       <p>For body-doubling, ambient focus, or simply making the room feel less empty, even something as ordinary as <a href="https://www.youtube.com" target="_blank" rel="noopener">YouTube</a> can be more useful than a niche app. Long-form co-working videos, instrumental playlists, and soft ambient sound are often enough to reduce resistance to starting. Not every solution needs to be sophisticated.</p>
 
-      <h2>How I would build the stack</h2>
-      <p>If I were putting together a lightweight ADHD-friendly setup for freelance work, I would keep it small. Todoist for instant capture. Projectholic for planning projects and fitting tasks into real time. Toggl Track for visibility when estimates keep drifting. Loom for lower-friction updates. Obsidian for notes and unfinished ideas. That is already enough for most people.</p>
-      <p>The important part is that each tool has a clear job. Problems start when one app is forced to do everything. A notes app should not also be your calendar, your invoicing system, and your master plan. Cleaner boundaries make the whole stack easier to trust.</p>
+      <h2 id="build-the-stack">How would I build the stack?</h2>
+      <p>If I were putting together a lightweight ADHD-friendly setup for freelance work, I would keep it small. Todoist for instant capture. Projectholic for <a href="freelancer-tool-project-planning.html">planning projects and fitting tasks into real time</a>. Toggl Track for visibility when estimates keep drifting. Loom for lower-friction updates. Obsidian for notes and unfinished ideas. That is already enough for most people.</p>
+      <p>The important part is that each tool has a clear job. Problems start when one app is forced to do everything. A notes app should not also be your calendar, your invoicing system, and your master plan. Cleaner boundaries make the whole stack easier to trust. For a wider view of what a balanced freelance stack looks like, see <a href="freelancer-must-have-apps.html">10 freelancer must-have apps</a>.</p>
 
-      <h2>The real rule</h2>
+      <h2 id="the-real-rule">What is the real rule for picking apps?</h2>
       <p>The best app is usually the one you can return to after a messy week. Fancy setups often collapse under inconsistency. A small stack with good visibility almost always wins.</p>
       <p>If an app makes you feel behind the moment you open it, it is probably the wrong tool. The better tools make re-entry feel normal. They assume you are human. For ADHD freelancers, that is not a soft benefit. It is the difference between having a system and quietly abandoning one.</p>
     </article>
+
+    <section class="faq" aria-label="Frequently asked questions">
+      <h2>Frequently asked questions</h2>
+      <details>
+        <summary>What apps work best for ADHD freelancers?</summary>
+        <p>A small core stack tends to work best: Todoist for fast capture, Projectholic for fitting tasks into real available time, Toggl Track for time visibility, Loom for low-friction updates, and Obsidian for notes. The pattern is low setup cost, clear visual state, and tools that remain usable after a scattered week, not the most powerful or customizable system.</p>
+      </details>
+      <details>
+        <summary>Why do ADHD freelancers struggle with traditional project management apps?</summary>
+        <p>Traditional project management apps usually demand heavy setup, constant grooming, and perfect tagging habits. That maintenance cost is fragile for ADHD freelancers because skipping a few days makes the system feel unusable. The tools punish inconsistency instead of absorbing it, so people quietly abandon them. Lighter, more opinionated tools survive real freelance life better than highly customizable ones.</p>
+      </details>
+      <details>
+        <summary>How should an ADHD freelancer set up their daily app stack?</summary>
+        <p>Keep it small and give each tool one clear job. Use a fast capture app for incoming thoughts, a planning app that maps tasks against real available time, a time tracker for visibility when estimates drift, and a notes app for unfinished thinking. Avoid forcing one app to handle capture, planning, notes, and scheduling at once. Cleaner boundaries make the stack easier to trust.</p>
+      </details>
+      <details>
+        <summary>What features matter most in an ADHD-friendly task app?</summary>
+        <p>Look for fast capture without setup, clear visual state instead of buried lists, gentle structure for time and priorities, and a low penalty when you fall off for a day. The right app makes re-entry feel normal rather than shameful. If opening the app makes you feel behind immediately, it is the wrong tool, regardless of how powerful or popular it is.</p>
+      </details>
+    </section>
 
     <section class="cta">
       <h2>Related reading</h2>

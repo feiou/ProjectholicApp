@@ -11,11 +11,11 @@
   <meta property="og:title" content="The Freelancer Tool Stack for Project Planning" />
   <meta property="og:description" content="A practical freelancer tool guide for managing client projects, deadlines, admin work, and capacity." />
   <meta property="og:url" content="https://projectholic.pro/blog/freelancer-tool-project-planning.html" />
-  <meta property="og:image" content="https://projectholic.pro/images/iPhone%20screenshot%209.jpg" />
+  <meta property="og:image" content="https://projectholic.pro/images/mac%20screenshot%205.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="The Freelancer Tool Stack for Project Planning" />
   <meta name="twitter:description" content="A practical freelancer tool guide for managing client projects, deadlines, admin work, and capacity." />
-  <meta name="twitter:image" content="https://projectholic.pro/images/iPhone%20screenshot%209.jpg" />
+  <meta name="twitter:image" content="https://projectholic.pro/images/mac%20screenshot%205.jpg" />
   <link rel="icon" type="image/png" href="../images/appIcon-20260112.png" />
   <script type="application/ld+json">
     {
@@ -23,24 +23,24 @@
       "@type": "Article",
       "headline": "The Freelancer Tool Stack for Project Planning",
       "datePublished": "2026-03-26",
-      "dateModified": "2026-03-26",
-      "author": {
-        "@type": "Organization",
-        "name": "Feioustudio"
-      },
+      "dateModified": "2026-05-10",
+      "author": { "@id": "https://projectholic.pro/about.html#person" },
       "publisher": {
         "@type": "Organization",
+        "@id": "https://projectholic.pro/#organization",
         "name": "Feioustudio",
         "logo": {
           "@type": "ImageObject",
           "url": "https://projectholic.pro/images/appIcon-20260112.png"
         },
         "sameAs": [
+          "https://feioustudio.com/",
           "https://x.com/feioustudio",
           "https://www.reddit.com/r/Projectholic/",
           "https://apps.apple.com/app/id6745497754"
         ]
       },
+      "image": "https://projectholic.pro/images/mac%20screenshot%205.jpg",
       "mainEntityOfPage": "https://projectholic.pro/blog/freelancer-tool-project-planning.html",
       "description": "A practical freelancer tool guide for managing client projects, deadlines, admin work, and capacity."
     }
@@ -53,6 +53,46 @@
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://projectholic.pro/" },
         { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://projectholic.pro/blog/" },
         { "@type": "ListItem", "position": 3, "name": "The Freelancer Tool Stack for Project Planning", "item": "https://projectholic.pro/blog/freelancer-tool-project-planning.html" }
+      ]
+    }
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What should be in a freelancer's project planning tool stack?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A freelancer's stack should cover client communication and approvals, file delivery, invoicing and payments, project planning with schedule management, and a way to review workload across active clients. The planning layer is the one most freelancers underbuild, which is why deadlines slip even when the rest of the tools work fine."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do freelancers need dedicated project planning software?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, once more than one client overlaps. Chat, cloud storage, invoicing, and notes only document the work. A planning app turns each engagement into a project with milestones, tasks, and a realistic schedule, so you can decide what fits the week instead of letting the loudest message decide the day."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How should planning tools fit alongside admin and capacity tools?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Treat planning as the central layer. Admin work like proposals, bookkeeping, revisions, and follow-ups should be scheduled inside the same capacity-aware system as client tasks, not handled in a separate to-do app. That way every active project competes for the same finite hours instead of admin invisibly stealing project time."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What's the difference between a to-do app and a project planning app for freelancers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A to-do list records obligations. A project planning app helps you decide what can realistically ship. It breaks each engagement into milestones, estimates time, and schedules tasks against your available week. For freelancers juggling clients, that capacity-aware structure is the difference between staying on schedule and reacting to whatever lands in the inbox first."
+          }
+        }
       ]
     }
   </script>
@@ -161,6 +201,61 @@
     .cta h2 {
       margin-top: 0;
     }
+
+    .quick-answer {
+      margin: 0 0 28px;
+      padding: 18px 22px;
+      border-radius: 14px;
+      border: 1px solid var(--stroke);
+      background: rgba(255, 179, 71, 0.08);
+    }
+
+    .quick-answer-label {
+      margin: 0 0 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.72rem;
+      color: var(--accent);
+    }
+
+    .quick-answer-body {
+      margin: 0;
+      font-size: 1.02rem;
+      line-height: 1.6;
+      color: var(--text);
+    }
+
+    .faq {
+      margin-top: 48px;
+      padding-top: 28px;
+      border-top: 1px solid var(--stroke);
+    }
+
+    .faq h2 {
+      margin-top: 0;
+    }
+
+    .faq details {
+      padding: 14px 18px;
+      border: 1px solid var(--stroke);
+      border-radius: 12px;
+      margin-bottom: 10px;
+      background: rgba(255, 249, 240, 0.04);
+    }
+
+    .faq summary {
+      cursor: pointer;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .faq details[open] summary {
+      margin-bottom: 8px;
+    }
+
+    .faq p {
+      margin: 0;
+    }
   </style>
 </head>
 <body>
@@ -178,12 +273,22 @@
       <p>The best freelancer tool is rarely a single app. Most solo operators need communication, files, invoicing, and a planning system. The problem is that planning is usually the weakest layer, which is why deadlines start to slip even when all the other tools are working.</p>
     </section>
 
+    <aside class="quick-answer" role="note" aria-label="Quick answer">
+      <p class="quick-answer-label">Quick answer</p>
+      <p class="quick-answer-body">A freelancer's project planning tool stack should center on one capacity-aware planning system, not a single app. Pair it with delivery tools (chat, files, approvals), admin tools (invoicing, bookkeeping), and a workload review across clients, so milestones, revisions, and follow-ups all compete for the same real hours.</p>
+    </aside>
+
+        <figure style="margin: 0 0 32px; padding: 0;">
+      <img src="../images/mac%20screenshot%205.jpg" alt="Projectholic on Mac as the planning layer of a freelancer tool stack" loading="lazy" style="width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 14px; border: 1px solid var(--stroke); display: block;" />
+      <figcaption style="margin-top: 10px; font-size: 0.86rem; color: var(--muted); text-align: center; opacity: 0.85;">Projectholic anchoring the planning layer of a freelancer's daily setup.</figcaption>
+    </figure>
+
     <article>
-      <h2>The planning gap in most freelancer stacks</h2>
+      <h2 id="planning-gap">Why does the planning layer fail in most freelancer stacks?</h2>
       <p>Freelancers often stitch together chat, cloud storage, invoices, and notes, then manage the actual work with memory and urgency. That works until multiple clients overlap. Then every incoming request feels equally important, and the week loses structure.</p>
       <p>A strong freelancer tool stack needs one place where projects are broken into milestones, tasks are scheduled against available time, and progress is visible. Without that layer, the rest of the stack only documents the chaos.</p>
 
-      <h2>What your core stack should handle</h2>
+      <h2 id="core-stack">What should a freelancer's core tool stack handle?</h2>
       <ul>
         <li>Client communication and approvals</li>
         <li>File delivery and version history</li>
@@ -192,11 +297,11 @@
         <li>Review of workload across active clients</li>
       </ul>
 
-      <h2>Why Projectholic belongs in that stack</h2>
-      <p>Projectholic is useful as the planning layer. It helps you turn each engagement into a project, define the work, estimate time, and schedule tasks around your actual week. That is different from a general to-do list. A to-do list records obligations. A planning app helps you decide what can realistically ship.</p>
+      <h2 id="why-projectholic">Why does Projectholic belong in that stack?</h2>
+      <p><a href="../index.html">Projectholic</a> is useful as the planning layer. It helps you turn each engagement into a project, define the work, estimate time, and schedule tasks around your actual week. That is different from a general to-do list. A to-do list records obligations. A planning app helps you decide what can realistically ship.</p>
       <p>For freelancers, that distinction matters. Your workload is not just client work. It also includes proposals, bookkeeping, revisions, follow-ups, and personal admin. Projectholic helps put all of that into one capacity-aware system instead of letting the loudest message decide the day.</p>
 
-      <h2>A practical weekly rhythm</h2>
+      <h2 id="weekly-rhythm">What does a practical weekly rhythm look like?</h2>
       <p>One simple workflow works well for most freelancers:</p>
       <ul>
         <li>Review every active client project on Monday.</li>
@@ -206,9 +311,29 @@
         <li>Close the week by updating next milestones instead of starting from scratch on Monday.</li>
       </ul>
 
-      <h2>Where this overlaps with gantt-style planning</h2>
-      <p>If you searched for a freelancer tool but also care about timeline planning, the overlap is real. Many freelancers do not need a formal enterprise gantt app. They need gantt-style clarity: what is next, what depends on what, and whether the current week is already over capacity. Projectholic addresses that need through project structure and realistic scheduling rather than by forcing every user into a heavy charting workflow.</p>
+      <h2 id="gantt-overlap">Where does this overlap with gantt-style planning?</h2>
+      <p>If you searched for a freelancer tool but also care about timeline planning, the overlap is real. Many freelancers do not need a formal enterprise gantt app. They need gantt-style clarity: what is next, what depends on what, and whether the current week is already over capacity. For the timeline-first version of this same idea, see <a href="project-gantt-guide.html">how to build a practical project gantt</a>. Projectholic addresses that need through project structure and realistic scheduling rather than by forcing every user into a heavy charting workflow.</p>
     </article>
+
+    <section class="faq" aria-label="Frequently asked questions">
+      <h2>Frequently asked questions</h2>
+      <details>
+        <summary>What should be in a freelancer's project planning tool stack?</summary>
+        <p>A freelancer's stack should cover client communication and approvals, file delivery, invoicing and payments, project planning with schedule management, and a way to review workload across active clients. The planning layer is the one most freelancers underbuild, which is why deadlines slip even when the rest of the tools work fine.</p>
+      </details>
+      <details>
+        <summary>Do freelancers need dedicated project planning software?</summary>
+        <p>Yes, once more than one client overlaps. Chat, cloud storage, invoicing, and notes only document the work. A planning app turns each engagement into a project with milestones, tasks, and a realistic schedule, so you can decide what fits the week instead of letting the loudest message decide the day.</p>
+      </details>
+      <details>
+        <summary>How should planning tools fit alongside admin and capacity tools?</summary>
+        <p>Treat planning as the central layer. Admin work like proposals, bookkeeping, revisions, and follow-ups should be scheduled inside the same capacity-aware system as client tasks, not handled in a separate to-do app. That way every active project competes for the same finite hours instead of admin invisibly stealing project time.</p>
+      </details>
+      <details>
+        <summary>What's the difference between a to-do app and a project planning app for freelancers?</summary>
+        <p>A to-do list records obligations. A project planning app helps you decide what can realistically ship. It breaks each engagement into milestones, estimates time, and schedules tasks against your available week. For freelancers juggling clients, that capacity-aware structure is the difference between staying on schedule and reacting to whatever lands in the inbox first.</p>
+      </details>
+    </section>
 
     <section class="cta">
       <h2>Keep exploring</h2>

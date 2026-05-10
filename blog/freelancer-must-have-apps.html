@@ -23,24 +23,24 @@
       "@type": "Article",
       "headline": "10 Freelancer Must-Have Apps That Make Work Easier",
       "datePublished": "2026-03-27",
-      "dateModified": "2026-03-27",
-      "author": {
-        "@type": "Organization",
-        "name": "Feioustudio"
-      },
+      "dateModified": "2026-05-10",
+      "author": { "@id": "https://projectholic.pro/about.html#person" },
       "publisher": {
         "@type": "Organization",
+        "@id": "https://projectholic.pro/#organization",
         "name": "Feioustudio",
         "logo": {
           "@type": "ImageObject",
           "url": "https://projectholic.pro/images/appIcon-20260112.png"
         },
         "sameAs": [
+          "https://feioustudio.com/",
           "https://x.com/feioustudio",
           "https://www.reddit.com/r/Projectholic/",
           "https://apps.apple.com/app/id6745497754"
         ]
       },
+      "image": "https://projectholic.pro/images/mac%20screenshot%207.jpg",
       "mainEntityOfPage": "https://projectholic.pro/blog/freelancer-must-have-apps.html",
       "description": "A practical list of 10 freelancer must-have apps for planning, communication, writing, meetings, proposals, and staying organized."
     }
@@ -53,6 +53,46 @@
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://projectholic.pro/" },
         { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://projectholic.pro/blog/" },
         { "@type": "ListItem", "position": 3, "name": "10 Freelancer Must-Have Apps", "item": "https://projectholic.pro/blog/freelancer-must-have-apps.html" }
+      ]
+    }
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What apps does a freelancer actually need?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most freelancers need one tool per category: planning (Projectholic), personal capture (Todoist), shared notes and briefs (Notion), async updates (Loom), scheduling (Cal.com), and writing (Grammarly). Add Figma, Linear, or DocuSeal only if your work depends on design, engineering, or contracts. Anything beyond that usually creates maintenance, not output."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many apps should a freelancer use?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Aim for the smallest set that covers planning, capture, shared context, communication, and scheduling. For most freelancers that is around five core tools, with one or two specialized additions for design, engineering, or contracts. The goal is fewer tools that earn their place every week, not a stack that looks impressive on paper."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which freelancer apps are worth paying for?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pay for the tools you would still open on a stressful week. Planning, scheduling, and writing tools usually justify their cost because they save hours every month. Tools you only open during onboarding or quarterly reviews rarely do. The honest test is whether removing the app would make your work measurably harder, not just slightly different."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you introduce a new app without breaking your stack?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Use a one in, one rethink rule. Before adding a new tool, decide which existing tool it replaces or which zone it makes obsolete. Move the work fully across instead of running both in parallel. Half-migrations are how stacks become messy, with overlapping zones and no clear place where information actually lives."
+          }
+        }
       ]
     }
   </script>
@@ -142,6 +182,61 @@
     .cta h2 {
       margin-top: 0;
     }
+
+    .quick-answer {
+      margin: 0 0 28px;
+      padding: 18px 22px;
+      border-radius: 14px;
+      border: 1px solid var(--stroke);
+      background: rgba(255, 179, 71, 0.08);
+    }
+
+    .quick-answer-label {
+      margin: 0 0 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.72rem;
+      color: var(--accent);
+    }
+
+    .quick-answer-body {
+      margin: 0;
+      font-size: 1.02rem;
+      line-height: 1.6;
+      color: var(--text);
+    }
+
+    .faq {
+      margin-top: 48px;
+      padding-top: 28px;
+      border-top: 1px solid var(--stroke);
+    }
+
+    .faq h2 {
+      margin-top: 0;
+    }
+
+    .faq details {
+      padding: 14px 18px;
+      border: 1px solid var(--stroke);
+      border-radius: 12px;
+      margin-bottom: 10px;
+      background: rgba(255, 244, 223, 0.04);
+    }
+
+    .faq summary {
+      cursor: pointer;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .faq details[open] summary {
+      margin-bottom: 8px;
+    }
+
+    .faq p {
+      margin: 0;
+    }
   </style>
 </head>
 <body>
@@ -159,12 +254,22 @@
       <p>A good freelance stack should remove friction, not create a new layer of maintenance. These are the tools I would genuinely recommend to someone managing clients, deadlines, and their own limited focus.</p>
     </section>
 
+    <aside class="quick-answer" role="note" aria-label="Quick answer">
+      <p class="quick-answer-label">Quick answer</p>
+      <p class="quick-answer-body">Every freelancer needs one tool per core category: planning, communication, writing, meetings, and proposals. A simple stack covers Projectholic for planning, Todoist for capture, Notion for shared notes, Loom for async updates, Cal.com for scheduling, and Grammarly for writing. The principle is fewer tools that earn their place every week.</p>
+    </aside>
+
+        <figure style="margin: 0 0 32px; padding: 0;">
+      <img src="../images/mac%20screenshot%207.jpg" alt="Projectholic on Mac as part of a freelancer tool stack" loading="lazy" style="width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 14px; border: 1px solid var(--stroke); display: block;" />
+      <figcaption style="margin-top: 10px; font-size: 0.86rem; color: var(--muted); text-align: center; opacity: 0.85;">Projectholic on Mac, used as the planning layer in a small freelancer stack.</figcaption>
+    </figure>
+
     <article>
-      <h2>What "must-have" actually means for a freelancer</h2>
+      <h2 id="what-must-have-means">What does "must-have" actually mean for a freelancer?</h2>
       <p>The phrase must-have gets used loosely. For a freelancer it should mean something specific. It should mean the app earns its place every week, not just once during onboarding. It should mean that removing it would make your work measurably harder, not just slightly different. By that bar, most apps people add to their stack are not must-haves. They are nice-to-haves that quietly add maintenance.</p>
       <p>The list below is built around that stricter definition. Each tool covers a category that almost every freelancer hits eventually: planning, capture, notes, design, communication, async updates, scheduling, writing, issue tracking, and contracts. You will not need every category from day one, but most established freelancers cover most of them.</p>
 
-      <h2>The 10 apps</h2>
+      <h2 id="the-10-apps">Which 10 apps actually belong in a freelancer stack?</h2>
       <ol>
         <li>
           <strong><a href="../index.html">Projectholic</a></strong>
@@ -208,21 +313,41 @@
         </li>
       </ol>
 
-      <h2>How to introduce a new tool without breaking your stack</h2>
+      <h2 id="introduce-new-tool">How do you introduce a new tool without breaking your stack?</h2>
       <p>Adding a tool is the easy part. Integrating it without disrupting everything else is the harder part. The mistake most freelancers make is bolting a new app on top of their existing workflow without removing or merging anything. After three months, you have eight apps, three overlapping zones, and no idea where information actually lives.</p>
-      <p>A safer pattern is one in, one rethink. Before adding a new tool, decide which existing tool it replaces or which zone it makes obsolete. If a new project tool covers what your task manager was doing for client work, move client tasks fully into it instead of running both in parallel. Half-migrations are how stacks become messy.</p>
+      <p>A safer pattern is one in, one rethink. Before adding a new tool, decide which existing tool it replaces or which zone it makes obsolete. If a new project tool covers what your task manager was doing for client work, move client tasks fully into it instead of running both in parallel. Half-migrations are how stacks become messy. For the planning side specifically, see <a href="freelancer-tool-project-planning.html">the freelancer tool project planning guide</a>.</p>
 
-      <h2>What to skip even if everyone recommends it</h2>
+      <h2 id="what-to-skip">What should you skip even if everyone recommends it?</h2>
       <p>Not every popular tool deserves a place in a freelancer stack. Heavy enterprise project management suites are usually overkill for one person. Tools that depend on a large team to work properly tend to feel hollow when used solo. Apps that require weekly maintenance to stay useful become abandoned within two months on a busy week.</p>
       <p>Resist tools that promise to replace four others. They sound efficient and almost always create new failure modes. Specialized tools that do one thing well are usually a better long-term bet than a single mega-tool that does everything adequately.</p>
 
-      <h2>What I would combine</h2>
+      <h2 id="what-to-combine">What would a simple combined stack look like?</h2>
       <p>A simple stack could be Todoist for personal capture, Notion for shared information, Loom for async updates, Cal.com for scheduling, and Projectholic for planning the work itself. That covers most freelancer needs without becoming bloated.</p>
-      <p>If your work is design heavy, add Figma. If it is engineering heavy, add Linear. If contracts are part of every project, add DocuSeal. The base stack stays the same. The optional layers depend on what you actually do.</p>
+      <p>If your work is design heavy, add Figma. If it is engineering heavy, add Linear. If contracts are part of every project, add DocuSeal. The base stack stays the same. The optional layers depend on what you actually do. If you are juggling several clients on top of this, see <a href="how-to-manage-multiple-client-projects.html">how to manage multiple client projects without dropping deadlines</a>.</p>
 
-      <h2>The honest test for any app</h2>
+      <h2 id="honest-test">What is the honest test for keeping any app in your stack?</h2>
       <p>The question to ask before adding any tool is simple. Will I still be opening this app in three months on a stressful week. If the answer is yes, it belongs in your stack. If the answer is unclear, it probably does not. The best freelancer stacks are not impressive. They are the ones that survive ordinary weeks without needing to be redesigned.</p>
     </article>
+
+    <section class="faq" aria-label="Frequently asked questions">
+      <h2>Frequently asked questions</h2>
+      <details>
+        <summary>What apps does a freelancer actually need?</summary>
+        <p>Most freelancers need one tool per category: planning (Projectholic), personal capture (Todoist), shared notes and briefs (Notion), async updates (Loom), scheduling (Cal.com), and writing (Grammarly). Add Figma, Linear, or DocuSeal only if your work depends on design, engineering, or contracts. Anything beyond that usually creates maintenance, not output.</p>
+      </details>
+      <details>
+        <summary>How many apps should a freelancer use?</summary>
+        <p>Aim for the smallest set that covers planning, capture, shared context, communication, and scheduling. For most freelancers that is around five core tools, with one or two specialized additions for design, engineering, or contracts. The goal is fewer tools that earn their place every week, not a stack that looks impressive on paper.</p>
+      </details>
+      <details>
+        <summary>Which freelancer apps are worth paying for?</summary>
+        <p>Pay for the tools you would still open on a stressful week. Planning, scheduling, and writing tools usually justify their cost because they save hours every month. Tools you only open during onboarding or quarterly reviews rarely do. The honest test is whether removing the app would make your work measurably harder, not just slightly different.</p>
+      </details>
+      <details>
+        <summary>How do you introduce a new app without breaking your stack?</summary>
+        <p>Use a one in, one rethink rule. Before adding a new tool, decide which existing tool it replaces or which zone it makes obsolete. Move the work fully across instead of running both in parallel. Half-migrations are how stacks become messy, with overlapping zones and no clear place where information actually lives.</p>
+      </details>
+    </section>
 
     <section class="cta">
       <h2>Keep reading</h2>

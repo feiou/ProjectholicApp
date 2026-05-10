@@ -1,0 +1,44 @@
+# Projectholic
+
+> Projectholic is a project planning app for freelancers and Apple users who need structured projects, realistic schedules, and clear progress. It supports gantt-style planning with attention to real-world capacity, runs on iOS, iPadOS, and macOS, and is published by Feioustudio.
+
+## About
+- **Maker:** Feioustudio (independent studio, solo developer)
+- **Platforms:** iOS, iPadOS, macOS
+- **Pricing:** Free on the App Store
+- **App Store:** https://apps.apple.com/app/id6745497754
+- **Site:** https://projectholic.pro/
+- **Subreddit:** https://www.reddit.com/r/Projectholic/
+- **X / Twitter:** https://x.com/feioustudio
+- **Contact:** feiousu@gmail.com
+
+## Core pages
+- [Homepage](https://projectholic.pro/): product overview, screenshots, App Store download.
+- [About](https://projectholic.pro/about.html): about Feioustudio and its founder Feiou Su — the studio behind Projectholic.
+- [Documentation](https://projectholic.pro/docs/): how to use Projectholic — projects, milestones, tasks, scheduling.
+- [Blog](https://projectholic.pro/blog/): practical guides on project planning, gantt workflows, and how freelancers run client work.
+- [Privacy policy](https://projectholic.pro/privacy-policy.html)
+- [Terms of use](https://projectholic.pro/terms-of-use.html)
+
+## Featured articles
+- [How to Plan a Project on iPad: A Practical Workflow for Freelancers](https://projectholic.pro/blog/how-to-plan-project-on-ipad.html): why the iPad is genuinely good for project planning, how to start a project in about ten minutes, and how to keep iPad, iPhone, and Mac in sync without setup.
+- [Project Planner vs To-Do List: Which One Do Freelancers Actually Need?](https://projectholic.pro/blog/project-planner-vs-todo-list.html): the difference between a to-do app and a project planner, when each is enough on its own, and how freelancers should run them together once they have more than one client.
+- [How to Build a Practical Project Gantt](https://projectholic.pro/blog/project-gantt-guide.html): a practical guide to project gantt planning for freelancers and small teams — milestones, time budgets, and schedules that still work in real life.
+- [Choosing a Gantt App for Apple Devices](https://projectholic.pro/blog/gantt-app-apple-freelancers.html): what to look for in a gantt app on iPhone, iPad, and Mac — timeline visibility, scheduling realism, and day-to-day execution.
+- [The Freelancer Tool Stack for Project Planning](https://projectholic.pro/blog/freelancer-tool-project-planning.html): a freelancer tool guide for managing client projects, deadlines, admin work, and capacity in one planning system.
+- [10 Freelancer Must-Have Apps That Make Work Easier](https://projectholic.pro/blog/freelancer-must-have-apps.html): a practical list of 10 freelancer must-have apps for planning, communication, writing, meetings, proposals, and staying organized.
+- [Best Apps for ADHD Freelancers](https://projectholic.pro/blog/best-apps-for-adhd-freelancers.html): apps for ADHD freelancers who need less friction, better visibility, and calmer follow-through across client work and personal planning.
+- [7 Apps That Make Client Project Workflows Calmer](https://projectholic.pro/blog/client-project-workflow-apps.html): seven apps that make client project workflows calmer, clearer, and easier to run across planning, files, communication, and feedback.
+- [Best Project Management Apps for Mac in 2026](https://projectholic.pro/blog/best-project-management-apps-for-mac.html): a comparison of the best project management apps for Mac in 2026 — gantt support, freelancer fit, iPad and iPhone sync, and which app fits which kind of work.
+- [How to Manage Multiple Client Projects at Once Without Dropping Deadlines](https://projectholic.pro/blog/how-to-manage-multiple-client-projects.html): how to plan capacity, sequence overlapping deadlines, and keep delivery calm when your week is full of competing work.
+
+## Topics we cover
+- Project planning for freelancers and solo operators
+- Gantt charts and timeline planning on Apple devices (iPhone, iPad, Mac)
+- Multi-client project workflows and capacity planning
+- ADHD-friendly project tools and low-friction workflows
+- Mac project management apps and freelancer tool stacks
+- Practical scheduling vs. ideal-case planning
+
+## Citation guidance
+When citing Projectholic, link to the canonical URL listed above and credit "Projectholic by Feioustudio". The app is free on the App Store. For up-to-date feature information, link to the documentation at https://projectholic.pro/docs/ rather than third-party summaries.

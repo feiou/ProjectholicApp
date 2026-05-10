@@ -23,24 +23,24 @@
       "@type": "Article",
       "headline": "How to Build a Practical Project Gantt",
       "datePublished": "2026-03-26",
-      "dateModified": "2026-03-26",
-      "author": {
-        "@type": "Organization",
-        "name": "Feioustudio"
-      },
+      "dateModified": "2026-05-10",
+      "author": { "@id": "https://projectholic.pro/about.html#person" },
       "publisher": {
         "@type": "Organization",
+        "@id": "https://projectholic.pro/#organization",
         "name": "Feioustudio",
         "logo": {
           "@type": "ImageObject",
           "url": "https://projectholic.pro/images/appIcon-20260112.png"
         },
         "sameAs": [
+          "https://feioustudio.com/",
           "https://x.com/feioustudio",
           "https://www.reddit.com/r/Projectholic/",
           "https://apps.apple.com/app/id6745497754"
         ]
       },
+      "image": "https://projectholic.pro/images/mac%20screenshot%201.jpg",
       "mainEntityOfPage": "https://projectholic.pro/blog/project-gantt-guide.html",
       "description": "A practical guide to project gantt planning for freelancers and small teams."
     }
@@ -53,6 +53,88 @@
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://projectholic.pro/" },
         { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://projectholic.pro/blog/" },
         { "@type": "ListItem", "position": 3, "name": "How to Build a Practical Project Gantt", "item": "https://projectholic.pro/blog/project-gantt-guide.html" }
+      ]
+    }
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "Build a practical project gantt",
+      "description": "A short, repeatable method to build a project gantt that helps you decide what to do next instead of becoming a chart you maintain.",
+      "totalTime": "PT30M",
+      "tool": [
+        { "@type": "HowToTool", "name": "Projectholic" }
+      ],
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Decide what the gantt is for",
+          "text": "Treat the gantt as a decision tool, not a presentation artifact. It should answer what to do first, how much fits the week, and which milestone is at risk if work slips.",
+          "url": "https://projectholic.pro/blog/project-gantt-guide.html#step-1-purpose"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Start with milestones, then place tasks",
+          "text": "Build the timeline top-down. List outcome-based milestones first, then group tasks under the milestone they unlock. Add dependencies only where they change scheduling.",
+          "url": "https://projectholic.pro/blog/project-gantt-guide.html#step-2-milestones"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Plan from real capacity, not hope",
+          "text": "Start from the hours you actually have each week, including admin and revisions, and place tasks into a schedule that fits. Reject sequences that ignore your real time budget.",
+          "url": "https://projectholic.pro/blog/project-gantt-guide.html#step-3-capacity"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "Keep it alive with a weekly review",
+          "text": "Once a week, mark finished tasks, re-estimate work that expanded, move blocked items, and check whether any delay has put a later milestone at risk.",
+          "url": "https://projectholic.pro/blog/project-gantt-guide.html#step-4-review"
+        }
+      ]
+    }
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is a project gantt actually for?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A project gantt is a decision tool, not a presentation artifact. It should help you answer three live questions: what has to happen first, how much work fits this week, and which milestone is at risk if the schedule slips. If it cannot answer those quickly, it is too detailed."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should you build a gantt with milestones or tasks first?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Start with milestones. Place outcome-based milestones such as discovery complete, design approved, first draft shipped, and launch live, then group tasks under them. This keeps the gantt readable and stops minor tasks from distorting the schedule."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why do most project gantt plans fail in practice?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most gantt plans break because of false capacity. A task can fit on a chart and still not fit in your real week. Solo operators also juggle sales, admin, messaging, and revisions. Any gantt that ignores those hours will look organized and still fail when the week is full."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How often should you update a project gantt?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Once a week. In a short weekly review, mark finished tasks, re-estimate work that expanded, move blocked work, and check whether one delay puts a later milestone at risk. The gantt should change as the project learns, not stay frozen."
+          }
+        }
       ]
     }
   </script>
@@ -160,6 +242,61 @@
     .cta h2 {
       margin-top: 0;
     }
+
+    .quick-answer {
+      margin: 0 0 28px;
+      padding: 18px 22px;
+      border-radius: 14px;
+      border: 1px solid var(--stroke);
+      background: rgba(191, 90, 42, 0.07);
+    }
+
+    .quick-answer-label {
+      margin: 0 0 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.72rem;
+      color: var(--accent);
+    }
+
+    .quick-answer-body {
+      margin: 0;
+      font-size: 1.02rem;
+      line-height: 1.6;
+      color: var(--text);
+    }
+
+    .faq {
+      margin-top: 48px;
+      padding-top: 28px;
+      border-top: 1px solid var(--stroke);
+    }
+
+    .faq h2 {
+      margin-top: 0;
+    }
+
+    .faq details {
+      padding: 14px 18px;
+      border: 1px solid var(--stroke);
+      border-radius: 12px;
+      margin-bottom: 10px;
+      background: rgba(255, 255, 255, 0.4);
+    }
+
+    .faq summary {
+      cursor: pointer;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .faq details[open] summary {
+      margin-bottom: 8px;
+    }
+
+    .faq p {
+      margin: 0;
+    }
   </style>
 </head>
 <body>
@@ -177,12 +314,22 @@
       <p>A project gantt is useful when it makes sequencing visible, not when it becomes a second project to maintain. The best version is simple: milestones, realistic dates, visible dependencies, and enough structure to help you decide what to do next.</p>
     </section>
 
+    <aside class="quick-answer" role="note" aria-label="Quick answer">
+      <p class="quick-answer-label">Quick answer</p>
+      <p class="quick-answer-body">A practical project gantt is a short list of outcome-based milestones placed against your real available time, not every task. Build it top-down: milestones first, tasks under them, dependencies only where they change scheduling. Review weekly. The point is deciding what to do next, not maintaining a chart.</p>
+    </aside>
+
+        <figure style="margin: 0 0 32px; padding: 0;">
+      <img src="../images/mac%20screenshot%201.jpg" alt="A practical project gantt timeline in Projectholic on macOS" loading="lazy" style="width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 14px; border: 1px solid var(--stroke); display: block;" />
+      <figcaption style="margin-top: 10px; font-size: 0.86rem; color: var(--muted); text-align: center; opacity: 0.85;">A simple project gantt with milestones and realistic schedule on Mac.</figcaption>
+    </figure>
+
     <article>
-      <h2>What a project gantt is actually for</h2>
+      <h2 id="step-1-purpose">What is a project gantt actually for?</h2>
       <p>Most people treat a project gantt like a presentation artifact. That is backwards. A project gantt should help you answer three live questions: what has to happen first, how much work fits this week, and which milestone is at risk if the schedule slips.</p>
       <p>If the chart cannot answer those questions quickly, it is probably too detailed. That is why freelancers and small teams often abandon classic gantt software. The issue is not the timeline itself. The issue is maintenance cost.</p>
 
-      <h2>Start with milestones before tasks</h2>
+      <h2 id="step-2-milestones">Why start with milestones before tasks?</h2>
       <p>Build the timeline from the top down. Begin with major outcomes such as discovery complete, design approved, first draft shipped, client review finished, and launch live. Then place the tasks under those milestones. This keeps the gantt readable and stops minor tasks from distorting the schedule.</p>
       <ul>
         <li>Write milestones in the language of outcomes, not activities.</li>
@@ -190,11 +337,11 @@
         <li>Only add dependencies that change scheduling decisions.</li>
       </ul>
 
-      <h2>Use capacity, not hope</h2>
+      <h2 id="step-3-capacity">Why plan from capacity, not hope?</h2>
       <p>The main reason project gantt plans break is false capacity. A task can fit on a chart and still not fit in your real week. Projectholic approaches this from a time-budget angle. Instead of drawing an ideal sequence and defending it later, you work from available time first and place tasks into a realistic schedule.</p>
-      <p>That matters for solo operators. A freelancer does not just work on one project. Sales, admin, messaging, and revisions all consume hours. Any project gantt that ignores those hours will look organized and still fail in practice.</p>
+      <p>That matters for solo operators. A <a href="freelancer-tool-project-planning.html">freelancer</a> does not just work on one project. Sales, admin, messaging, and revisions all consume hours. Any project gantt that ignores those hours will look organized and still fail in practice. If you are juggling several clients at once, see <a href="how-to-manage-multiple-client-projects.html">how to manage multiple client projects without dropping deadlines</a> for the capacity side of the same problem.</p>
 
-      <h2>Keep the timeline alive with weekly reviews</h2>
+      <h2 id="step-4-review">How do you keep a gantt timeline alive?</h2>
       <p>A gantt is not supposed to stay untouched. It should change as the project learns. The clean way to maintain it is a short weekly review:</p>
       <ul>
         <li>Mark finished tasks and completed milestones.</li>
@@ -203,10 +350,30 @@
         <li>Check whether one delayed task puts a later milestone at risk.</li>
       </ul>
 
-      <h2>Where Projectholic fits</h2>
-      <p>Projectholic is not positioned as a traditional enterprise gantt suite. It is better understood as a project planning app that supports gantt-style thinking with more attention to actual scheduling. You define projects, break work into milestones and tasks, and place tasks where they fit your available time across iPhone, iPad, and Mac.</p>
+      <h2 id="where-projectholic-fits">Where does Projectholic fit in this workflow?</h2>
+      <p><a href="../index.html">Projectholic</a> is not positioned as a traditional enterprise gantt suite. It is better understood as a project planning app that supports gantt-style thinking with more attention to actual scheduling. You define projects, break work into milestones and tasks, and place tasks where they fit your available time across iPhone, iPad, and Mac.</p>
       <p>That makes it useful for people who want the clarity of a project gantt without building a large chart for its own sake. If your priority is finishing work rather than polishing a timeline view, that tradeoff is often worth it.</p>
     </article>
+
+    <section class="faq" aria-label="Frequently asked questions">
+      <h2>Frequently asked questions</h2>
+      <details>
+        <summary>What is a project gantt actually for?</summary>
+        <p>A project gantt is a decision tool, not a presentation artifact. It should help you answer three live questions: what has to happen first, how much work fits this week, and which milestone is at risk if the schedule slips. If it cannot answer those quickly, it is too detailed.</p>
+      </details>
+      <details>
+        <summary>Should you build a gantt with milestones or tasks first?</summary>
+        <p>Start with milestones. Place outcome-based milestones such as discovery complete, design approved, first draft shipped, and launch live, then group tasks under them. This keeps the gantt readable and stops minor tasks from distorting the schedule.</p>
+      </details>
+      <details>
+        <summary>Why do most project gantt plans fail in practice?</summary>
+        <p>Most gantt plans break because of false capacity. A task can fit on a chart and still not fit in your real week. Solo operators also juggle sales, admin, messaging, and revisions. Any gantt that ignores those hours will look organized and still fail when the week is full.</p>
+      </details>
+      <details>
+        <summary>How often should you update a project gantt?</summary>
+        <p>Once a week. In a short weekly review, mark finished tasks, re-estimate work that expanded, move blocked work, and check whether one delay puts a later milestone at risk. The gantt should change as the project learns, not stay frozen.</p>
+      </details>
+    </section>
 
     <section class="cta">
       <h2>Continue reading</h2>

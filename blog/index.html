@@ -3,19 +3,20 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Projectholic Blog | Project Gantt, Gantt App, and Freelancer Tool Guides</title>
-  <meta name="description" content="Read Projectholic guides about project gantt planning, choosing a gantt app, and building a practical freelancer tool stack for client work and focused execution." />
+  <title>Projectholic Blog | Project Planning, Gantt, and Freelancer Workflow Guides</title>
+  <meta name="description" content="Practical writing on project planning, gantt workflows, and how freelancers actually run client work. Read the latest guides from the Projectholic team." />
   <meta name="robots" content="index,follow" />
+  <meta name="theme-color" content="#111111" />
   <link rel="canonical" href="https://projectholic.pro/blog/" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Projectholic Blog | Project Gantt, Gantt App, and Freelancer Tool Guides" />
-  <meta property="og:description" content="Actionable guides for project planning, realistic scheduling, and freelancer workflows." />
+  <meta property="og:title" content="Projectholic Blog | Project Planning, Gantt, and Freelancer Workflow Guides" />
+  <meta property="og:description" content="Practical writing on project planning, gantt workflows, and how freelancers actually run client work." />
   <meta property="og:url" content="https://projectholic.pro/blog/" />
-  <meta property="og:image" content="https://projectholic.pro/images/appIcon-20260112.png" />
+  <meta property="og:image" content="https://projectholic.pro/images/mac%20screenshot%201.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Projectholic Blog | Project Gantt, Gantt App, and Freelancer Tool Guides" />
-  <meta name="twitter:description" content="Actionable guides for project planning, realistic scheduling, and freelancer workflows." />
-  <meta name="twitter:image" content="https://projectholic.pro/images/appIcon-20260112.png" />
+  <meta name="twitter:title" content="Projectholic Blog | Project Planning, Gantt, and Freelancer Workflow Guides" />
+  <meta name="twitter:description" content="Practical writing on project planning, gantt workflows, and how freelancers actually run client work." />
+  <meta name="twitter:image" content="https://projectholic.pro/images/mac%20screenshot%201.jpg" />
   <link rel="icon" type="image/png" href="../images/appIcon-20260112.png" />
   <link rel="apple-touch-icon" href="../images/appIcon-20260112.png" />
   <script type="application/ld+json">
@@ -24,7 +25,7 @@
       "@type": "Blog",
       "name": "Projectholic Blog",
       "url": "https://projectholic.pro/blog/",
-      "description": "Guides about project gantt planning, gantt app comparisons, and freelancer tool workflows.",
+      "description": "Practical guides on project planning, gantt workflows, and freelancer work.",
       "publisher": {
         "@type": "Organization",
         "name": "Feioustudio",
@@ -37,7 +38,19 @@
           "https://www.reddit.com/r/Projectholic/",
           "https://apps.apple.com/app/id6745497754"
         ]
-      }
+      },
+      "blogPost": [
+        { "@type": "BlogPosting", "headline": "How to Plan a Project on iPad: A Practical Workflow for Freelancers", "url": "https://projectholic.pro/blog/how-to-plan-project-on-ipad.html", "datePublished": "2026-05-10" },
+        { "@type": "BlogPosting", "headline": "Project Planner vs To-Do List: Which One Do Freelancers Actually Need?", "url": "https://projectholic.pro/blog/project-planner-vs-todo-list.html", "datePublished": "2026-05-10" },
+        { "@type": "BlogPosting", "headline": "Best Project Management Apps for Mac in 2026", "url": "https://projectholic.pro/blog/best-project-management-apps-for-mac.html", "datePublished": "2026-04-26" },
+        { "@type": "BlogPosting", "headline": "How to Manage Multiple Client Projects at Once", "url": "https://projectholic.pro/blog/how-to-manage-multiple-client-projects.html", "datePublished": "2026-04-26" },
+        { "@type": "BlogPosting", "headline": "10 Freelancer Must-Have Apps", "url": "https://projectholic.pro/blog/freelancer-must-have-apps.html", "datePublished": "2026-03-27" },
+        { "@type": "BlogPosting", "headline": "Best Apps for ADHD Freelancers", "url": "https://projectholic.pro/blog/best-apps-for-adhd-freelancers.html", "datePublished": "2026-03-27" },
+        { "@type": "BlogPosting", "headline": "7 Apps That Make Client Project Workflows Calmer", "url": "https://projectholic.pro/blog/client-project-workflow-apps.html", "datePublished": "2026-03-27" },
+        { "@type": "BlogPosting", "headline": "How to Build a Practical Project Gantt", "url": "https://projectholic.pro/blog/project-gantt-guide.html", "datePublished": "2026-03-26" },
+        { "@type": "BlogPosting", "headline": "Choosing a Gantt App for Apple Devices", "url": "https://projectholic.pro/blog/gantt-app-apple-freelancers.html", "datePublished": "2026-03-26" },
+        { "@type": "BlogPosting", "headline": "The Freelancer Tool Stack for Project Planning", "url": "https://projectholic.pro/blog/freelancer-tool-project-planning.html", "datePublished": "2026-03-26" }
+      ]
     }
   </script>
   <script type="application/ld+json">
@@ -56,35 +69,31 @@
     :root {
       --bg: #111111;
       --bg-soft: #1a1a1a;
-      --panel: rgba(255, 255, 255, 0.05);
+      --panel: rgba(255, 255, 255, 0.04);
       --stroke: rgba(255, 255, 255, 0.11);
       --text: #f4f1eb;
       --muted: rgba(244, 241, 235, 0.74);
       --accent: #ff9b54;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
       font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at top left, rgba(255, 155, 84, 0.16), transparent 38%),
-        radial-gradient(circle at 80% 15%, rgba(255, 255, 255, 0.08), transparent 30%),
+        radial-gradient(circle at top left, rgba(255, 155, 84, 0.14), transparent 36%),
+        radial-gradient(circle at 80% 12%, rgba(255, 255, 255, 0.06), transparent 28%),
         linear-gradient(180deg, #151515 0%, #0f0f0f 100%);
     }
 
-    a {
-      color: inherit;
-    }
+    a { color: inherit; }
 
     .wrap {
       max-width: 1180px;
       margin: 0 auto;
-      padding: 0 24px 80px;
+      padding: 0 24px 88px;
     }
 
     .topbar {
@@ -120,20 +129,22 @@
     .topbar nav a {
       text-decoration: none;
       color: var(--muted);
+      transition: color 0.18s ease;
+    }
+
+    .topbar nav a:hover {
+      color: var(--text);
     }
 
     .hero {
-      padding: 56px 0 34px;
-      display: grid;
-      grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
-      gap: 28px;
-      align-items: end;
+      padding: 48px 0 32px;
+      max-width: 760px;
     }
 
     .eyebrow {
       display: inline-block;
-      margin-bottom: 18px;
-      font-size: 0.78rem;
+      margin-bottom: 14px;
+      font-size: 0.76rem;
       letter-spacing: 0.24em;
       text-transform: uppercase;
       color: rgba(244, 241, 235, 0.56);
@@ -146,90 +157,237 @@
     }
 
     h1 {
-      font-size: clamp(2.6rem, 5vw, 4.3rem);
-      line-height: 1.05;
+      font-size: clamp(2.4rem, 4.6vw, 3.8rem);
+      line-height: 1.06;
       margin-bottom: 18px;
     }
 
-    .hero p,
-    .intro p,
-    .card p {
+    .hero p {
       color: var(--muted);
       line-height: 1.72;
+      font-size: 1.05rem;
     }
 
-    .hero-panel {
-      padding: 24px 0 0;
-      border-top: 1px solid var(--stroke);
+    .section-label {
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+      margin: 38px 0 18px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--stroke);
     }
 
-    .hero-panel strong {
+    .section-label .eyebrow {
+      margin: 0;
+    }
+
+    .section-label .count {
+      margin-left: auto;
+      font-size: 0.82rem;
+      color: rgba(244, 241, 235, 0.5);
+    }
+
+    /* Featured card (newest post) */
+    .featured {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+      gap: 28px;
+      align-items: stretch;
+      text-decoration: none;
+      color: inherit;
+      padding: 18px;
+      border: 1px solid var(--stroke);
+      border-radius: 18px;
+      background: linear-gradient(155deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01));
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .featured:hover {
+      transform: translateY(-3px);
+      border-color: rgba(255, 155, 84, 0.4);
+    }
+
+    .featured .thumb {
+      position: relative;
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+      border-radius: 12px;
+      background: #1a1a1a;
+    }
+
+    .featured .thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
       display: block;
-      margin-bottom: 10px;
-      font-size: 0.95rem;
     }
 
+    .featured .body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 8px 8px 8px 0;
+    }
+
+    .featured .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: rgba(255, 155, 84, 0.12);
+      border: 1px solid rgba(255, 155, 84, 0.32);
+      border-radius: 999px;
+      width: fit-content;
+      margin-bottom: 14px;
+    }
+
+    .featured h2 {
+      font-size: clamp(1.6rem, 2.6vw, 2.1rem);
+      line-height: 1.16;
+      margin-bottom: 14px;
+    }
+
+    .featured p {
+      color: var(--muted);
+      line-height: 1.65;
+      margin: 0 0 16px;
+    }
+
+    .featured .meta {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      font-size: 0.86rem;
+      color: rgba(244, 241, 235, 0.6);
+    }
+
+    .featured .meta .dot {
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: rgba(244, 241, 235, 0.4);
+    }
+
+    /* Article cards grid */
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 18px;
-      margin-top: 28px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 26px;
     }
 
     .card {
-      padding: 0 0 26px;
-      text-decoration: none;
       display: flex;
       flex-direction: column;
       gap: 14px;
-      transition: transform 0.2s ease, opacity 0.2s ease;
-      border-bottom: 1px solid var(--stroke);
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s ease;
     }
 
     .card:hover {
       transform: translateY(-4px);
-      opacity: 0.92;
     }
 
-    .card span {
-      font-size: 0.76rem;
+    .card .thumb {
+      position: relative;
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+      border-radius: 12px;
+      background: #1a1a1a;
+      border: 1px solid var(--stroke);
+    }
+
+    .card .thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .card:hover .thumb img {
+      transform: scale(1.04);
+    }
+
+    .card .tag {
+      display: inline-block;
+      font-size: 0.7rem;
       letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: rgba(244, 241, 235, 0.52);
+      color: rgba(244, 241, 235, 0.6);
     }
 
-    .card h2 {
-      font-size: 1.55rem;
-      line-height: 1.18;
+    .card h3 {
+      font-size: 1.32rem;
+      line-height: 1.22;
+    }
+
+    .card p {
+      color: var(--muted);
+      line-height: 1.6;
+      margin: 0;
+      font-size: 0.96rem;
     }
 
     .card .meta {
-      font-size: 0.92rem;
-      color: rgba(244, 241, 235, 0.62);
+      font-size: 0.84rem;
+      color: rgba(244, 241, 235, 0.55);
+      margin-top: auto;
+      padding-top: 6px;
     }
 
-    .intro {
-      margin-top: 26px;
-      padding: 24px 0 0;
-      border-top: 1px solid var(--stroke);
+    .intro-note {
+      margin-top: 32px;
+      padding: 22px 24px;
+      border: 1px solid var(--stroke);
+      border-radius: 14px;
+      background: var(--panel);
     }
 
-    .intro h2 {
-      font-size: 1.45rem;
-      margin-bottom: 12px;
+    .intro-note h2 {
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+    }
+
+    .intro-note p {
+      color: var(--muted);
+      line-height: 1.65;
+      margin: 0;
+      font-size: 0.96rem;
     }
 
     .footer {
-      margin-top: 44px;
+      margin-top: 56px;
       padding-top: 24px;
       border-top: 1px solid var(--stroke);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      justify-content: space-between;
       color: rgba(244, 241, 235, 0.58);
       font-size: 0.92rem;
     }
 
+    .footer a {
+      color: rgba(244, 241, 235, 0.78);
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      color: var(--text);
+    }
+
     @media (max-width: 820px) {
-      .hero {
+      .featured {
         grid-template-columns: 1fr;
+      }
+
+      .featured .body {
+        padding: 4px 4px 8px;
       }
 
       .topbar {
@@ -250,79 +408,123 @@
         <a href="../index.html">Home</a>
         <a href="../docs/index.html">Docs</a>
         <a href="index.html">Blog</a>
+        <a href="../about.html">About</a>
       </nav>
     </header>
 
     <section class="hero">
-      <div>
-        <span class="eyebrow">Project Planning Blog</span>
-        <h1>Notes on planning work that actually gets finished</h1>
-        <p>Essays, guides, and working methods for people balancing deadlines, priorities, and limited time. The focus stays on clear projects, realistic pacing, and calmer execution across iPhone, iPad, and Mac.</p>
-      </div>
-      <aside class="hero-panel">
-        <strong>For thoughtful planners</strong>
-        <p>Read when you want a cleaner way to shape a project, map the next milestone, or keep a busy week from turning into reactive task switching.</p>
-      </aside>
+      <span class="eyebrow">The Projectholic Journal</span>
+      <h1>Notes on planning work that actually gets finished</h1>
+      <p>Field notes, guides, and working methods for people balancing deadlines, priorities, and limited time. Written for freelancers, solo founders, and Apple users who want clearer projects, calmer weeks, and fewer surprises.</p>
     </section>
 
-    <section class="intro">
-      <h2>Planning, without the ceremony</h2>
-      <p>These articles are written for people who want enough structure to stay on track, without turning planning into a second job. Expect practical ways to think through scope, timing, and follow-through.</p>
-    </section>
+    <div class="section-label">
+      <span class="eyebrow">Latest</span>
+      <span class="count">10 articles</span>
+    </div>
+
+    <a class="featured" href="best-project-management-apps-for-mac.html">
+      <div class="thumb">
+        <img src="../images/mac%20screenshot%203.jpg" alt="Projectholic running on macOS, showing project planning and gantt timeline" loading="lazy" />
+      </div>
+      <div class="body">
+        <span class="tag">New &nbsp;&middot;&nbsp; Mac PM</span>
+        <h2>Best project management apps for Mac in 2026</h2>
+        <p>An honest comparison of the Mac project management apps worth using, with notes on freelancer fit, gantt support, and iPad and iPhone sync. Covers Projectholic, Things 3, OmniPlan, Notion, Asana, Linear, and more.</p>
+        <div class="meta">
+          <span>April 26, 2026</span>
+          <span class="dot"></span>
+          <span>9 min read</span>
+        </div>
+      </div>
+    </a>
+
+    <div class="section-label">
+      <span class="eyebrow">More articles</span>
+    </div>
 
     <section class="grid">
-      <a class="card" href="project-gantt-guide.html">
-        <span>Project Gantt</span>
-        <h2>How to build a practical project gantt without turning your week into overhead</h2>
-        <p>Use milestones, sequencing, and capacity planning to make a gantt-style system that stays useful after week one.</p>
-        <div class="meta">Published March 26, 2026</div>
+      <a class="card" href="how-to-plan-project-on-ipad.html">
+        <div class="thumb"><img src="../images/ipad%20screenshot%201.jpg" alt="Projectholic on iPad with project milestones and a timeline view" loading="lazy" /></div>
+        <span class="tag">iPad Workflow</span>
+        <h3>How to plan a project on iPad: a practical workflow for freelancers</h3>
+        <p>Why the iPad is genuinely good for project planning, how to start one in ten minutes, and how to keep iPad, iPhone, and Mac in sync without setup.</p>
+        <div class="meta">May 10, 2026 &nbsp;&middot;&nbsp; 7 min read</div>
       </a>
-      <a class="card" href="gantt-app-apple-freelancers.html">
-        <span>Gantt App</span>
-        <h2>Choosing a gantt app for Apple devices when you care about execution, not just charts</h2>
-        <p>Understand the tradeoffs between visual timelines, scheduling friction, and cross-device planning.</p>
-        <div class="meta">Published March 26, 2026</div>
+
+      <a class="card" href="project-planner-vs-todo-list.html">
+        <div class="thumb"><img src="../images/mac%20screenshot%202.jpg" alt="Projectholic on Mac alongside a daily to-do list, side-by-side comparison" loading="lazy" /></div>
+        <span class="tag">Tools Compared</span>
+        <h3>Project planner vs to-do list: which one do freelancers actually need?</h3>
+        <p>What a planner does that a to-do app cannot, when a to-do list is enough, and how the two work together once you have more than one client.</p>
+        <div class="meta">May 10, 2026 &nbsp;&middot;&nbsp; 8 min read</div>
       </a>
-      <a class="card" href="freelancer-tool-project-planning.html">
-        <span>Freelancer Tool</span>
-        <h2>The freelancer tool stack for managing client projects, deadlines, and your own bandwidth</h2>
-        <p>Build one system for client delivery, admin work, and personal priorities without losing the thread.</p>
-        <div class="meta">Published March 26, 2026</div>
-      </a>
-      <a class="card" href="freelancer-must-have-apps.html">
-        <span>Tool List</span>
-        <h2>10 freelancer must-have apps that make work easier without adding more noise</h2>
-        <p>A practical stack for planning, writing, meetings, files, proposals, and staying sane between client deadlines.</p>
-        <div class="meta">Published March 27, 2026</div>
-      </a>
-      <a class="card" href="best-apps-for-adhd-freelancers.html">
-        <span>Focus</span>
-        <h2>Best apps for ADHD freelancers who need less friction and more follow-through</h2>
-        <p>Tools that reduce context-switching, make work visible, and help a busy week feel less slippery.</p>
-        <div class="meta">Published March 27, 2026</div>
-      </a>
-      <a class="card" href="client-project-workflow-apps.html">
-        <span>Workflow</span>
-        <h2>7 apps that make client project workflows feel calmer, clearer, and easier to run</h2>
-        <p>A straightforward recommendation list for people juggling delivery, communication, files, and planning.</p>
-        <div class="meta">Published March 27, 2026</div>
-      </a>
-      <a class="card" href="best-project-management-apps-for-mac.html">
-        <span>Mac PM</span>
-        <h2>Best project management apps for Mac in 2026</h2>
-        <p>An honest comparison of the Mac project management apps worth using in 2026, with notes on freelancer fit, gantt support, and iPad and iPhone sync.</p>
-        <div class="meta">Published April 26, 2026</div>
-      </a>
+
       <a class="card" href="how-to-manage-multiple-client-projects.html">
-        <span>Client Workflow</span>
-        <h2>How to manage multiple client projects at once without dropping deadlines</h2>
+        <div class="thumb"><img src="../images/ipad%20screenshot%205.jpg" alt="Projectholic project view on iPad, showing multiple overlapping client projects" loading="lazy" /></div>
+        <span class="tag">Client Workflow</span>
+        <h3>How to manage multiple client projects at once without dropping deadlines</h3>
         <p>A practical system for sequencing overlapping projects, planning real capacity, and keeping client work calm even on a full week.</p>
-        <div class="meta">Published April 26, 2026</div>
+        <div class="meta">April 26, 2026 &nbsp;&middot;&nbsp; 10 min read</div>
       </a>
+
+      <a class="card" href="freelancer-must-have-apps.html">
+        <div class="thumb"><img src="../images/mac%20screenshot%207.jpg" alt="Projectholic on Mac with multiple projects and a clean workspace" loading="lazy" /></div>
+        <span class="tag">Tool List</span>
+        <h3>10 freelancer must-have apps that make work easier without adding more noise</h3>
+        <p>A practical stack for planning, writing, meetings, files, proposals, and staying sane between client deadlines.</p>
+        <div class="meta">March 27, 2026 &nbsp;&middot;&nbsp; 7 min read</div>
+      </a>
+
+      <a class="card" href="best-apps-for-adhd-freelancers.html">
+        <div class="thumb"><img src="../images/iPhone%20screenshot%208.jpg" alt="Projectholic iPhone view used as a calm capture tool for daily tasks" loading="lazy" /></div>
+        <span class="tag">Focus</span>
+        <h3>Best apps for ADHD freelancers who need less friction and more follow-through</h3>
+        <p>Tools that reduce context-switching, make work visible, and help a busy week feel less slippery.</p>
+        <div class="meta">March 27, 2026 &nbsp;&middot;&nbsp; 6 min read</div>
+      </a>
+
+      <a class="card" href="client-project-workflow-apps.html">
+        <div class="thumb"><img src="../images/iPhone%20screenshot%209.jpg" alt="Projectholic iPhone view showing a client project broken into milestones" loading="lazy" /></div>
+        <span class="tag">Workflow</span>
+        <h3>7 apps that make client project workflows feel calmer, clearer, and easier to run</h3>
+        <p>A straightforward recommendation list for people juggling delivery, communication, files, and planning.</p>
+        <div class="meta">March 27, 2026 &nbsp;&middot;&nbsp; 6 min read</div>
+      </a>
+
+      <a class="card" href="project-gantt-guide.html">
+        <div class="thumb"><img src="../images/mac%20screenshot%201.jpg" alt="Project gantt timeline in Projectholic on macOS" loading="lazy" /></div>
+        <span class="tag">Project Gantt</span>
+        <h3>How to build a practical project gantt without turning your week into overhead</h3>
+        <p>Use milestones, sequencing, and capacity planning to make a gantt-style system that stays useful after week one.</p>
+        <div class="meta">March 26, 2026 &nbsp;&middot;&nbsp; 8 min read</div>
+      </a>
+
+      <a class="card" href="gantt-app-apple-freelancers.html">
+        <div class="thumb"><img src="../images/ipad%20screenshot%206.jpg" alt="Gantt-style project timeline on iPad in Projectholic" loading="lazy" /></div>
+        <span class="tag">Gantt App</span>
+        <h3>Choosing a gantt app for Apple devices when you care about execution, not just charts</h3>
+        <p>Understand the tradeoffs between visual timelines, scheduling friction, and cross-device planning.</p>
+        <div class="meta">March 26, 2026 &nbsp;&middot;&nbsp; 7 min read</div>
+      </a>
+
+      <a class="card" href="freelancer-tool-project-planning.html">
+        <div class="thumb"><img src="../images/mac%20screenshot%205.jpg" alt="Projectholic on Mac used as the planning layer in a freelancer tool stack" loading="lazy" /></div>
+        <span class="tag">Freelancer Tool</span>
+        <h3>The freelancer tool stack for managing client projects, deadlines, and your own bandwidth</h3>
+        <p>Build one system for client delivery, admin work, and personal priorities without losing the thread.</p>
+        <div class="meta">March 26, 2026 &nbsp;&middot;&nbsp; 8 min read</div>
+      </a>
+    </section>
+
+    <section class="intro-note">
+      <h2>Why we write this blog</h2>
+      <p>Most project management writing is aimed at large teams. We write for the other side of the spectrum: solo operators, two-person studios, freelancers running five projects at once. The goal is honest, practical writing about how planning actually works when nobody else is going to organize the week for you.</p>
     </section>
 
     <footer class="footer">
-      Projectholic is available on iPhone, iPad, and Mac. Explore the app on the <a href="../index.html">homepage</a> or read the <a href="../docs/index.html">documentation</a>.
+      <span>Projectholic is available on iPhone, iPad, and Mac.</span>
+      <span><a href="../index.html">Homepage</a> &nbsp;&middot;&nbsp; <a href="../about.html">About</a> &nbsp;&middot;&nbsp; <a href="../docs/index.html">Documentation</a> &nbsp;&middot;&nbsp; <a href="https://apps.apple.com/app/id6745497754" target="_blank" rel="noopener">App Store</a></span>
     </footer>
   </div>
 </body>
