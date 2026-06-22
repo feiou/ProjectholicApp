@@ -40,6 +40,9 @@
         ]
       },
       "blogPost": [
+        { "@type": "BlogPosting", "headline": "How to Estimate How Long a Project Will Take (Without Lying to Yourself)", "url": "https://projectholic.pro/blog/how-to-estimate-project-time.html", "datePublished": "2026-06-23" },
+        { "@type": "BlogPosting", "headline": "How to Break a Big Project Into Milestones You'll Actually Finish", "url": "https://projectholic.pro/blog/how-to-break-down-a-project.html", "datePublished": "2026-06-23" },
+        { "@type": "BlogPosting", "headline": "How to Handle Scope Creep on Freelance Projects", "url": "https://projectholic.pro/blog/how-to-handle-scope-creep.html", "datePublished": "2026-06-23" },
         { "@type": "BlogPosting", "headline": "How to Plan a Project on iPad: A Practical Workflow for Freelancers", "url": "https://projectholic.pro/blog/how-to-plan-project-on-ipad.html", "datePublished": "2026-05-10" },
         { "@type": "BlogPosting", "headline": "Project Planner vs To-Do List: Which One Do Freelancers Actually Need?", "url": "https://projectholic.pro/blog/project-planner-vs-todo-list.html", "datePublished": "2026-05-10" },
         { "@type": "BlogPosting", "headline": "Best Project Management Apps for Mac in 2026", "url": "https://projectholic.pro/blog/best-project-management-apps-for-mac.html", "datePublished": "2026-04-26" },
@@ -63,8 +66,11 @@
       ]
     }
   </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Noto+Serif:wght@500;600;700&display=swap" />
+  <link rel="stylesheet" href="../styles/base.css" />
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Noto+Serif:wght@500;600;700&display=swap');
 
     :root {
       --bg: #111111;
@@ -76,7 +82,6 @@
       --accent: #ff9b54;
     }
 
-    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -88,7 +93,6 @@
         linear-gradient(180deg, #151515 0%, #0f0f0f 100%);
     }
 
-    a { color: inherit; }
 
     .wrap {
       max-width: 1180px;
@@ -381,6 +385,12 @@
       color: var(--text);
     }
 
+    .footer-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+    }
+
     @media (max-width: 820px) {
       .featured {
         grid-template-columns: 1fr;
@@ -420,8 +430,7 @@
     </section>
 
     <div class="section-label">
-      <span class="eyebrow">Latest</span>
-      <span class="count">10 articles</span>
+      <span class="count">13 articles</span>
     </div>
 
     <a class="featured" href="best-project-management-apps-for-mac.html">
@@ -429,22 +438,41 @@
         <img src="../images/mac%20screenshot%203.jpg" alt="Projectholic running on macOS, showing project planning and gantt timeline" loading="lazy" />
       </div>
       <div class="body">
-        <span class="tag">New &nbsp;&middot;&nbsp; Mac PM</span>
+        <span class="tag">Mac PM</span>
         <h2>Best project management apps for Mac in 2026</h2>
         <p>An honest comparison of the Mac project management apps worth using, with notes on freelancer fit, gantt support, and iPad and iPhone sync. Covers Projectholic, Things 3, OmniPlan, Notion, Asana, Linear, and more.</p>
         <div class="meta">
           <span>April 26, 2026</span>
-          <span class="dot"></span>
           <span>9 min read</span>
         </div>
       </div>
     </a>
 
-    <div class="section-label">
-      <span class="eyebrow">More articles</span>
-    </div>
-
     <section class="grid">
+      <a class="card" href="how-to-estimate-project-time.html">
+        <div class="thumb"><img src="../images/mac%20screenshot%204.jpg" alt="A project schedule with milestones placed across real working days on macOS in Projectholic" loading="lazy" /></div>
+        <span class="tag">Estimating</span>
+        <h3>How to estimate how long a project will take (without lying to yourself)</h3>
+        <p>Why projects always run long, and a step-by-step method for an estimate you can defend — from past work, with a real buffer, on a real calendar.</p>
+        <div class="meta">June 23, 2026 &nbsp;&middot;&nbsp; 8 min read</div>
+      </a>
+
+      <a class="card" href="how-to-break-down-a-project.html">
+        <div class="thumb"><img src="../images/ipad%20screenshot%202.jpg" alt="A big project broken into a short sequence of milestones on iPad in Projectholic" loading="lazy" /></div>
+        <span class="tag">Project Breakdown</span>
+        <h3>How to break a big project into milestones you'll actually finish</h3>
+        <p>Turn an overwhelming project into a handful of outcomes by working backwards from the finished deliverable — not by drowning in a task list.</p>
+        <div class="meta">June 23, 2026 &nbsp;&middot;&nbsp; 8 min read</div>
+      </a>
+
+      <a class="card" href="how-to-handle-scope-creep.html">
+        <div class="thumb"><img src="../images/mac%20screenshot%206.jpg" alt="A freelance project plan with a clearly defined scope and timeline on macOS in Projectholic" loading="lazy" /></div>
+        <span class="tag">Scope Creep</span>
+        <h3>How to handle scope creep on freelance projects</h3>
+        <p>Why scope quietly grows, how to set it before work starts, and exactly what to say when a client asks for "just one more thing."</p>
+        <div class="meta">June 23, 2026 &nbsp;&middot;&nbsp; 9 min read</div>
+      </a>
+
       <a class="card" href="how-to-plan-project-on-ipad.html">
         <div class="thumb"><img src="../images/ipad%20screenshot%201.jpg" alt="Projectholic on iPad with project milestones and a timeline view" loading="lazy" /></div>
         <span class="tag">iPad Workflow</span>
@@ -525,7 +553,12 @@
 
     <footer class="footer">
       <span>Projectholic is available on iPhone, iPad, and Mac.</span>
-      <span><a href="../index.html">Homepage</a> &nbsp;&middot;&nbsp; <a href="../about.html">About</a> &nbsp;&middot;&nbsp; <a href="../docs/index.html">Documentation</a> &nbsp;&middot;&nbsp; <a href="https://apps.apple.com/app/id6745497754" target="_blank" rel="noopener">App Store</a></span>
+      <nav class="footer-nav" aria-label="Site links">
+        <a href="../index.html">Homepage</a>
+        <a href="../about.html">About</a>
+        <a href="../docs/index.html">Documentation</a>
+        <a href="https://apps.apple.com/app/id6745497754" target="_blank" rel="noopener">App Store</a>
+      </nav>
     </footer>
   </div>
 </body>

@@ -21,6 +21,9 @@
 - [Terms of use](https://projectholic.pro/terms-of-use.html)
 
 ## Featured articles
+- [How to Estimate How Long a Project Will Take (Without Lying to Yourself)](https://projectholic.pro/blog/how-to-estimate-project-time.html): why projects run long (the planning fallacy), and a step-by-step method for estimating project time — break work into milestones, estimate each from past projects, add a named buffer, and place the estimate on a real calendar.
+- [How to Break a Big Project Into Milestones You'll Actually Finish](https://projectholic.pro/blog/how-to-break-down-a-project.html): a work-breakdown method that turns a big project into three to seven outcome milestones by working backwards from the finished deliverable, then breaking only the current milestone into tasks.
+- [How to Handle Scope Creep on Freelance Projects](https://projectholic.pro/blog/how-to-handle-scope-creep.html): why scope creep happens, how to define scope in writing before work starts, how to treat every new request as a change with its own cost, and word-for-word scripts for the boundary conversation.
 - [How to Plan a Project on iPad: A Practical Workflow for Freelancers](https://projectholic.pro/blog/how-to-plan-project-on-ipad.html): why the iPad is genuinely good for project planning, how to start a project in about ten minutes, and how to keep iPad, iPhone, and Mac in sync without setup.
 - [Project Planner vs To-Do List: Which One Do Freelancers Actually Need?](https://projectholic.pro/blog/project-planner-vs-todo-list.html): the difference between a to-do app and a project planner, when each is enough on its own, and how freelancers should run them together once they have more than one client.
 - [How to Build a Practical Project Gantt](https://projectholic.pro/blog/project-gantt-guide.html): a practical guide to project gantt planning for freelancers and small teams — milestones, time budgets, and schedules that still work in real life.
@@ -39,6 +42,9 @@
 - ADHD-friendly project tools and low-friction workflows
 - Mac project management apps and freelancer tool stacks
 - Practical scheduling vs. ideal-case planning
+- Project time estimation and the planning fallacy
+- Breaking large projects into outcome milestones
+- Scope management, change requests, and client boundaries for freelancers
 
 ## Citation guidance
 When citing Projectholic, link to the canonical URL listed above and credit "Projectholic by Feioustudio". The app is free on the App Store. For up-to-date feature information, link to the documentation at https://projectholic.pro/docs/ rather than third-party summaries.

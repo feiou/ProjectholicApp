@@ -24,6 +24,12 @@
   </script>
   <link rel="icon" type="image/png" href="images/appIcon-20260112.png" />
   <link rel="apple-touch-icon" href="images/appIcon-20260112.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Noto+Serif:wght@500;600;700&display=swap" />
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/index.css" />
+  <link rel="stylesheet" href="styles/motion.css" />
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -50,7 +56,7 @@
       "@id": "https://projectholic.pro/#website",
       "url": "https://projectholic.pro/",
       "name": "Projectholic",
-      "description": "Projectholic is a project planning app for freelancers and Apple users — turn goals into projects, schedule against real time, and finish what you started.",
+      "description": "Projectholic is a project planning app for freelancers and Apple users. Turn goals into projects, schedule against real time, and finish what you started.",
       "publisher": { "@id": "https://projectholic.pro/#organization" },
       "inLanguage": "en"
     }
@@ -85,7 +91,7 @@
           "name": "What is Projectholic?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Projectholic turns the projects in your head into a clear plan you can actually finish. Set a goal, break it into milestones, and schedule the work against the real hours you have this week — not the optimistic version. It runs natively on iPhone, iPad, and Mac with iCloud sync, and it's free to download on the App Store."
+            "text": "Projectholic turns the projects in your head into a clear plan you can actually finish. Set a goal, break it into milestones, and schedule the work against the real hours you have this week, not the optimistic version. It runs natively on iPhone, iPad, and Mac with iCloud sync, and it's free to download on the App Store."
           }
         },
         {
@@ -93,7 +99,7 @@
           "name": "Is Projectholic free?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes — fully free on the App Store. No trial timer, no upsell wall, no premium tier waiting to interrupt you. Planning, milestones, scheduling, gantt-style timeline, progress tracking, iCloud sync — all in. Built by an independent studio that earns its keep by being genuinely useful, not by adding friction to make you pay."
+            "text": "Yes, fully free on the App Store. No trial timer, no upsell wall, no premium tier waiting to interrupt you. Planning, milestones, scheduling, gantt-style timeline, progress tracking, iCloud sync, all included. Built by an independent studio that earns its keep by being genuinely useful, not by adding friction to make you pay."
           }
         },
         {
@@ -101,7 +107,7 @@
           "name": "Which Apple devices does Projectholic support?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "iPhone, iPad, and Mac, with iCloud sync between all three. Plan on the train, adjust on the couch, ship at the desk — your projects move with you, no setup required. Each platform uses native conventions, so it feels right whether you're on a Mac trackpad or an iPad with Apple Pencil. Try it on whichever you have nearest first."
+            "text": "iPhone, iPad, and Mac, with iCloud sync between all three. Plan on the train, adjust on the couch, ship at the desk. Your projects move with you, no setup required. Each platform uses native conventions, so it feels right whether you're on a Mac trackpad or an iPad with Apple Pencil. Try it on whichever you have nearest first."
           }
         },
         {
@@ -109,7 +115,7 @@
           "name": "Does Projectholic support gantt charts?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes — but the kind that helps you finish, not the kind you spend three days maintaining. Place milestones, drop tasks under them, and see the timeline against your real available hours. It's gantt-style thinking without enterprise overhead. Most people have their first project mapped within ten minutes of opening the app."
+            "text": "Yes, but the kind that helps you finish, not the kind you spend three days maintaining. Place milestones, drop tasks under them, and see the timeline against your real available hours. It's gantt-style thinking without enterprise overhead. Most people have their first project mapped within ten minutes of opening the app."
           }
         },
         {
@@ -117,7 +123,7 @@
           "name": "Can Projectholic sync with Apple Calendar?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes, two-way sync. Tasks you schedule in Projectholic appear in Apple Calendar alongside meetings and personal events, and changes flow back into the plan. That's how schedules stay honest — your project hours meet the rest of your week, and you stop overcommitting Wednesdays. Setup takes about thirty seconds the first time you open the app."
+            "text": "Yes, two-way sync. Tasks you schedule in Projectholic appear in Apple Calendar alongside meetings and personal events, and changes flow back into the plan. That's how schedules stay honest. Your project hours meet the rest of your week, and you stop overcommitting Wednesdays. Setup takes about thirty seconds the first time you open the app."
           }
         },
         {
@@ -125,1101 +131,12 @@
           "name": "Who makes Projectholic?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Feioustudio — an independent practice founded by Feiou Su, with a background in interaction design, AR/VR, and product design. The studio also makes Watermelon Todo, NearbyGem, and Udoland, but Projectholic is the one built for people who want to actually finish what they start. Read the story on the about page, then download the app and try it."
+            "text": "Feioustudio is an independent practice founded by Feiou Su, with a background in interaction design, AR/VR, and product design. The studio also makes Watermelon Todo, NearbyGem, and Udoland, but Projectholic is the one built for people who want to actually finish what they start. Read the story on the about page, then download the app and try it."
           }
         }
       ]
     }
   </script>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Noto+Serif:wght@500;600;700&display=swap');
-
-    :root {
-      --ink: #f5f2ed;
-      --muted-ink: rgba(245, 242, 237, 0.72);
-      --accent: #ff8c42;
-      --accent-warm: #ffa566;
-      --night: #121212;
-      --night-soft: #1a1a1a;
-      --panel: rgba(255, 255, 255, 0.05);
-      --panel-stroke: rgba(255, 255, 255, 0.1);
-      --glow: rgba(255, 140, 66, 0.2);
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
-      background: radial-gradient(circle at top, #2b2b2b 0%, #161616 55%, #101010 100%);
-      color: var(--ink);
-      overflow-x: hidden;
-      -webkit-tap-highlight-color: transparent;
-      -webkit-touch-callout: none;
-    }
-
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background: radial-gradient(circle at 20% 20%, rgba(255, 140, 66, 0.15), transparent 50%),
-        radial-gradient(circle at 80% 10%, rgba(255, 165, 102, 0.12), transparent 55%),
-        radial-gradient(circle at 70% 80%, rgba(255, 255, 255, 0.06), transparent 60%);
-      pointer-events: none;
-      z-index: -1;
-    }
-
-    h1,
-    h2,
-    h3,
-    h4 {
-      font-family: 'Noto Serif', 'Times New Roman', serif;
-      font-weight: 600;
-    }
-
-    a {
-      color: inherit;
-    }
-
-    .page {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-    }
-
-    .section {
-      padding: 6rem 7vw;
-    }
-
-    .section-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .eyebrow {
-      text-transform: uppercase;
-      letter-spacing: 0.32em;
-      font-size: 0.75rem;
-      color: rgba(245, 242, 237, 0.5);
-      margin-bottom: 1.2rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-    }
-
-    .eyebrow::before {
-      content: '';
-      width: 40px;
-      height: 1px;
-      background: rgba(245, 242, 237, 0.35);
-    }
-
-    .lead {
-      font-size: clamp(1.05rem, 2.2vw, 1.3rem);
-      color: var(--muted-ink);
-      line-height: 1.7;
-    }
-
-    .headline {
-      font-size: clamp(2.8rem, 6vw, 4.6rem);
-      line-height: 1.05;
-      letter-spacing: -0.02em;
-      margin-bottom: 1.4rem;
-    }
-
-    .subheadline {
-      font-size: clamp(1.2rem, 2.6vw, 1.6rem);
-      color: var(--muted-ink);
-      margin-bottom: 2rem;
-    }
-
-    .topbar {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      padding: 2rem 7vw 0;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      z-index: 100;
-      transition: background 0.3s ease, backdrop-filter 0.3s ease, padding 0.3s ease;
-    }
-
-    .topbar.scrolled {
-      position: fixed;
-      background: rgba(18, 18, 18, 0.8);
-      backdrop-filter: blur(20px);
-      padding: 1.2rem 7vw;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .brand {
-      font-size: 1.1rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-    }
-
-    .brand-icon {
-      width: 32px;
-      height: 32px;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 1.6rem;
-      font-size: 0.95rem;
-      color: rgba(245, 242, 237, 0.7);
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      transition: color 0.2s ease;
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    .nav-links a:hover {
-      color: var(--ink);
-    }
-
-    .nav-links a:active {
-      color: var(--accent);
-    }
-
-    .hero {
-      min-height: 95vh;
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-      align-items: center;
-      gap: 3rem;
-      padding-top: 7rem;
-    }
-
-    .hero-content {
-      display: flex;
-      flex-direction: column;
-      gap: 1.2rem;
-      position: relative;
-      z-index: 2;
-    }
-
-    .hero-copy {
-      display: flex;
-      flex-direction: column;
-      gap: 1.4rem;
-    }
-
-    .cta-row {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 1.5rem;
-      margin-top: 1rem;
-    }
-
-    .store-badge {
-      display: inline-block;
-      height: 60px;
-      transition: all 0.3s ease;
-      filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.45));
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    .store-badge:hover {
-      transform: translateY(-4px) scale(1.04);
-    }
-
-    .store-badge:active {
-      transform: translateY(-2px) scale(1.02);
-    }
-
-    .store-badge img {
-      height: 100%;
-      width: auto;
-      user-select: none;
-      -webkit-user-drag: none;
-    }
-
-    .secondary-link {
-      text-decoration: none;
-      color: var(--muted-ink);
-      font-size: 0.95rem;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      transition: color 0.2s ease;
-    }
-
-    .secondary-link:hover {
-      color: var(--ink);
-    }
-
-    .hero-details {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 1rem;
-      margin-top: 2rem;
-    }
-
-    .detail-card {
-      padding: 1rem 1.2rem;
-      border-radius: 14px;
-      background: var(--panel);
-      border: 1px solid var(--panel-stroke);
-      font-size: 0.95rem;
-      color: var(--muted-ink);
-    }
-
-    .hero-visual {
-      position: relative;
-      min-height: 650px;
-      display: grid;
-      place-items: center;
-      z-index: 1;
-    }
-
-    .device-stack {
-      position: relative;
-      width: min(55vw, 650px);
-      height: 650px;
-      perspective: 1000px;
-      margin: 0 auto;
-    }
-
-    .image-placeholder {
-      display: grid;
-      place-items: center;
-      text-align: center;
-      border-radius: 24px;
-      border: 1px solid var(--panel-stroke);
-      background: linear-gradient(150deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
-      color: rgba(245, 242, 237, 0.65);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      font-size: 0.75rem;
-      padding: 1rem;
-    }
-
-    .image-placeholder .ph-number {
-      display: block;
-      font-size: 2.3rem;
-      color: var(--accent-warm);
-      margin-bottom: 0.4rem;
-      font-family: 'Noto Serif', 'Times New Roman', serif;
-    }
-
-    .screenshot-card {
-      position: absolute;
-      width: 280px;
-      cursor: grab;
-      border-radius: 24px;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.05);
-      transition: box-shadow 0.3s ease;
-      user-select: none;
-      -webkit-user-select: none;
-      touch-action: none;
-      background: rgba(0, 0, 0, 0.2);
-      backdrop-filter: blur(10px);
-      will-change: transform;
-      opacity: 1;
-    }
-
-    .screenshot-card.wide {
-      width: 480px;
-    }
-
-    .screenshot-card:hover {
-      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
-    }
-
-    .screenshot-card.dragging {
-      cursor: grabbing;
-      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.7);
-      z-index: 1000 !important;
-    }
-
-    .screenshot-card img {
-      width: 100%;
-      height: auto;
-      display: block;
-      border-radius: 24px;
-      pointer-events: none;
-    }
-
-    .method-grid {
-      display: flex;
-      overflow-x: auto;
-      overflow-y: hidden;
-      gap: 3rem;
-      margin-top: 4rem;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: none;
-      -ms-overflow-style: none;
-      padding-bottom: 1rem;
-      padding-left: 7vw;
-      padding-right: 7vw;
-      margin-left: -7vw;
-      margin-right: -7vw;
-    }
-
-    .method-grid::-webkit-scrollbar {
-      display: none;
-    }
-
-    .method-card {
-      flex: 0 0 min(400px, 35vw);
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-      position: relative;
-      scroll-snap-align: center;
-    }
-
-    .method-text-card {
-      padding: 2rem;
-      border-radius: 20px;
-      border: 1px solid var(--panel-stroke);
-      background: var(--panel);
-      display: flex;
-      flex-direction: column;
-      gap: 0.8rem;
-    }
-
-    .method-card h3 {
-      font-size: 1.8rem;
-      color: var(--ink);
-      margin-bottom: 0.5rem;
-    }
-
-    .method-card p {
-      color: var(--muted-ink);
-      line-height: 1.7;
-      font-size: 1rem;
-    }
-
-    .method-visual {
-      margin-bottom: 2rem;
-      aspect-ratio: 9 / 19.5;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4),
-                  0 0 0 1px rgba(255, 255, 255, 0.05);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .method-visual:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5),
-                  0 0 0 1px rgba(255, 255, 255, 0.08);
-    }
-
-    .method-visual img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: top center;
-      display: block;
-    }
-
-    .split-section {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 3rem;
-      align-items: center;
-    }
-
-    .split-copy h2 {
-      font-size: clamp(2.2rem, 4vw, 3.4rem);
-      margin-bottom: 1.2rem;
-    }
-
-    .split-copy p {
-      color: var(--muted-ink);
-      line-height: 1.7;
-      margin-bottom: 1.5rem;
-    }
-
-    .bullet-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.8rem;
-      color: var(--muted-ink);
-    }
-
-    .bullet-list li::before {
-      content: '\2022';
-      color: var(--accent);
-      margin-right: 0.6rem;
-    }
-
-    .visual-block {
-      aspect-ratio: 4 / 5;
-      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
-    }
-
-    .insights-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.8rem;
-      margin-top: 2.5rem;
-    }
-
-    .insight-card {
-      padding: 1.8rem;
-      border-radius: 20px;
-      border: 1px solid var(--panel-stroke);
-      background: var(--panel);
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .insight-card h4 {
-      font-size: 1.3rem;
-    }
-
-    .insight-card p {
-      color: var(--muted-ink);
-      line-height: 1.6;
-    }
-
-    .insight-visual {
-      aspect-ratio: 16 / 10;
-    }
-
-    .feature-stack {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 2rem;
-      margin-top: 2.5rem;
-    }
-
-    .feature-tile {
-      padding: 2rem;
-      border-radius: 22px;
-      border: 1px solid var(--panel-stroke);
-      background: linear-gradient(140deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .feature-tile p {
-      color: var(--muted-ink);
-      line-height: 1.6;
-    }
-
-    .wide-visual {
-      aspect-ratio: 16 / 9;
-      box-shadow: 0 28px 70px rgba(0, 0, 0, 0.55);
-    }
-
-    .roadmap-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2.5rem;
-    }
-
-    .roadmap-card {
-      padding: 1.6rem;
-      border-radius: 18px;
-      border: 1px solid var(--panel-stroke);
-      background: var(--panel);
-    }
-
-    .roadmap-card span {
-      display: block;
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-      color: rgba(245, 242, 237, 0.5);
-      margin-bottom: 0.8rem;
-    }
-
-    .roadmap-card h4 {
-      font-size: 1.3rem;
-      margin-bottom: 0.6rem;
-    }
-
-    .roadmap-card p {
-      color: var(--muted-ink);
-      line-height: 1.6;
-    }
-
-    .contact-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.2rem;
-      margin-top: 2rem;
-    }
-
-    .contact-link {
-      padding: 0.9rem 1.4rem;
-      border-radius: 999px;
-      border: 1px solid var(--panel-stroke);
-      background: var(--panel);
-      text-decoration: none;
-      font-size: 0.95rem;
-      color: var(--ink);
-      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    .contact-link:hover {
-      transform: translateY(-2px);
-      border-color: rgba(255, 255, 255, 0.4);
-      background: rgba(255, 140, 66, 0.1);
-    }
-
-    .contact-link:active {
-      transform: translateY(0);
-    }
-
-    .contact-icon {
-      width: 20px;
-      height: 20px;
-      fill: currentColor;
-    }
-
-    .footer-section {
-      padding: 4rem 7vw 5rem;
-      text-align: center;
-    }
-
-    .footer-links {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      flex-wrap: wrap;
-      margin-top: 2rem;
-    }
-
-    .footer-links a {
-      text-decoration: none;
-      color: var(--muted-ink);
-      transition: color 0.2s ease;
-    }
-
-    .footer-links a:hover {
-      color: var(--ink);
-    }
-
-    footer {
-      margin-top: 2rem;
-      font-size: 0.85rem;
-      color: rgba(245, 242, 237, 0.6);
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *,
-      *::before,
-      *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-      }
-    }
-
-    /* Hamburger menu styles */
-    .menu-toggle {
-      display: none;
-      background: none;
-      border: none;
-      color: var(--ink);
-      font-size: 1.5rem;
-      cursor: pointer;
-      padding: 0.5rem;
-      z-index: 100;
-    }
-
-    .nav-links.mobile-hidden {
-      display: flex;
-    }
-
-    @media (max-width: 960px) {
-      .topbar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        padding: 1.2rem 6vw;
-        margin: 0;
-        flex-direction: row;
-        gap: 1rem;
-        z-index: 100;
-      }
-
-      .topbar.scrolled {
-        padding: 1.2rem 6vw;
-      }
-
-      .menu-toggle {
-        display: block;
-      }
-
-      .nav-links {
-        position: fixed;
-        top: 80px;
-        left: 0;
-        right: 0;
-        background: rgba(18, 18, 18, 0.95);
-        backdrop-filter: blur(20px);
-        flex-direction: column;
-        padding: 2rem 6vw;
-        gap: 1.5rem;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        font-size: 1.1rem;
-        transform: translateY(-100%);
-        opacity: 0;
-        transition: transform 0.3s ease, opacity 0.3s ease;
-        pointer-events: none;
-      }
-
-      .nav-links.mobile-open {
-        transform: translateY(0);
-        opacity: 1;
-        pointer-events: auto;
-      }
-
-      .nav-links a {
-        padding: 0.5rem 0;
-      }
-
-      .hero {
-        grid-template-columns: 1fr;
-        padding-top: 5rem;
-        min-height: auto;
-        gap: 2rem;
-        display: flex;
-        flex-direction: column-reverse;
-        align-items: center;
-        overflow: visible;
-      }
-
-      .hero-content {
-        text-align: center;
-        align-items: center;
-        width: 100%;
-        position: relative;
-        z-index: 2;
-      }
-
-      .hero-copy {
-        align-items: center;
-      }
-
-      .hero-visual {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        overflow: visible;
-        z-index: 1;
-      }
-
-      .section {
-        padding: 4rem 6vw;
-        overflow: hidden;
-      }
-
-      .section.hero {
-        overflow: visible;
-      }
-
-      .device-stack {
-        width: 100%;
-        max-width: 88vw;
-        height: 450px;
-        margin: 0 auto;
-        position: relative;
-        left: auto;
-        transform: none;
-        overflow: visible;
-      }
-
-      .screenshot-card {
-        width: 200px;
-      }
-
-      .screenshot-card.wide {
-        width: 360px;
-      }
-
-      .hero-visual {
-        min-height: 450px;
-      }
-
-      .headline {
-        font-size: clamp(2.2rem, 9vw, 3.5rem);
-      }
-
-      .split-section {
-        gap: 2.5rem;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .topbar {
-        padding: 0.8rem 5vw;
-      }
-
-      .brand {
-        font-size: 1rem;
-      }
-
-      .brand-icon {
-        width: 28px;
-        height: 28px;
-      }
-
-      .section {
-        padding: 3rem 5vw;
-        overflow: hidden;
-      }
-
-      .section.hero {
-        overflow: visible;
-      }
-
-      .section-inner {
-        text-align: center;
-      }
-
-      .hero {
-        padding-top: 4.5rem;
-        gap: 1.5rem;
-        display: flex;
-        flex-direction: column-reverse;
-        align-items: center;
-        overflow: visible;
-      }
-
-      .hero-content {
-        text-align: center;
-        align-items: center;
-        width: 100%;
-        max-width: 100%;
-        position: relative;
-        z-index: 2;
-      }
-
-      .hero-copy {
-        align-items: center;
-      }
-
-      .hero-visual {
-        position: relative;
-        width: 100%;
-        max-width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 0;
-        overflow: visible;
-        z-index: 1;
-      }
-
-      .eyebrow {
-        font-size: 0.65rem;
-        letter-spacing: 0.25em;
-        justify-content: center;
-      }
-
-      .eyebrow::before {
-        width: 30px;
-      }
-
-      .headline {
-        font-size: clamp(2rem, 10vw, 2.8rem);
-        margin-bottom: 1rem;
-        width: 100%;
-      }
-
-      .subheadline {
-        font-size: clamp(1.05rem, 4.5vw, 1.3rem);
-        margin-bottom: 1.5rem;
-        width: 100%;
-      }
-
-      .lead {
-        font-size: clamp(0.95rem, 3.8vw, 1.15rem);
-        width: 100%;
-      }
-
-      .hero-details {
-        grid-template-columns: 1fr;
-        gap: 0.75rem;
-        margin-top: 1.5rem;
-        width: 100%;
-        max-width: 100%;
-      }
-
-      .detail-card {
-        padding: 0.85rem 1rem;
-        font-size: 0.9rem;
-        text-align: center;
-        width: 100%;
-      }
-
-      .cta-row {
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-        margin-top: 1.5rem;
-        width: 100%;
-        max-width: 100%;
-      }
-
-      .store-badge {
-        height: 50px;
-        width: fit-content;
-      }
-
-      .secondary-link {
-        text-align: center;
-        padding: 0.75rem 1.5rem;
-      }
-
-      .device-stack {
-        width: 100%;
-        max-width: 90vw;
-        height: 500px;
-        margin: 0 auto;
-        position: relative;
-        left: auto;
-        transform: none;
-        overflow: visible;
-      }
-
-      .screenshot-card {
-        width: 150px;
-      }
-
-      .screenshot-card.wide {
-        width: 280px;
-      }
-
-      .hero-visual {
-        min-height: 500px;
-      }
-
-      .method-grid {
-        gap: 2rem;
-        margin-top: 3rem;
-        padding-left: 5vw;
-        padding-right: 5vw;
-        margin-left: -5vw;
-        margin-right: -5vw;
-      }
-
-      .method-card {
-        flex: 0 0 85vw;
-        max-width: 85vw;
-        text-align: center;
-      }
-
-      .method-text-card {
-        padding: 1.5rem;
-      }
-
-      .method-card h3 {
-        font-size: 1.5rem;
-      }
-
-      .method-card p {
-        font-size: 0.95rem;
-      }
-
-      .method-visual {
-        margin-bottom: 1.5rem;
-        margin-top: 0;
-        max-width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .feature-stack,
-      .insights-grid,
-      .roadmap-grid {
-        grid-template-columns: 1fr;
-        gap: 1.2rem;
-        margin-top: 2rem;
-      }
-
-      .feature-tile,
-      .insight-card,
-      .roadmap-card {
-        padding: 1.5rem;
-      }
-
-      .feature-tile h3 {
-        font-size: 1.3rem;
-      }
-
-      .split-section {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
-
-      .split-copy {
-        text-align: center;
-      }
-
-      .split-copy h2 {
-        font-size: clamp(1.8rem, 7vw, 2.5rem);
-        margin-bottom: 1rem;
-      }
-
-      .split-copy p {
-        margin-bottom: 1.2rem;
-      }
-
-      .bullet-list {
-        text-align: left;
-        display: inline-block;
-      }
-
-      .visual-block,
-      .wide-visual {
-        aspect-ratio: 3 / 4;
-      }
-
-      .contact-links {
-        flex-direction: column;
-        gap: 1rem;
-      }
-
-      .contact-link {
-        justify-content: center;
-        padding: 1rem 1.2rem;
-      }
-
-      .footer-section {
-        padding: 3rem 5vw 4rem;
-      }
-
-      .footer-links {
-        gap: 1.5rem;
-        flex-direction: column;
-      }
-    }
-
-    @media (max-width: 500px) {
-      .method-card {
-        flex: 0 0 60vw;
-        max-width: 60vw;
-      }
-    }
-
-    @media (max-width: 400px) {
-      .headline {
-        font-size: 1.8rem;
-      }
-
-      .device-stack {
-        width: 100%;
-        max-width: 90vw;
-        height: 300px;
-        margin: 0 auto;
-        position: relative;
-        left: auto;
-        transform: none;
-        overflow: visible;
-      }
-
-      .hero-visual {
-        min-height: 300px;
-      }
-
-      .screenshot-card {
-        width: 130px;
-      }
-
-      .screenshot-card.wide {
-        width: 240px;
-      }
-    }
-
-    .faq-list {
-      margin-top: 2rem;
-      display: grid;
-      gap: 0.8rem;
-    }
-
-    .faq-list details {
-      padding: 1.1rem 1.4rem;
-      border-radius: 16px;
-      border: 1px solid var(--panel-stroke);
-      background: var(--panel);
-      transition: border-color 0.2s ease, background 0.2s ease;
-    }
-
-    .faq-list details[open] {
-      border-color: rgba(255, 140, 66, 0.35);
-      background: rgba(255, 140, 66, 0.05);
-    }
-
-    .faq-list summary {
-      cursor: pointer;
-      font-weight: 600;
-      color: var(--ink);
-      list-style: none;
-      font-size: 1.02rem;
-    }
-
-    .faq-list summary::-webkit-details-marker {
-      display: none;
-    }
-
-    .faq-list summary::after {
-      content: '+';
-      float: right;
-      color: var(--accent);
-      font-size: 1.3rem;
-      line-height: 1;
-      transition: transform 0.2s ease;
-    }
-
-    .faq-list details[open] summary::after {
-      content: '\2212';
-    }
-
-    .faq-list p {
-      margin: 0.7rem 0 0;
-      color: var(--muted-ink);
-      line-height: 1.7;
-    }
-  </style>
 </head>
 <body>
   <div class="page">
@@ -1252,26 +169,13 @@
         <span class="eyebrow">Think first, schedule later</span>
         <div class="hero-copy">
           <h1 class="headline">Turn Goals into Projects</h1>
-          <p class="subheadline">Finish what you started. From intent to action, use a clear method: plan -> schedule -> finish.</p>
-          <p class="lead">Projectholic turns ambitious goals into structured projects. It helps you define the work, set realistic schedules, and track progress without losing momentum. If you are looking for a calmer way to run project gantt planning, freelancer schedules, or time-budgeted execution on Apple devices, this is the system.</p>
+          <p class="subheadline">Finish what you started. Plan, schedule against real hours, and ship without losing momentum.</p>
         </div>
         <div class="cta-row">
-          <div style="display: flex; flex-direction: column; gap: 0.5rem; align-items: center;">
-            <a href="https://apps.apple.com/app/id6745497754" class="store-badge" target="_blank" rel="noopener">
-              <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1234567890" alt="Download on the App Store">
-            </a>
-            <span style="font-size: 0.85rem; color: var(--muted-ink); letter-spacing: 0.05em;">Available on iPhone, iPad and Mac</span>
-          </div>
+          <a href="https://apps.apple.com/app/id6745497754" class="store-badge" target="_blank" rel="noopener">
+            <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1234567890" alt="Download on the App Store">
+          </a>
           <a href="#method" class="secondary-link">Explore the method</a>
-          <a href="blog/index.html" class="secondary-link">Visit the blog</a>
-          <a href="docs/index.html" class="secondary-link">Read documentation</a>
-        </div>
-        <div class="hero-details">
-          <div class="detail-card">Project-based calendar</div>
-          <div class="detail-card">2-way Apple Calendar sync</div>
-          <div class="detail-card">Time is your budget</div>
-          <div class="detail-card">Track progress over time</div>
-          <div class="detail-card">Power view on iPad and Mac</div>
         </div>
       </div>
       <div class="hero-visual">
@@ -1303,8 +207,7 @@
 
     <section id="method" class="section reveal">
       <div class="section-inner">
-        <span class="eyebrow">From intent to action</span>
-        <h2 class="headline">Plan -> schedule -> finish</h2>
+        <h2 class="headline">Plan, schedule, finish</h2>
         <p class="lead">Projectholic keeps the sequence simple. Think through the work, place it on the calendar, then finish with clarity. Each step stays lightweight, so you move forward without over-planning.</p>
         <div class="method-grid">
           <div class="method-card">
@@ -1338,18 +241,18 @@
       </div>
     </section>
 
+    <!-- Layout family 1: split image-left, text-right -->
     <section id="features" class="section reveal">
       <div class="section-inner">
-        <span class="eyebrow">Feature Highlights</span>
         <div class="split-section">
-          <img src="images/iPhone screenshot 5.jpg" alt="Project-based calendar" class="visual-block" style="border-radius: 20px; width: 100%; height: 100%; object-fit: cover;">
+          <img src="images/iPhone screenshot 5.jpg" alt="Project-based calendar" class="visual-block feature-img">
           <div class="split-copy">
             <h2>Project-based calendar</h2>
             <p>The calendar is organized by project, not chaos. Put project tasks on Apple Calendar, adjust them there or in Projectholic, and both stay in sync.</p>
             <ul class="bullet-list">
               <li>Group tasks by project and milestone</li>
               <li>Sync project schedules with Apple Calendar in both directions</li>
-              <li>Edit in Apple Calendar or Projectholic and keep both updated</li>
+              <li>Edit in either app and keep both updated</li>
               <li>Balance workload across multiple projects</li>
             </ul>
           </div>
@@ -1357,9 +260,10 @@
       </div>
     </section>
 
+    <!-- Layout family 2: split reversed (text-left, image-right) -->
     <section class="section reveal">
-      <div class="section-inner split-section">
-        <img src="images/iPhone screenshot 6.jpg" alt="Time budget view" class="visual-block" style="border-radius: 20px; width: 100%; height: 100%; object-fit: cover;">
+      <div class="section-inner split-section reversed">
+        <img src="images/iPhone screenshot 6.jpg" alt="Time budget view" class="visual-block feature-img">
         <div class="split-copy">
           <h2>Time is your budget</h2>
           <p>Projects thrive when you respect time constraints. Budget hours like a resource, then let the schedule reflect reality without guesswork.</p>
@@ -1372,62 +276,285 @@
       </div>
     </section>
 
+    <!-- Layout family 3: bento 3-tile grid (asymmetric 1.4/1/1) -->
     <section class="section reveal">
-      <div class="section-inner split-section">
-        <img src="images/iPhone screenshot 7.jpg" alt="Progress tracking" class="visual-block" style="border-radius: 20px; width: 100%; height: 100%; object-fit: cover;">
+      <div class="section-inner">
+        <div class="bento-features">
+          <article class="bento-tile">
+            <div class="bento-tile__media">
+              <img src="images/iPhone screenshot 7.jpg" alt="Progress tracking">
+            </div>
+            <div class="bento-tile__copy">
+              <h3>Progress you can see</h3>
+              <p>Visual progress shows momentum, reveals patterns, and keeps your attention on finishing.</p>
+            </div>
+          </article>
+          <article class="bento-tile">
+            <div class="bento-tile__media">
+              <img src="images/iPhone screenshot 8.jpg" alt="Recurring tasks">
+            </div>
+            <div class="bento-tile__copy">
+              <h3>Recurring tasks, simplified</h3>
+              <p>Build recurring tasks that adapt to your schedule without extra effort.</p>
+            </div>
+          </article>
+          <article class="bento-tile">
+            <div class="bento-tile__media">
+              <img src="images/iPhone screenshot 9.jpg" alt="Share tasks">
+            </div>
+            <div class="bento-tile__copy">
+              <h3>Share and follow up</h3>
+              <p>Assign owners and keep follow-ups clear with one source of truth.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Layout family 4: wide asymmetric showcase (5/7 split) -->
+    <section class="section reveal">
+      <div class="section-inner">
+        <div class="wide-feature">
+          <div class="wide-feature__copy">
+            <h2>Power view on iPad and Mac</h2>
+            <p>When you need the full picture, open a wide, immersive layout built for deep focus and complex projects.</p>
+            <ul class="bullet-list">
+              <li>Wide, immersive layout for complex work</li>
+              <li>Built for deep focus and planning</li>
+              <li>Full context across all your projects</li>
+            </ul>
+          </div>
+          <div class="wide-feature__visual">
+            <img src="images/ipad screenshot 4.jpg" alt="iPad and Mac power view">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Group intro: deeper feature set -->
+    <section class="section reveal">
+      <div class="section-inner" style="text-align:center; max-width:760px;">
+        <span class="eyebrow" style="justify-content:center;">Beyond planning</span>
+        <h2 class="headline">Built for doing the work, not just listing it</h2>
+        <p class="lead">Plans are easy. Finishing is the hard part, so Projectholic carries you all the way through execution, review, and the business side of the work.</p>
+      </div>
+    </section>
+
+    <!-- Feature: Focus sessions (split, visual left) -->
+    <section class="section reveal">
+      <div class="section-inner">
+        <div class="split-section">
+          <div class="motion-stage focus-stage" role="img" aria-label="Animated focus-session timer with a progress ring, pause and stop controls, and a minimized session pill">
+            <div class="ms-row">
+              <span class="ms-tag"><span class="ms-dot"></span>Focus</span>
+              <span class="ms-task">Design homepage hero</span>
+            </div>
+            <div class="focus-ring">
+              <svg viewBox="0 0 120 120" aria-hidden="true">
+                <circle class="focus-ring-bg" cx="60" cy="60" r="52"></circle>
+                <circle class="focus-ring-fg" cx="60" cy="60" r="52"></circle>
+              </svg>
+              <div class="focus-time"><span data-target="1455" data-kind="time">24:15</span><em>In session</em></div>
+            </div>
+            <div class="focus-controls" aria-hidden="true">
+              <span class="focus-btn focus-btn--pause"><i></i><i></i></span>
+              <span class="focus-btn focus-btn--stop"></span>
+            </div>
+            <div class="focus-pill" aria-hidden="true"><span class="focus-pill-play"></span>Session running &middot; minimized</div>
+          </div>
+          <div class="split-copy">
+            <h2>Focus, on the clock</h2>
+            <p>Planning is only half the job. Start a focus session on any task and Projectholic times the work, holds your place when you pause, and tucks into a floating indicator so it keeps running while you move around the app.</p>
+            <ul class="bullet-list">
+              <li>Start, pause, resume, and stop without losing the thread</li>
+              <li>A minimized session keeps timing while you work elsewhere</li>
+              <li>Every session logs to the task, so your history is real</li>
+              <li>Double-tap a calendar block to launch focus instantly</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Feature: Multi-day auto-spread (split reversed, visual right) -->
+    <section class="section reveal">
+      <div class="section-inner split-section reversed">
+        <div class="motion-stage spread-stage" role="img" aria-label="Animated multi-day task spreading into daily blocks across weekdays and skipping the weekend">
+          <div class="ms-row">
+            <span class="ms-tag ms-tag--blue">Multi-day</span>
+            <span class="ms-task">Write report &middot; 8h total</span>
+          </div>
+          <div class="spread-grid">
+            <div class="spread-col"><div class="spread-track"><div class="spread-chunk" style="--h:56%; --i:0"></div></div><span class="spread-day">Mon</span></div>
+            <div class="spread-col"><div class="spread-track"><div class="spread-chunk" style="--h:80%; --i:1"></div></div><span class="spread-day">Tue</span></div>
+            <div class="spread-col"><div class="spread-track"><div class="spread-chunk" style="--h:44%; --i:2"></div></div><span class="spread-day">Wed</span></div>
+            <div class="spread-col"><div class="spread-track"><div class="spread-chunk" style="--h:70%; --i:3"></div></div><span class="spread-day">Thu</span></div>
+            <div class="spread-col"><div class="spread-track"><div class="spread-chunk" style="--h:38%; --i:4"></div></div><span class="spread-day">Fri</span></div>
+            <div class="spread-col spread-col--off"><div class="spread-track"></div><span class="spread-day">Sat</span></div>
+            <div class="spread-col spread-col--off"><div class="spread-track"></div><span class="spread-day">Sun</span></div>
+          </div>
+          <div class="ms-note">Auto-spread within 2h/day &middot; skips weekends</div>
+        </div>
         <div class="split-copy">
-          <h2>Progress you can see</h2>
-          <p>Move beyond checklists. Visual progress shows momentum, reveals patterns, and keeps your attention on finishing.</p>
+          <h2>Big tasks, spread the smart way</h2>
+          <p>Some work won't fit one sitting. Mark a task as multi-day and Projectholic distributes it across your week within real limits, so an eight-hour job lands as honest daily blocks instead of one impossible afternoon.</p>
           <ul class="bullet-list">
-            <li>Track velocity and completion trends</li>
-            <li>Spot blockers and refine scope</li>
-            <li>Understand where your time is actually going</li>
+            <li>Set a daily cap and minimum block size; the app does the spread</li>
+            <li>Skip weekends automatically, or don't, your call</li>
+            <li>Continuation arrows show work flowing day to day</li>
+            <li>Reschedule once and the whole spread re-balances</li>
           </ul>
         </div>
       </div>
     </section>
 
+    <!-- Feature: Gantt (split, visual left) -->
     <section class="section reveal">
-      <div class="section-inner split-section">
-        <img src="images/iPhone screenshot 8.jpg" alt="Recurring tasks" class="visual-block" style="border-radius: 20px; width: 100%; height: 100%; object-fit: cover;">
+      <div class="section-inner">
+        <div class="split-section">
+          <div class="motion-stage gantt-stage" role="img" aria-label="Animated Gantt timeline with project bars growing across weeks, a milestone marker, and a today line">
+            <div class="ms-row">
+              <span class="ms-tag ms-tag--blue">Gantt</span>
+              <span class="ms-task">3 projects &middot; Apr–Jun</span>
+            </div>
+            <div class="gantt-grid">
+              <div class="gantt-row"><span class="gantt-bar" style="--l:2%; --w:30%; --i:0">Research</span></div>
+              <div class="gantt-row"><span class="gantt-bar gantt-bar--2" style="--l:24%; --w:36%; --i:1">Design</span></div>
+              <div class="gantt-row"><span class="gantt-bar gantt-bar--3" style="--l:48%; --w:34%; --i:2">Build</span></div>
+              <div class="gantt-row"><span class="gantt-bar gantt-bar--4" style="--l:74%; --w:20%; --i:3">Launch</span><span class="gantt-diamond" style="--l:94%"></span></div>
+              <span class="gantt-today" aria-hidden="true"></span>
+            </div>
+          </div>
+          <div class="split-copy">
+            <h2>See every project on one timeline</h2>
+            <p>When several projects run at once, the Gantt view lays them end to end. Zoom the density, filter by project or tag, and jump across weeks to see exactly where things collide, on iPad and Mac.</p>
+            <ul class="bullet-list">
+              <li>All projects and milestones on a single timeline</li>
+              <li>Zoom in for detail or out for the whole quarter</li>
+              <li>Filter by project or tag to cut the noise</li>
+              <li>A today line keeps you honest about what's due</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Feature: Kanban (split reversed, visual right) -->
+    <section class="section reveal">
+      <div class="section-inner split-section reversed">
+        <div class="motion-stage kanban-stage" role="img" aria-label="Animated kanban board with cards settling into To do, Doing, and Done columns, an active card filling, and done cards checking off">
+          <div class="kanban-col">
+            <div class="kanban-head">To do <span>2</span></div>
+            <div class="kanban-card" style="--i:0"></div>
+            <div class="kanban-card" style="--i:1"></div>
+          </div>
+          <div class="kanban-col">
+            <div class="kanban-head">Doing <span>1</span></div>
+            <div class="kanban-card kanban-card--active" style="--i:2"><span class="kanban-prog"></span></div>
+          </div>
+          <div class="kanban-col">
+            <div class="kanban-head">Done <span>3</span></div>
+            <div class="kanban-card kanban-card--done" style="--i:3"><span class="kanban-check"></span></div>
+            <div class="kanban-card kanban-card--done" style="--i:4"><span class="kanban-check"></span></div>
+            <div class="kanban-card kanban-card--done" style="--i:5"><span class="kanban-check"></span></div>
+          </div>
+        </div>
         <div class="split-copy">
-          <h2>Recurring tasks, simplified</h2>
-          <p>Routines keep life stable. Projectholic lets you build recurring tasks that adapt to your schedule without extra effort.</p>
+          <h2>Move work across a board</h2>
+          <p>Prefer columns to calendars? Track tasks through To do, Doing, and Done and watch a project's status shift at a glance. It's the same plan, seen as flow instead of dates.</p>
           <ul class="bullet-list">
-            <li>Flexible repeat rules</li>
-            <li>Automatic rescheduling</li>
-            <li>Clear history of completions</li>
+            <li>Track status across clear, simple columns</li>
+            <li>Move a task forward as the work progresses</li>
+            <li>Counts update so progress stays obvious</li>
+            <li>Same tasks as the calendar and Gantt, just a different view</li>
           </ul>
         </div>
       </div>
     </section>
 
+    <!-- Feature: Revenue per minute/hour (split, visual left) -->
     <section class="section reveal">
-      <div class="section-inner split-section">
-        <img src="images/iPhone screenshot 9.jpg" alt="Share tasks and follow up" class="visual-block" style="border-radius: 20px; width: 100%; height: 100%; object-fit: cover;">
-        <div class="split-copy">
-          <h2>Share tasks and follow up</h2>
-          <p>Projects move faster when everyone is aligned. Share tasks, assign owners, and keep follow-ups clear with one source of truth.</p>
-          <ul class="bullet-list">
-            <li>Assign tasks and set expectations</li>
-            <li>Follow up without chasing messages</li>
-            <li>Keep collaboration focused on outcomes</li>
-          </ul>
+      <div class="section-inner">
+        <div class="split-section">
+          <div class="motion-stage rev-stage" role="img" aria-label="Animated earnings counter climbing while weekly earning bars grow">
+            <div class="ms-row">
+              <span class="ms-tag ms-tag--green">Earnings</span>
+              <span class="ms-task">Client retainer &middot; $90/hr</span>
+            </div>
+            <div class="rev-amount">$<span data-target="1248.5" data-kind="number" data-decimals="2">1,248.50</span></div>
+            <div class="rev-meta"><span class="rev-rate">$1.50 / min</span><span>13h 52m focused</span></div>
+            <div class="rev-bars" aria-hidden="true">
+              <i style="--h:40%; --i:0"></i>
+              <i style="--h:55%; --i:1"></i>
+              <i style="--h:48%; --i:2"></i>
+              <i style="--h:72%; --i:3"></i>
+              <i style="--h:64%; --i:4"></i>
+              <i style="--h:88%; --i:5"></i>
+              <i style="--h:78%; --i:6"></i>
+            </div>
+          </div>
+          <div class="split-copy">
+            <h2>Watch a project earn its keep</h2>
+            <p>Set your rate and Projectholic turns focus time into money on screen. See what a project is worth by the minute and the hour, so you know which work pays and which quietly doesn't.</p>
+            <ul class="bullet-list">
+              <li>Tie an hourly rate to any project</li>
+              <li>Earnings add up as your focus time grows</li>
+              <li>Compare value per hour across clients and projects</li>
+              <li>Decide what to take on with numbers, not guesses</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
 
+    <!-- Feature: Daily Summary & Stats (wide showcase, visual right) -->
     <section class="section reveal">
-      <div class="section-inner split-section">
-        <img src="images/ipad screenshot 4.jpg" alt="iPad and Mac power view" class="visual-block" style="border-radius: 20px; width: 100%; height: 100%; object-fit: cover;">
-        <div class="split-copy">
-          <h2>Power view on iPad and Mac</h2>
-          <p>When you need the full picture, open a wide, immersive layout built for deep focus and complex projects.</p>
-          <ul class="bullet-list">
-            <li>Wide, immersive layout for complex work</li>
-            <li>Built for deep focus and planning</li>
-            <li>Full context across all your projects</li>
-          </ul>
+      <div class="section-inner">
+        <div class="wide-feature">
+          <div class="wide-feature__copy">
+            <h2>Close the day, then read the trend</h2>
+            <p>End each day with a Daily Summary and Day-End Review to close open loops, then let Stats turn weeks of work into a picture, by month, quarter, year, and project, so overcommitment shows up before it bites.</p>
+            <ul class="bullet-list">
+              <li>A Daily Summary and Day-End Review to finish cleanly</li>
+              <li>Progress by month, quarter, and year</li>
+              <li>Drill into any single project's trend</li>
+              <li>Spot delays and overload early, while you can still fix them</li>
+            </ul>
+          </div>
+          <div class="motion-stage motion-stage--wide stats-stage" role="img" aria-label="Animated stats dashboard with a completion ring filling to 82 percent, a day-end review checklist, and a weekly bar chart growing">
+            <div class="stats-top">
+              <div class="stats-ringwrap">
+                <div class="stats-ring">
+                  <svg viewBox="0 0 120 120" aria-hidden="true">
+                    <circle class="stats-ring-bg" cx="60" cy="60" r="50"></circle>
+                    <circle class="stats-ring-fg" cx="60" cy="60" r="50"></circle>
+                  </svg>
+                  <div class="stats-ring-num"><span data-target="82" data-kind="number" data-decimals="0">82</span>%</div>
+                </div>
+                <span class="stats-ring-cap">This month</span>
+              </div>
+              <div class="stats-review">
+                <div class="stats-review-head">Day-End Review</div>
+                <div class="stats-line stats-line--done" style="--i:0"><span class="stats-tick"></span>Shipped the hero section</div>
+                <div class="stats-line stats-line--done" style="--i:1"><span class="stats-tick"></span>Cleared the client inbox</div>
+                <div class="stats-line" style="--i:2"><span class="stats-tick"></span>Draft the Q3 timeline</div>
+              </div>
+            </div>
+            <div class="stats-chart" aria-hidden="true">
+              <i style="--h:52%; --i:0"></i>
+              <i style="--h:68%; --i:1"></i>
+              <i style="--h:46%; --i:2"></i>
+              <i style="--h:80%; --i:3"></i>
+              <i style="--h:62%; --i:4"></i>
+              <i style="--h:90%; --i:5"></i>
+              <i style="--h:74%; --i:6"></i>
+              <i style="--h:84%; --i:7"></i>
+              <i style="--h:58%; --i:8"></i>
+              <i style="--h:96%; --i:9"></i>
+              <i style="--h:70%; --i:10"></i>
+              <i style="--h:88%; --i:11"></i>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -1464,7 +591,6 @@
 
     <section id="blog" class="section reveal">
       <div class="section-inner">
-        <span class="eyebrow">Blog</span>
         <h2 class="headline">Read the latest writing</h2>
         <p class="lead">Practical guides on project planning, gantt workflows, and how freelancers actually run client work without dropping deadlines.</p>
         <div class="roadmap-grid">
@@ -1497,33 +623,32 @@
 
     <section id="faq" class="section reveal">
       <div class="section-inner">
-        <span class="eyebrow">FAQ</span>
         <h2 class="headline">Frequently asked questions</h2>
         <p class="lead">Quick answers about Projectholic, who it's for, and how it works.</p>
         <div class="faq-list">
           <details>
             <summary>What is Projectholic?</summary>
-            <p>Projectholic turns the projects in your head into a clear plan you can actually finish. Set a goal, break it into milestones, and schedule the work against the real hours you have this week — not the optimistic version. It runs natively on iPhone, iPad, and Mac with iCloud sync, and it's free to download on the App Store.</p>
+            <p>Projectholic turns the projects in your head into a clear plan you can actually finish. Set a goal, break it into milestones, and schedule the work against the real hours you have this week, not the optimistic version. It runs natively on iPhone, iPad, and Mac with iCloud sync, and it's free to download on the App Store.</p>
           </details>
           <details>
             <summary>Is Projectholic free?</summary>
-            <p>Yes — fully free on the App Store. No trial timer, no upsell wall, no premium tier waiting to interrupt you. Planning, milestones, scheduling, gantt-style timeline, progress tracking, iCloud sync — all in. Built by an independent studio that earns its keep by being genuinely useful, not by adding friction to make you pay.</p>
+            <p>Yes, fully free on the App Store. No trial timer, no upsell wall, no premium tier waiting to interrupt you. Planning, milestones, scheduling, gantt-style timeline, progress tracking, iCloud sync, all included. Built by an independent studio that earns its keep by being genuinely useful, not by adding friction to make you pay.</p>
           </details>
           <details>
             <summary>Which Apple devices does Projectholic support?</summary>
-            <p>iPhone, iPad, and Mac, with iCloud sync between all three. Plan on the train, adjust on the couch, ship at the desk — your projects move with you, no setup required. Each platform uses native conventions, so it feels right whether you're on a Mac trackpad or an iPad with Apple Pencil. Try it on whichever you have nearest first.</p>
+            <p>iPhone, iPad, and Mac, with iCloud sync between all three. Plan on the train, adjust on the couch, ship at the desk. Your projects move with you, no setup required. Each platform uses native conventions, so it feels right whether you're on a Mac trackpad or an iPad with Apple Pencil. Try it on whichever you have nearest first.</p>
           </details>
           <details>
             <summary>Does Projectholic support gantt charts?</summary>
-            <p>Yes — but the kind that helps you finish, not the kind you spend three days maintaining. Place milestones, drop tasks under them, and see the timeline against your real available hours. It's gantt-style thinking without enterprise overhead. Most people have their first project mapped within ten minutes of opening the app.</p>
+            <p>Yes, but the kind that helps you finish, not the kind you spend three days maintaining. Place milestones, drop tasks under them, and see the timeline against your real available hours. It's gantt-style thinking without enterprise overhead. Most people have their first project mapped within ten minutes of opening the app.</p>
           </details>
           <details>
             <summary>Can Projectholic sync with Apple Calendar?</summary>
-            <p>Yes, two-way sync. Tasks you schedule in Projectholic appear in Apple Calendar alongside meetings and personal events, and changes flow back into the plan. That's how schedules stay honest — your project hours meet the rest of your week, and you stop overcommitting Wednesdays. Setup takes about thirty seconds the first time you open the app.</p>
+            <p>Yes, two-way sync. Tasks you schedule in Projectholic appear in Apple Calendar alongside meetings and personal events, and changes flow back into the plan. That's how schedules stay honest. Your project hours meet the rest of your week, and you stop overcommitting Wednesdays. Setup takes about thirty seconds the first time you open the app.</p>
           </details>
           <details>
             <summary>Who makes Projectholic?</summary>
-            <p>Feioustudio — an independent practice founded by Feiou Su, with a background in interaction design, AR/VR, and product design. The studio also makes Watermelon Todo, NearbyGem, and Udoland, but Projectholic is the one built for people who want to actually finish what they start. Read the story on the <a href="about.html">about page</a>, then download the app and try it.</p>
+            <p>Feioustudio is an independent practice founded by Feiou Su, with a background in interaction design, AR/VR, and product design. The studio also makes Watermelon Todo, NearbyGem, and Udoland, but Projectholic is the one built for people who want to actually finish what they start. Read the story on the <a href="about.html">about page</a>, then download the app and try it.</p>
           </details>
         </div>
       </div>
@@ -1578,21 +703,17 @@
   </div>
 
   <script>
-    // Header scroll effect
+    // Header scroll effect: IntersectionObserver on a top sentinel.
+    // Toggles `.scrolled` once the user has scrolled past the first 50px,
+    // without firing on every scroll frame.
     const topbar = document.querySelector('.topbar');
-    let lastScrollTop = 0;
-
-    window.addEventListener('scroll', () => {
-      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-      if (scrollTop > 50) {
-        topbar.classList.add('scrolled');
-      } else {
-        topbar.classList.remove('scrolled');
-      }
-
-      lastScrollTop = scrollTop;
-    });
+    const scrollSentinel = document.createElement('div');
+    scrollSentinel.setAttribute('aria-hidden', 'true');
+    scrollSentinel.style.cssText = 'position:absolute;top:0;left:0;width:1px;height:50px;pointer-events:none;';
+    document.body.prepend(scrollSentinel);
+    new IntersectionObserver(([entry]) => {
+      topbar.classList.toggle('scrolled', !entry.isIntersecting);
+    }, { threshold: 0 }).observe(scrollSentinel);
 
     // Mobile menu toggle
     const menuToggle = document.getElementById('menuToggle');
@@ -1633,6 +754,63 @@
     document.querySelectorAll('.reveal').forEach(section => {
       observer.observe(section);
     });
+
+    // ============================================
+    // FEATURE MOTION GRAPHICS
+    // Trigger the bespoke mini-UI animations on scroll-in and
+    // run the numeric count-ups. Under reduced-motion we skip
+    // the tween and jump straight to the settled value.
+    // ============================================
+    const motionReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    function formatCount(value, kind, decimals) {
+      if (kind === 'time') {
+        const total = Math.round(value);
+        const m = Math.floor(total / 60);
+        const s = (total % 60).toString().padStart(2, '0');
+        return m + ':' + s;
+      }
+      return value.toLocaleString('en-US', {
+        minimumFractionDigits: decimals,
+        maximumFractionDigits: decimals
+      });
+    }
+
+    function animateCount(el) {
+      if (el.dataset.counted) return;
+      el.dataset.counted = '1';
+      const target = parseFloat(el.dataset.target);
+      if (isNaN(target)) return;
+      const kind = el.dataset.kind || 'number';
+      const decimals = parseInt(el.dataset.decimals || '0', 10);
+
+      if (motionReduced) {
+        el.textContent = formatCount(target, kind, decimals);
+        return;
+      }
+
+      const duration = 1700;
+      const start = performance.now();
+      function step(now) {
+        const t = Math.min(1, (now - start) / duration);
+        const eased = 1 - Math.pow(1 - t, 3); // easeOutCubic
+        el.textContent = formatCount(target * eased, kind, decimals);
+        if (t < 1) requestAnimationFrame(step);
+        else el.textContent = formatCount(target, kind, decimals);
+      }
+      requestAnimationFrame(step);
+    }
+
+    const motionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('in-view');
+        entry.target.querySelectorAll('[data-target]').forEach(animateCount);
+        motionObserver.unobserve(entry.target);
+      });
+    }, { threshold: 0.25 });
+
+    document.querySelectorAll('.motion-stage').forEach(stage => motionObserver.observe(stage));
 
     // ============================================
     // CARD DROP PHYSICS ENGINE
@@ -1835,37 +1013,54 @@
       cardPhysicsObjects.push(physics);
     });
 
-    // Animation loop
-    let lastTime = performance.now();
-    let animationRunning = true;
+    // Honor user's reduced-motion preference: skip the falling animation
+    // entirely by fast-forwarding the simulation to its resting state.
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    function animate(currentTime) {
-      if (!animationRunning) return;
-
-      const deltaTime = Math.min((currentTime - lastTime) / 1000, 0.033); // Cap at 30fps for stability
-      lastTime = currentTime;
-
-      let allResting = true;
-
-      cardPhysicsObjects.forEach(cardPhysics => {
-        cardPhysics.update(deltaTime);
-        cardPhysics.render();
-
-        if (!cardPhysics.isResting) {
-          allResting = false;
-        }
-      });
-
-      // Continue animation if any card is still moving
-      if (!allResting) {
-        requestAnimationFrame(animate);
-      } else {
-        animationRunning = false;
+    if (prefersReducedMotion) {
+      const fixedDt = 1 / 60;
+      let safety = 600; // ~10s of simulated time, enough to settle
+      let allResting = false;
+      while (!allResting && safety-- > 0) {
+        allResting = true;
+        cardPhysicsObjects.forEach(cardPhysics => {
+          cardPhysics.update(fixedDt);
+          if (!cardPhysics.isResting) allResting = false;
+        });
       }
-    }
+      cardPhysicsObjects.forEach(cardPhysics => cardPhysics.render());
+    } else {
+      // Animation loop
+      let lastTime = performance.now();
+      let animationRunning = true;
 
-    // Start animation
-    requestAnimationFrame(animate);
+      function animate(currentTime) {
+        if (!animationRunning) return;
+
+        const deltaTime = Math.min((currentTime - lastTime) / 1000, 0.033); // Cap at 30fps for stability
+        lastTime = currentTime;
+
+        let allResting = true;
+
+        cardPhysicsObjects.forEach(cardPhysics => {
+          cardPhysics.update(deltaTime);
+          cardPhysics.render();
+
+          if (!cardPhysics.isResting) {
+            allResting = false;
+          }
+        });
+
+        // Continue animation if any card is still moving
+        if (!allResting) {
+          requestAnimationFrame(animate);
+        } else {
+          animationRunning = false;
+        }
+      }
+
+      requestAnimationFrame(animate);
+    }
 
     // ============================================
     // INTERACTIVE CARD DRAGGING

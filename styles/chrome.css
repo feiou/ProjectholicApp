@@ -1,0 +1,111 @@
+/*
+ * Brand chrome: dark theme + topbar + footer + eyebrow + body overlay.
+ * Linked from 404, link, privacy, terms, about. Other pages keep their own.
+ */
+
+:root {
+  --ink: #f5f2ed;
+  --muted-ink: rgba(245, 242, 237, 0.72);
+  --soft-ink: rgba(245, 242, 237, 0.5);
+  --accent: #ff8c42;
+  --accent-warm: #ffa566;
+  --panel: rgba(255, 255, 255, 0.05);
+  --panel-stroke: rgba(255, 255, 255, 0.1);
+}
+
+body {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  color: var(--ink);
+  background: radial-gradient(circle at top, #2b2b2b 0%, #161616 55%, #101010 100%);
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255, 140, 66, 0.14), transparent 50%),
+    radial-gradient(circle at 80% 10%, rgba(255, 165, 102, 0.10), transparent 55%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 32px;
+  border-bottom: 1px solid var(--panel-stroke);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--ink);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.brand img {
+  width: 28px;
+  height: 28px;
+  border-radius: 7px;
+}
+
+.topbar nav {
+  display: flex;
+  gap: 26px;
+  font-size: 0.95rem;
+}
+
+.topbar nav a {
+  color: var(--muted-ink);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.topbar nav a:hover {
+  color: var(--ink);
+}
+
+.eyebrow {
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.74rem;
+  color: var(--accent);
+  margin-bottom: 18px;
+}
+
+footer.page-footer {
+  padding: 28px 32px;
+  border-top: 1px solid var(--panel-stroke);
+  text-align: center;
+  color: var(--soft-ink);
+  font-size: 0.86rem;
+}
+
+footer.page-footer a {
+  color: var(--muted-ink);
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+footer.page-footer a:hover {
+  color: var(--ink);
+}
+
+@media (max-width: 640px) {
+  .topbar {
+    padding: 18px 20px;
+  }
+
+  .topbar nav {
+    gap: 16px;
+    font-size: 0.88rem;
+  }
+}
