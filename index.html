@@ -26,10 +26,11 @@
   <link rel="apple-touch-icon" href="images/appIcon-20260112.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Noto+Serif:wght@500;600;700&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Manrope:wght@400;500;600&display=swap" />
   <link rel="stylesheet" href="styles/base.css" />
   <link rel="stylesheet" href="styles/index.css" />
   <link rel="stylesheet" href="styles/motion.css" />
+  <link rel="stylesheet" href="styles/showcase.css" />
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -155,6 +156,7 @@
       <nav class="nav-links" id="navLinks">
         <a href="#method">Method</a>
         <a href="#features">Features</a>
+        <a href="#screens">Screens</a>
         <a href="blog/index.html">Blog</a>
         <a href="#roadmap">Roadmap</a>
         <a href="docs/index.html">Documentation</a>
@@ -180,26 +182,20 @@
       </div>
       <div class="hero-visual">
         <div class="device-stack" id="cardStack">
-          <div class="screenshot-card" style="left: 200px; top: 180px; transform: rotate(-6deg); z-index: 1;">
-            <img src="images/iPhone screenshot 7.jpg" alt="Projectholic app view">
+          <div class="screenshot-card" data-rot="-12" style="left: 165px; top: 182px; transform: rotate(-12deg); z-index: 1;">
+            <img src="images/iPhone screenshot 8.jpg" alt="Projectholic recurring task settings">
           </div>
-          <div class="screenshot-card" style="left: 220px; top: 160px; transform: rotate(10deg); z-index: 2;">
-            <img src="images/iPhone screenshot 8.jpg" alt="Projectholic recurring tasks">
+          <div class="screenshot-card" data-rot="-6" style="left: 225px; top: 156px; transform: rotate(-6deg); z-index: 2;">
+            <img src="images/iPhone screenshot 7.jpg" alt="Projectholic progress tracking">
           </div>
-          <div class="screenshot-card wide" style="left: 150px; top: 180px; transform: rotate(-4deg); z-index: 3;">
-            <img src="images/mac screenshot 1.jpg" alt="Projectholic Mac view">
+          <div class="screenshot-card" data-rot="0" style="left: 285px; top: 144px; transform: rotate(0deg); z-index: 5;">
+            <img src="images/iPhone screenshot 5.jpg" alt="Projectholic project calendar">
           </div>
-          <div class="screenshot-card" style="left: 240px; top: 190px; transform: rotate(14deg); z-index: 4;">
-            <img src="images/iPhone screenshot 4.jpg" alt="Projectholic tasks">
+          <div class="screenshot-card" data-rot="7" style="left: 240px; top: 166px; transform: rotate(7deg); z-index: 4;">
+            <img src="images/iPhone screenshot 4.jpg" alt="Projectholic project plan and milestones">
           </div>
-          <div class="screenshot-card" style="left: 210px; top: 170px; transform: rotate(-9deg); z-index: 5;">
-            <img src="images/iPhone screenshot 5.jpg" alt="Projectholic time budget">
-          </div>
-          <div class="screenshot-card" style="left: 230px; top: 165px; transform: rotate(7deg); z-index: 6;">
-            <img src="images/ipad screenshot 6.jpg" alt="Projectholic iPad progress">
-          </div>
-          <div class="screenshot-card wide" style="left: 180px; top: 175px; transform: rotate(-11deg); z-index: 7;">
-            <img src="images/mac screenshot 7.jpg" alt="Projectholic Mac insights">
+          <div class="screenshot-card" data-rot="13" style="left: 190px; top: 188px; transform: rotate(13deg); z-index: 3;">
+            <img src="images/iPhone screenshot 6.jpg" alt="Projectholic time and capacity view">
           </div>
         </div>
       </div>
@@ -211,8 +207,14 @@
         <p class="lead">Projectholic keeps the sequence simple. Think through the work, place it on the calendar, then finish with clarity. Each step stays lightweight, so you move forward without over-planning.</p>
         <div class="method-grid">
           <div class="method-card">
-            <div class="method-visual">
-              <img src="images/iPhone screenshot 4.jpg" alt="Plan">
+            <div class="motion-stage method-mini plan-mini" role="img" aria-label="Animated plan: a goal breaking into milestone tasks with progress bars">
+              <div class="ms-row"><span class="ms-tag">Plan</span></div>
+              <div class="plan-goal">Earn 100k in 2026</div>
+              <div class="plan-tree">
+                <div class="plan-node" style="--i:0"><b>Research</b><span class="plan-bar" style="--w:72%"></span></div>
+                <div class="plan-node plan-node--2" style="--i:1"><b>Implement PMBOK</b><span class="plan-bar" style="--w:54%"></span></div>
+                <div class="plan-node plan-node--3" style="--i:2"><b>Launch &amp; iterate</b><span class="plan-bar" style="--w:38%"></span></div>
+              </div>
             </div>
             <div class="method-text-card">
               <h3>Plan</h3>
@@ -220,8 +222,15 @@
             </div>
           </div>
           <div class="method-card">
-            <div class="method-visual">
-              <img src="images/iPhone screenshot 5.jpg" alt="Schedule">
+            <div class="motion-stage method-mini sched-mini" role="img" aria-label="Animated schedule: task blocks dropping into weekday columns">
+              <div class="ms-row"><span class="ms-tag ms-tag--blue">Schedule</span></div>
+              <div class="sched-grid">
+                <div class="sched-col"><div class="sched-block" style="--t:18%; --h:30%; --i:0"></div></div>
+                <div class="sched-col"><div class="sched-block sched-block--b" style="--t:44%; --h:34%; --i:1"></div></div>
+                <div class="sched-col"><div class="sched-block sched-block--c" style="--t:24%; --h:26%; --i:2"></div></div>
+                <div class="sched-col"><div class="sched-block" style="--t:50%; --h:30%; --i:3"></div></div>
+                <div class="sched-col"><div class="sched-block sched-block--b" style="--t:28%; --h:42%; --i:4"></div></div>
+              </div>
             </div>
             <div class="method-text-card">
               <h3>Schedule</h3>
@@ -229,8 +238,15 @@
             </div>
           </div>
           <div class="method-card">
-            <div class="method-visual">
-              <img src="images/iPhone screenshot 6.jpg" alt="Finish">
+            <div class="motion-stage method-mini finish-mini" role="img" aria-label="Animated finish: a completion ring filling to one hundred percent with a check">
+              <div class="ms-row"><span class="ms-tag ms-tag--green">Finish</span></div>
+              <div class="finish-ring">
+                <svg viewBox="0 0 120 120" aria-hidden="true">
+                  <circle class="finish-ring-bg" cx="60" cy="60" r="52"></circle>
+                  <circle class="finish-ring-fg" cx="60" cy="60" r="52"></circle>
+                </svg>
+                <div class="finish-check"></div>
+              </div>
             </div>
             <div class="method-text-card">
               <h3>Finish</h3>
@@ -245,7 +261,30 @@
     <section id="features" class="section reveal">
       <div class="section-inner">
         <div class="split-section">
-          <img src="images/iPhone screenshot 5.jpg" alt="Project-based calendar" class="visual-block feature-img">
+          <div class="motion-stage cal-stage" role="img" aria-label="Animated weekly calendar with project-colored task blocks appearing and an Apple Calendar sync indicator">
+            <div class="ms-row"><span class="ms-tag">Calendar</span><span class="ms-task">Grouped by project</span></div>
+            <div class="cal-grid">
+              <div class="cal-col"><span class="cal-day">M</span><div class="cal-track">
+                <div class="cal-block" style="--t:12%; --h:22%; --c:var(--accent); --i:0"></div>
+                <div class="cal-block" style="--t:46%; --h:24%; --c:#5fa8f0; --i:1"></div>
+              </div></div>
+              <div class="cal-col"><span class="cal-day">T</span><div class="cal-track">
+                <div class="cal-block" style="--t:20%; --h:30%; --c:#5fce9b; --i:2"></div>
+              </div></div>
+              <div class="cal-col"><span class="cal-day">W</span><div class="cal-track">
+                <div class="cal-block" style="--t:10%; --h:18%; --c:#5fa8f0; --i:3"></div>
+                <div class="cal-block" style="--t:42%; --h:28%; --c:var(--accent); --i:4"></div>
+              </div></div>
+              <div class="cal-col"><span class="cal-day">T</span><div class="cal-track">
+                <div class="cal-block" style="--t:26%; --h:34%; --c:var(--accent); --i:5"></div>
+              </div></div>
+              <div class="cal-col"><span class="cal-day">F</span><div class="cal-track">
+                <div class="cal-block" style="--t:16%; --h:22%; --c:#5fce9b; --i:6"></div>
+                <div class="cal-block" style="--t:48%; --h:24%; --c:#5fa8f0; --i:7"></div>
+              </div></div>
+            </div>
+            <div class="cal-sync"><span class="cal-sync-ic">&#8646;</span> Two-way Apple Calendar sync</div>
+          </div>
           <div class="split-copy">
             <h2>Project-based calendar</h2>
             <p>The calendar is organized by project, not chaos. Put project tasks on Apple Calendar, adjust them there or in Projectholic, and both stay in sync.</p>
@@ -263,7 +302,23 @@
     <!-- Layout family 2: split reversed (text-left, image-right) -->
     <section class="section reveal">
       <div class="section-inner split-section reversed">
-        <img src="images/iPhone screenshot 6.jpg" alt="Time budget view" class="visual-block feature-img">
+        <div class="motion-stage budget-stage" role="img" aria-label="Animated weekly capacity gauge filling with project hours toward a limit, with daily load bars and a near-capacity warning">
+          <div class="ms-row"><span class="ms-tag ms-tag--blue">Capacity</span><span class="ms-task">This week</span></div>
+          <div class="budget-head"><b>34h</b> of 40h planned</div>
+          <div class="gauge">
+            <span class="gauge-seg" style="--w:34%; --c:var(--accent); --i:0"></span>
+            <span class="gauge-seg" style="--w:30%; --c:#5fa8f0; --i:1"></span>
+            <span class="gauge-seg" style="--w:21%; --c:#5fce9b; --i:2"></span>
+          </div>
+          <div class="budget-days" aria-hidden="true">
+            <i style="--h:50%; --i:0"></i>
+            <i style="--h:66%; --i:1"></i>
+            <i style="--h:44%; --i:2"></i>
+            <i class="is-hot" style="--h:96%; --i:3"></i>
+            <i style="--h:58%; --i:4"></i>
+          </div>
+          <div class="ms-note"><span class="warn-dot"></span> Thursday is near capacity</div>
+        </div>
         <div class="split-copy">
           <h2>Time is your budget</h2>
           <p>Projects thrive when you respect time constraints. Budget hours like a resource, then let the schedule reflect reality without guesswork.</p>
@@ -281,8 +336,15 @@
       <div class="section-inner">
         <div class="bento-features">
           <article class="bento-tile">
-            <div class="bento-tile__media">
-              <img src="images/iPhone screenshot 7.jpg" alt="Progress tracking">
+            <div class="bento-tile__media bento-tile__media--motion">
+              <div class="motion-stage bento-motion prog-stage" role="img" aria-label="Animated progress bars filling for several projects">
+                <div class="ms-row"><span class="ms-tag ms-tag--green">Progress</span></div>
+                <div class="prog-list">
+                  <div class="prog-row" style="--i:0"><span class="prog-name">Client site</span><span class="prog-pct">78%</span><span class="prog-track"><span class="prog-bar" style="--w:78%"></span></span></div>
+                  <div class="prog-row" style="--i:1"><span class="prog-name">Brand kit</span><span class="prog-pct">52%</span><span class="prog-track"><span class="prog-bar prog-bar--2" style="--w:52%"></span></span></div>
+                  <div class="prog-row" style="--i:2"><span class="prog-name">App v2</span><span class="prog-pct">31%</span><span class="prog-track"><span class="prog-bar prog-bar--3" style="--w:31%"></span></span></div>
+                </div>
+              </div>
             </div>
             <div class="bento-tile__copy">
               <h3>Progress you can see</h3>
@@ -290,8 +352,19 @@
             </div>
           </article>
           <article class="bento-tile">
-            <div class="bento-tile__media">
-              <img src="images/iPhone screenshot 8.jpg" alt="Recurring tasks">
+            <div class="bento-tile__media bento-tile__media--motion">
+              <div class="motion-stage bento-motion recur-stage" role="img" aria-label="Animated weekly recurrence with Monday, Wednesday, and Friday highlighted">
+                <div class="ms-row"><span class="ms-tag ms-tag--blue">Recurring</span><span class="recur-chip">&#8635; Weekly</span></div>
+                <div class="recur-days">
+                  <span class="recur-day">S</span>
+                  <span class="recur-day recur-day--on" style="--i:0">M</span>
+                  <span class="recur-day">T</span>
+                  <span class="recur-day recur-day--on" style="--i:1">W</span>
+                  <span class="recur-day">T</span>
+                  <span class="recur-day recur-day--on" style="--i:2">F</span>
+                  <span class="recur-day">S</span>
+                </div>
+              </div>
             </div>
             <div class="bento-tile__copy">
               <h3>Recurring tasks, simplified</h3>
@@ -299,8 +372,15 @@
             </div>
           </article>
           <article class="bento-tile">
-            <div class="bento-tile__media">
-              <img src="images/iPhone screenshot 9.jpg" alt="Share tasks">
+            <div class="bento-tile__media bento-tile__media--motion">
+              <div class="motion-stage bento-motion share-stage" role="img" aria-label="Animated task being delegated to a teammate with a follow-up status">
+                <div class="ms-row"><span class="ms-tag">Follow-up</span></div>
+                <div class="share-flow">
+                  <div class="share-card">Send brand assets <span class="ms-avatar">FS</span></div>
+                  <span class="share-arrow"></span>
+                  <div class="share-to"><span class="ms-avatar ms-avatar--b">JD</span><em>Following up &middot; <b>Jordan</b></em></div>
+                </div>
+              </div>
             </div>
             <div class="bento-tile__copy">
               <h3>Share and follow up</h3>
@@ -324,8 +404,22 @@
               <li>Full context across all your projects</li>
             </ul>
           </div>
-          <div class="wide-feature__visual">
-            <img src="images/ipad screenshot 4.jpg" alt="iPad and Mac power view">
+          <div class="motion-stage motion-stage--wide power-stage" role="img" aria-label="Animated desktop command center: a sidebar of projects beside a multi-project Gantt timeline">
+            <div class="power-bar"><i></i><i></i><i></i><span>Projectholic - Gantt</span></div>
+            <div class="power-body">
+              <div class="power-side">
+                <div class="power-proj" style="--c:var(--accent); --i:0"><span></span>Make money</div>
+                <div class="power-proj" style="--c:#5fa8f0; --i:1"><span></span>Client site</div>
+                <div class="power-proj" style="--c:#5fce9b; --i:2"><span></span>Brand kit</div>
+                <div class="power-proj" style="--c:#9a6bff; --i:3"><span></span>App v2</div>
+              </div>
+              <div class="power-main">
+                <div class="gantt-row"><span class="gantt-bar" style="--l:3%; --w:34%; --i:0">Research</span></div>
+                <div class="gantt-row"><span class="gantt-bar gantt-bar--2" style="--l:22%; --w:40%; --i:1">Design</span></div>
+                <div class="gantt-row"><span class="gantt-bar gantt-bar--3" style="--l:48%; --w:36%; --i:2">Build</span></div>
+                <div class="gantt-row"><span class="gantt-bar gantt-bar--4" style="--l:74%; --w:22%; --i:3">Launch</span></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -408,78 +502,76 @@
       </div>
     </section>
 
-    <!-- Feature: Gantt (split, visual left) -->
+    <!-- Feature: Two views (Gantt + Kanban) as a 2-up duo, breaking the split rhythm -->
     <section class="section reveal">
       <div class="section-inner">
-        <div class="split-section">
-          <div class="motion-stage gantt-stage" role="img" aria-label="Animated Gantt timeline with project bars growing across weeks, a milestone marker, and a today line">
-            <div class="ms-row">
-              <span class="ms-tag ms-tag--blue">Gantt</span>
-              <span class="ms-task">3 projects &middot; Apr–Jun</span>
+        <h2 class="headline">Two ways to see the same work</h2>
+        <p class="lead">A plan is not one shape. Lay every project on a timeline, or push tasks across a board. The tasks are the same; the view is your call.</p>
+        <div class="duo-grid">
+          <article class="duo-card">
+            <div class="motion-stage duo-stage gantt-stage" role="img" aria-label="Animated Gantt timeline with project bars growing across weeks, a milestone marker, and a today line">
+              <div class="ms-row">
+                <span class="ms-tag ms-tag--blue">Gantt</span>
+                <span class="ms-task">3 projects, Apr to Jun</span>
+              </div>
+              <div class="gantt-grid">
+                <div class="gantt-row"><span class="gantt-bar" style="--l:2%; --w:30%; --i:0">Research</span></div>
+                <div class="gantt-row"><span class="gantt-bar gantt-bar--2" style="--l:24%; --w:36%; --i:1">Design</span></div>
+                <div class="gantt-row"><span class="gantt-bar gantt-bar--3" style="--l:48%; --w:34%; --i:2">Build</span></div>
+                <div class="gantt-row"><span class="gantt-bar gantt-bar--4" style="--l:74%; --w:20%; --i:3">Launch</span><span class="gantt-diamond" style="--l:94%"></span></div>
+                <span class="gantt-today" aria-hidden="true"></span>
+              </div>
             </div>
-            <div class="gantt-grid">
-              <div class="gantt-row"><span class="gantt-bar" style="--l:2%; --w:30%; --i:0">Research</span></div>
-              <div class="gantt-row"><span class="gantt-bar gantt-bar--2" style="--l:24%; --w:36%; --i:1">Design</span></div>
-              <div class="gantt-row"><span class="gantt-bar gantt-bar--3" style="--l:48%; --w:34%; --i:2">Build</span></div>
-              <div class="gantt-row"><span class="gantt-bar gantt-bar--4" style="--l:74%; --w:20%; --i:3">Launch</span><span class="gantt-diamond" style="--l:94%"></span></div>
-              <span class="gantt-today" aria-hidden="true"></span>
+            <div class="duo-copy">
+              <h3>Every project on one timeline</h3>
+              <p>Lay projects end to end, zoom the density, and filter by project or tag. A today line keeps you honest about what is due. On iPad and Mac.</p>
             </div>
-          </div>
-          <div class="split-copy">
-            <h2>See every project on one timeline</h2>
-            <p>When several projects run at once, the Gantt view lays them end to end. Zoom the density, filter by project or tag, and jump across weeks to see exactly where things collide, on iPad and Mac.</p>
-            <ul class="bullet-list">
-              <li>All projects and milestones on a single timeline</li>
-              <li>Zoom in for detail or out for the whole quarter</li>
-              <li>Filter by project or tag to cut the noise</li>
-              <li>A today line keeps you honest about what's due</li>
+          </article>
+          <article class="duo-card">
+            <div class="motion-stage duo-stage kanban-stage" role="img" aria-label="Animated kanban board with cards settling into To do, Doing, and Done columns, an active card filling, and done cards checking off">
+              <div class="kanban-col">
+                <div class="kanban-head">To do <span>2</span></div>
+                <div class="kanban-card" style="--i:0"></div>
+                <div class="kanban-card" style="--i:1"></div>
+              </div>
+              <div class="kanban-col">
+                <div class="kanban-head">Doing <span>1</span></div>
+                <div class="kanban-card kanban-card--active" style="--i:2"><span class="kanban-prog"></span></div>
+              </div>
+              <div class="kanban-col">
+                <div class="kanban-head">Done <span>3</span></div>
+                <div class="kanban-card kanban-card--done" style="--i:3"><span class="kanban-check"></span></div>
+                <div class="kanban-card kanban-card--done" style="--i:4"><span class="kanban-check"></span></div>
+                <div class="kanban-card kanban-card--done" style="--i:5"><span class="kanban-check"></span></div>
+              </div>
+            </div>
+            <div class="duo-copy">
+              <h3>Or move it across a board</h3>
+              <p>Prefer columns to calendars? Track tasks through To do, Doing, and Done and watch a project's status shift at a glance. Same plan, seen as flow.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Feature: Revenue, as a full-width featured band (distinct family) -->
+    <section class="section reveal">
+      <div class="section-inner">
+        <div class="band">
+          <div class="band-text">
+            <span class="ms-tag ms-tag--green">For freelancers</span>
+            <h2>Watch a project earn its keep</h2>
+            <p>Set your rate and Projectholic turns focus time into money on screen. See what a project is worth by the minute and the hour, so you know which work pays and which quietly doesn't.</p>
+            <ul class="band-points">
+              <li>Tie an hourly rate to any project</li>
+              <li>Earnings add up as your focus time grows</li>
+              <li>Compare value per hour across clients</li>
             </ul>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Feature: Kanban (split reversed, visual right) -->
-    <section class="section reveal">
-      <div class="section-inner split-section reversed">
-        <div class="motion-stage kanban-stage" role="img" aria-label="Animated kanban board with cards settling into To do, Doing, and Done columns, an active card filling, and done cards checking off">
-          <div class="kanban-col">
-            <div class="kanban-head">To do <span>2</span></div>
-            <div class="kanban-card" style="--i:0"></div>
-            <div class="kanban-card" style="--i:1"></div>
-          </div>
-          <div class="kanban-col">
-            <div class="kanban-head">Doing <span>1</span></div>
-            <div class="kanban-card kanban-card--active" style="--i:2"><span class="kanban-prog"></span></div>
-          </div>
-          <div class="kanban-col">
-            <div class="kanban-head">Done <span>3</span></div>
-            <div class="kanban-card kanban-card--done" style="--i:3"><span class="kanban-check"></span></div>
-            <div class="kanban-card kanban-card--done" style="--i:4"><span class="kanban-check"></span></div>
-            <div class="kanban-card kanban-card--done" style="--i:5"><span class="kanban-check"></span></div>
-          </div>
-        </div>
-        <div class="split-copy">
-          <h2>Move work across a board</h2>
-          <p>Prefer columns to calendars? Track tasks through To do, Doing, and Done and watch a project's status shift at a glance. It's the same plan, seen as flow instead of dates.</p>
-          <ul class="bullet-list">
-            <li>Track status across clear, simple columns</li>
-            <li>Move a task forward as the work progresses</li>
-            <li>Counts update so progress stays obvious</li>
-            <li>Same tasks as the calendar and Gantt, just a different view</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- Feature: Revenue per minute/hour (split, visual left) -->
-    <section class="section reveal">
-      <div class="section-inner">
-        <div class="split-section">
-          <div class="motion-stage rev-stage" role="img" aria-label="Animated earnings counter climbing while weekly earning bars grow">
+          <div class="motion-stage rev-stage band-stage" role="img" aria-label="Animated earnings counter climbing while weekly earning bars grow">
             <div class="ms-row">
               <span class="ms-tag ms-tag--green">Earnings</span>
-              <span class="ms-task">Client retainer &middot; $90/hr</span>
+              <span class="ms-task">Client retainer, $90/hr</span>
             </div>
             <div class="rev-amount">$<span data-target="1248.5" data-kind="number" data-decimals="2">1,248.50</span></div>
             <div class="rev-meta"><span class="rev-rate">$1.50 / min</span><span>13h 52m focused</span></div>
@@ -492,16 +584,6 @@
               <i style="--h:88%; --i:5"></i>
               <i style="--h:78%; --i:6"></i>
             </div>
-          </div>
-          <div class="split-copy">
-            <h2>Watch a project earn its keep</h2>
-            <p>Set your rate and Projectholic turns focus time into money on screen. See what a project is worth by the minute and the hour, so you know which work pays and which quietly doesn't.</p>
-            <ul class="bullet-list">
-              <li>Tie an hourly rate to any project</li>
-              <li>Earnings add up as your focus time grows</li>
-              <li>Compare value per hour across clients and projects</li>
-              <li>Decide what to take on with numbers, not guesses</li>
-            </ul>
           </div>
         </div>
       </div>
@@ -559,33 +641,97 @@
       </div>
     </section>
 
-    <section id="roadmap" class="section reveal">
+    <section id="screens" class="section reveal">
       <div class="section-inner">
-        <span class="eyebrow">Roadmap</span>
-        <h2 class="headline">What is coming next</h2>
-        <p class="lead">Major features planned for 2026. From smarter planning systems to an AI project manager that thinks like your PM.</p>
-        <div class="roadmap-grid">
-          <div class="roadmap-card">
-            <span>2026 Q1</span>
-            <h4>Smart Notifications</h4>
-            <p>Intelligent deadline warnings that alert you when projects are at risk before your schedule slips.</p>
-          </div>
-          <div class="roadmap-card">
-            <span>2026 Q2</span>
-            <h4>Project Templates & Task Dependencies</h4>
-            <p>Pre-built project structures you can reuse. Link tasks that depend on each other and visualize what's blocking progress.</p>
-          </div>
-          <div class="roadmap-card">
-            <span>2026 Q3</span>
-            <h4>AI Quick Add with Natural Language</h4>
-            <p>Type or speak naturally: "Review designs Thursday 2-4pm" and AI creates structured tasks with time blocks instantly.</p>
-          </div>
-          <div class="roadmap-card">
-            <span>2026 Q4</span>
-            <h4>AI Project Manager</h4>
-            <p>Your personal PM that reviews projects, identifies risks, and suggests next steps. Chat to get insights and stay on track.</p>
+        <span class="eyebrow">See it on your devices</span>
+        <h2 class="headline">The real thing, on every screen</h2>
+        <p class="lead">Projectholic is native on iPhone, iPad, and Mac, with iCloud sync between all three. Here is what it actually looks like.</p>
+
+        <div class="gallery-group">
+          <h3 class="gallery-group__title">On iPhone</h3>
+          <div class="gallery-row gallery-row--phone">
+            <figure class="shot"><img src="images/iPhone screenshot 5.jpg" alt="Project calendar by day on iPhone" loading="lazy"><figcaption>Project calendar, by day</figcaption></figure>
+            <figure class="shot"><img src="images/iPhone screenshot 4.jpg" alt="Project plan and milestones on iPhone" loading="lazy"><figcaption>Plan &amp; milestones</figcaption></figure>
+            <figure class="shot"><img src="images/iPhone screenshot 8.jpg" alt="Recurring task settings on iPhone" loading="lazy"><figcaption>Recurring task settings</figcaption></figure>
+            <figure class="shot"><img src="images/iPhone screenshot 6.jpg" alt="Project health and time metrics on iPhone" loading="lazy"><figcaption>Health &amp; time metrics</figcaption></figure>
+            <figure class="shot"><img src="images/iPhone screenshot 7.jpg" alt="Progress-over-time charts on iPhone" loading="lazy"><figcaption>Progress over time</figcaption></figure>
           </div>
         </div>
+
+        <div class="gallery-group">
+          <h3 class="gallery-group__title">On iPad</h3>
+          <div class="gallery-row gallery-row--pad">
+            <figure class="shot"><img src="images/ipad screenshot 4.jpg" alt="Gantt timeline on iPad" loading="lazy"><figcaption>Gantt timeline</figcaption></figure>
+            <figure class="shot"><img src="images/ipad screenshot 6.jpg" alt="Insights dashboard on iPad" loading="lazy"><figcaption>Insights dashboard</figcaption></figure>
+          </div>
+        </div>
+
+        <div class="gallery-group">
+          <h3 class="gallery-group__title">On Mac</h3>
+          <div class="gallery-row gallery-row--mac">
+            <figure class="shot"><img src="images/mac screenshot 1.jpg" alt="All projects at a glance on Mac" loading="lazy"><figcaption>Every project at a glance</figcaption></figure>
+            <figure class="shot"><img src="images/mac screenshot 7.jpg" alt="Projectholic running on iPhone, iPad, and Mac" loading="lazy"><figcaption>iPhone, iPad &amp; Mac</figcaption></figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="reviews" class="section reveal">
+      <div class="section-inner">
+        <div class="reviews-head">
+          <div class="rating-badge" aria-label="Rated 4.9 out of 5 on the App Store from 15 ratings">
+            <span class="rating-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span class="rating-line"><b>4.9</b> on the App Store<i>15 ratings</i></span>
+          </div>
+          <h2 class="headline">Freelancers who actually finish</h2>
+        </div>
+        <div class="reviews-grid">
+          <figure class="review review--feature">
+            <blockquote>Finally, a productivity app that helps me both plan and execute. The Gantt view, Kanban board, and focus timer work together really well.</blockquote>
+            <figcaption>Pinkypanther345<span>App Store review</span></figcaption>
+          </figure>
+          <figure class="review">
+            <blockquote>Planning feels natural now. I realized how effective it is to treat goals as projects. Breaking tasks down and scheduling them feels effortless.</blockquote>
+            <figcaption>k54279<span>App Store review</span></figcaption>
+          </figure>
+          <figure class="review">
+            <blockquote>The interface is clean and intuitive, yet it offers powerful features for project management and time scheduling.</blockquote>
+            <figcaption>Lawrence_1920<span>App Store review</span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="roadmap" class="section reveal">
+      <div class="section-inner">
+        <h2 class="headline">What is coming next</h2>
+        <p class="lead">Major features planned for 2026, from smarter planning to an AI project manager that thinks like your PM.</p>
+        <ol class="timeline">
+          <li class="timeline-item">
+            <span class="timeline-node"></span>
+            <span class="timeline-q">2026 Q1</span>
+            <h4>Smart Notifications</h4>
+            <p>Deadline warnings that flag a project at risk before your schedule slips.</p>
+          </li>
+          <li class="timeline-item">
+            <span class="timeline-node"></span>
+            <span class="timeline-q">2026 Q2</span>
+            <h4>Templates &amp; Dependencies</h4>
+            <p>Reusable project structures, plus links between tasks that show what is blocking progress.</p>
+          </li>
+          <li class="timeline-item">
+            <span class="timeline-node"></span>
+            <span class="timeline-q">2026 Q3</span>
+            <h4>AI Quick Add</h4>
+            <p>Type or speak "Review designs Thursday 2-4pm" and get a structured, time-blocked task.</p>
+          </li>
+          <li class="timeline-item">
+            <span class="timeline-node"></span>
+            <span class="timeline-q">2026 Q4</span>
+            <h4>AI Project Manager</h4>
+            <p>A personal PM that reviews projects, flags risks, and suggests the next step.</p>
+          </li>
+        </ol>
       </div>
     </section>
 
@@ -656,7 +802,6 @@
 
     <section id="contact" class="section reveal">
       <div class="section-inner">
-        <span class="eyebrow">Contact</span>
         <h2 class="headline">Stay connected</h2>
         <p class="lead">Follow updates, share feedback, and connect with the community.</p>
         <div class="contact-links">
@@ -817,22 +962,25 @@
     // ============================================
 
     // Physics parameters - tweak these for different effects
+    // Tuned for a calm, delicate settle: cards fall almost straight and
+    // come to rest in their curated fan (see each card's data-rot), rather
+    // than scattering like tossed poker cards.
     const PHYSICS = {
-      dropHeight: 250,           // Initial Z position (cm above table)
-      gravity: 980,              // Gravity acceleration (cm/s²)
+      dropHeight: 170,           // Initial Z position (cm above table)
+      gravity: 560,              // Gravity acceleration (cm/s²) - gentler fall
       airResistance: 0.015,      // Air drag coefficient
-      restitution: 0.28,         // Bounce coefficient (0 = no bounce, 1 = perfect bounce)
-      restitutionVariation: 0.12, // Randomize bounce per card
-      friction: 0.75,            // Friction coefficient (poker cards are slippery)
-      frictionVariation: 0.15,   // Slight variation per card
-      angularDamping: 0.94,      // Rotational friction
+      restitution: 0.1,          // Bounce coefficient (soft landing, barely bounces)
+      restitutionVariation: 0.04, // Randomize bounce per card
+      friction: 0.78,            // Friction coefficient
+      frictionVariation: 0.05,   // Slight variation per card
+      angularDamping: 0.9,       // Rotational friction
       minVelocity: 0.5,          // Stop simulation when velocity is this low
-      scaleAtStart: 1.5,         // Scale when close to viewer (high Z)
+      scaleAtStart: 1.12,        // Scale when close to viewer (high Z) - subtle zoom
       scaleAtTable: 1.0,         // Scale when on table (Z = 0)
       initialStackRadius: 3,     // How tightly cards are stacked initially (px)
-      impactScatterForce: 900,   // How much cards scatter on impact
-      randomSpinForce: 255,       // Random spin during fall (deg/s)
-      initialDriftForce: 150,     // Small initial sideways force during drop
+      impactScatterForce: 0,     // No scatter - cards stay in their curated fan
+      randomSpinForce: 0,        // No random spin - rotation eases to data-rot
+      initialDriftForce: 0,      // No sideways drift - fall is vertical
     };
 
     class CardPhysics {
@@ -866,9 +1014,10 @@
         this.vy = Math.sin(driftAngle) * driftMagnitude;
         this.vz = 0; // Dropped, not thrown
 
-        // Physics state - Rotation
-        this.rotation = (Math.random() - 0.5) * 2; // Tiny initial tilt
-        this.angularVelocity = (Math.random() - 0.5) * PHYSICS.randomSpinForce;
+        // Physics state - Rotation: settle straight to the curated angle
+        this.targetRotation = parseFloat(element.dataset.rot) || 0;
+        this.rotation = this.targetRotation;
+        this.angularVelocity = 0;
 
         // Individual card properties (randomized)
         this.restitution = PHYSICS.restitution + (Math.random() - 0.5) * PHYSICS.restitutionVariation;
@@ -925,18 +1074,13 @@
           // Bounce
           this.vz = -this.vz * this.restitution;
 
-          // First impact - convert downward energy to scatter
+          // First impact - forces are zeroed for a curated landing, so the
+          // card just settles in place. (Kept as a hook for future tuning.)
           if (!this.hasLanded) {
             this.hasLanded = true;
-            const impactEnergy = Math.abs(this.vz);
-
-            // Scatter in random direction
             const scatterForce = PHYSICS.impactScatterForce * (0.8 + Math.random() * 0.4);
             this.vx += Math.cos(this.scatterAngle) * scatterForce;
             this.vy += Math.sin(this.scatterAngle) * scatterForce;
-
-            // Add spin from impact
-            this.angularVelocity += (Math.random() - 0.5) * 40;
           }
 
           // Stop bouncing if energy is too low
@@ -969,9 +1113,10 @@
         const scaleProgress = 1 - (this.z / PHYSICS.dropHeight);
         const scale = PHYSICS.scaleAtStart - (PHYSICS.scaleAtStart - PHYSICS.scaleAtTable) * scaleProgress;
 
-        // Calculate shadow blur based on height
-        const shadowBlur = Math.max(20, 20 + this.z * 0.3);
-        const shadowSpread = Math.max(50, 50 + this.z * 0.5);
+        // Soft, layered shadow that lightens as the card settles
+        const lift = this.z / PHYSICS.dropHeight; // 1 = high, 0 = resting
+        const shadowOffset = 14 + this.z * 0.12;
+        const shadowBlurPx = 34 + this.z * 0.22;
 
         // Apply transform and position
         const finalX = this.centerX + this.x;
@@ -986,7 +1131,9 @@
           this.element.style.transform = `translate(${this.x}px, ${this.y}px) rotate(${this.rotation}deg) scale(${scale})`;
         }
 
-        this.element.style.boxShadow = `0 ${shadowBlur}px ${shadowSpread}px rgba(0, 0, 0, ${0.3 + this.z / PHYSICS.dropHeight * 0.2}), 0 0 0 1px rgba(255, 255, 255, 0.05)`;
+        this.element.style.boxShadow =
+          `0 ${shadowOffset.toFixed(1)}px ${shadowBlurPx.toFixed(1)}px rgba(0, 0, 0, ${(0.22 + lift * 0.12).toFixed(2)}),`
+          + ` 0 2px 10px rgba(0, 0, 0, 0.22), 0 0 0 1px rgba(255, 255, 255, 0.07)`;
       }
     }
 
@@ -1000,12 +1147,9 @@
     const containerWidth = cardStack.offsetWidth;
     const containerHeight = cardStack.offsetHeight;
 
-    // Adjust physics for mobile devices
+    // Adjust physics for mobile devices (still calm, just a shorter drop)
     if (isMobile) {
-      PHYSICS.dropHeight = 150;
-      PHYSICS.impactScatterForce = 200;
-      PHYSICS.randomSpinForce = 120;
-      PHYSICS.initialDriftForce = 50;
+      PHYSICS.dropHeight = 130;
     }
 
     cardElements.forEach((card, index) => {
@@ -1067,7 +1211,7 @@
     // ============================================
 
     // Interactive card stack
-    let highestZIndex = 7;
+    let highestZIndex = 5;
 
     cardElements.forEach((card, cardIndex) => {
       let isDragging = false;
@@ -1135,6 +1279,33 @@
         }
       }
     });
+
+    // ============================================
+    // HERO PARALLAX TILT
+    // The settled card cluster tilts subtly toward the cursor on devices
+    // with a fine pointer. Skipped for touch and reduced-motion.
+    // ============================================
+    const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    if (!prefersReducedMotion && finePointer) {
+      const heroSection = document.querySelector('.hero');
+      cardStack.classList.add('tilt');
+      let tiltRaf = null;
+      heroSection.addEventListener('pointermove', (e) => {
+        if (tiltRaf) return;
+        tiltRaf = requestAnimationFrame(() => {
+          tiltRaf = null;
+          const r = heroSection.getBoundingClientRect();
+          const dx = (e.clientX - r.left) / r.width - 0.5;
+          const dy = (e.clientY - r.top) / r.height - 0.5;
+          cardStack.style.setProperty('--ry', (dx * 7).toFixed(2) + 'deg');
+          cardStack.style.setProperty('--rx', (-dy * 6).toFixed(2) + 'deg');
+        });
+      });
+      heroSection.addEventListener('pointerleave', () => {
+        cardStack.style.setProperty('--rx', '0deg');
+        cardStack.style.setProperty('--ry', '0deg');
+      });
+    }
   </script>
 </body>
 </html>

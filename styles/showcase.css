@@ -1,0 +1,232 @@
+/* ============================================================
+   Screenshot gallery + hero polish
+   ------------------------------------------------------------
+   The screenshots are finished App Store compositions (device
+   mockup + headline + backdrop baked in), so they're shown as
+   clean cards — rounded, soft-shadowed, captioned — rather than
+   re-framed. Grouped by device. Also holds the hero parallax.
+   ============================================================ */
+
+/* ---- Gallery groups ---- */
+.gallery-group { margin-top: 3rem; }
+.gallery-group:first-of-type { margin-top: 2.5rem; }
+.gallery-group__title {
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: rgba(245, 242, 237, 0.55);
+  margin-bottom: 1.4rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+.gallery-group__title::before {
+  content: '';
+  width: 26px;
+  height: 1px;
+  background: rgba(245, 242, 237, 0.3);
+}
+
+.gallery-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.6rem;
+  align-items: flex-start;
+}
+
+.shot {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  transition: transform 0.35s cubic-bezier(.2, .8, .2, 1);
+}
+.shot img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 18px;
+  box-shadow: 0 22px 50px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.05);
+  transition: box-shadow 0.35s ease;
+}
+.shot:hover { transform: translateY(-7px); }
+.shot:hover img { box-shadow: 0 32px 66px rgba(0, 0, 0, 0.58), 0 0 0 1px rgba(255, 255, 255, 0.08); }
+.shot figcaption {
+  font-size: 0.85rem;
+  color: var(--muted-ink);
+  text-align: center;
+  letter-spacing: 0.01em;
+}
+
+.gallery-row--phone .shot { width: clamp(150px, 20vw, 188px); }
+.gallery-row--pad .shot   { width: clamp(300px, 46vw, 460px); }
+.gallery-row--mac .shot   { width: clamp(320px, 50vw, 520px); }
+
+/* ============================================================
+   Hero parallax tilt
+   The settled card cluster tilts subtly toward the cursor.
+   JS sets --rx / --ry on .device-stack and toggles .tilt.
+   ============================================================ */
+.device-stack {
+  transition: transform 0.4s cubic-bezier(.2, .8, .2, 1);
+}
+.device-stack.tilt {
+  transform: perspective(1300px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .device-stack.tilt { transform: none; }
+  .shot { transition: none; }
+}
+
+@media (max-width: 600px) {
+  .gallery-group { margin-top: 2.4rem; }
+  .gallery-row { gap: 1.1rem; }
+  .gallery-row--phone .shot { width: clamp(132px, 41vw, 165px); }
+  .gallery-row--pad .shot,
+  .gallery-row--mac .shot { width: 100%; }
+}
+
+/* ============================================================
+   Taste-pass layout families: duo, band, timeline, reviews
+   ============================================================ */
+
+/* Two-up "duo" feature (Gantt + Kanban) */
+.duo-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+.duo-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  padding: 1.5rem;
+  border-radius: 24px;
+  border: 1px solid var(--panel-stroke);
+  background: linear-gradient(150deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.015));
+}
+.duo-copy h3 { font-size: 1.5rem; margin-bottom: 0.5rem; }
+.duo-copy p { color: var(--muted-ink); line-height: 1.6; }
+
+/* Featured revenue band (framed, tinted callout) */
+.band {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
+  padding: clamp(1.8rem, 5vw, 3.6rem);
+  border-radius: 28px;
+  border: 1px solid var(--panel-stroke);
+  background:
+    radial-gradient(130% 130% at 88% 8%, rgba(255, 140, 66, 0.18), transparent 55%),
+    linear-gradient(155deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.015));
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+}
+.band-text h2 { font-size: clamp(2rem, 4vw, 3rem); margin: 1rem 0; }
+.band-text > p { color: var(--muted-ink); line-height: 1.7; margin-bottom: 1.4rem; max-width: 46ch; }
+.band-points { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; color: var(--muted-ink); }
+.band-points li::before { content: '\2192'; color: var(--accent); margin-right: 0.6rem; }
+.band-stage { width: 100%; }
+
+/* Roadmap horizontal timeline */
+.timeline {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.6rem;
+  margin-top: 3.5rem;
+  position: relative;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 2px;
+  right: 2px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--accent), rgba(255, 140, 66, 0.1));
+}
+.timeline-item { position: relative; padding-top: 2rem; }
+.timeline-node {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 4px rgba(255, 140, 66, 0.15);
+}
+.timeline-q {
+  display: block;
+  font-size: 0.8rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(245, 242, 237, 0.5);
+  margin-bottom: 0.6rem;
+}
+.timeline-item h4 { font-size: 1.25rem; margin-bottom: 0.5rem; }
+.timeline-item p { color: var(--muted-ink); line-height: 1.6; font-size: 0.95rem; }
+
+/* Reviews */
+.reviews-head { display: flex; flex-direction: column; gap: 1.1rem; }
+.rating-badge { display: inline-flex; align-items: center; gap: 0.7rem; }
+.rating-stars { color: var(--accent); font-size: 1.05rem; letter-spacing: 0.08em; }
+.rating-line { font-size: 0.95rem; color: var(--muted-ink); display: inline-flex; align-items: baseline; gap: 0.5rem; }
+.rating-line b { font-family: var(--font-display); font-size: 1.5rem; color: var(--ink); font-weight: 700; }
+.rating-line i { font-style: normal; font-size: 0.8rem; color: rgba(245, 242, 237, 0.45); }
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 1.6rem;
+  margin-top: 2.5rem;
+}
+.review {
+  margin: 0;
+  padding: 1.8rem;
+  border-radius: 20px;
+  border: 1px solid var(--panel-stroke);
+  background: var(--panel);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.4rem;
+}
+.review--feature {
+  grid-row: span 2;
+  background: linear-gradient(150deg, rgba(255, 140, 66, 0.1), rgba(255, 255, 255, 0.02));
+  border-color: rgba(255, 140, 66, 0.25);
+}
+.review blockquote { margin: 0; font-size: 1.02rem; line-height: 1.6; color: var(--ink); }
+.review--feature blockquote { font-size: 1.28rem; line-height: 1.5; }
+.review blockquote::before {
+  content: '\201C';
+  color: var(--accent);
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  line-height: 0;
+  margin-right: 0.12rem;
+  vertical-align: -0.2em;
+}
+.review figcaption { font-size: 0.85rem; color: var(--ink); font-weight: 600; display: flex; flex-direction: column; gap: 0.15rem; }
+.review figcaption span { font-weight: 400; color: rgba(245, 242, 237, 0.45); font-size: 0.78rem; }
+
+@media (max-width: 860px) {
+  .duo-grid { grid-template-columns: 1fr; }
+  .band { grid-template-columns: 1fr; }
+  .timeline { grid-template-columns: 1fr 1fr; gap: 1.8rem 1.6rem; }
+  .reviews-grid { grid-template-columns: 1fr; }
+  .review--feature { grid-row: auto; }
+}
+
+@media (max-width: 560px) {
+  .timeline { grid-template-columns: 1fr; gap: 1.6rem; }
+  .timeline::before { display: none; }
+  .timeline-item { padding-top: 0; padding-left: 1.6rem; }
+  .timeline-node { top: 6px; }
+}

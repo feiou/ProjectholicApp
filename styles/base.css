@@ -11,6 +11,11 @@
   padding: 0;
 }
 
+:root {
+  /* Display typeface (site-wide). Swap this one value to change every heading. */
+  --font-display: 'Bricolage Grotesque', 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -25,7 +30,7 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: 'Noto Serif', 'Times New Roman', serif;
+  font-family: var(--font-display);
   font-weight: 600;
 }
 

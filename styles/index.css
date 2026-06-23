@@ -8,6 +8,8 @@
   --panel: rgba(255, 255, 255, 0.05);
   --panel-stroke: rgba(255, 255, 255, 0.1);
   --glow: rgba(255, 140, 66, 0.2);
+  /* Display typeface. Swap this one value to revert to 'Noto Serif'. */
+  --font-display: 'Bricolage Grotesque', 'Manrope', -apple-system, sans-serif;
 }
 
 * {
@@ -45,7 +47,7 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: 'Noto Serif', 'Times New Roman', serif;
+  font-family: var(--font-display);
   font-weight: 600;
 }
 
@@ -293,7 +295,7 @@ a {
   font-size: 2.3rem;
   color: var(--accent-warm);
   margin-bottom: 0.4rem;
-  font-family: 'Noto Serif', 'Times New Roman', serif;
+  font-family: var(--font-display);
 }
 
 .screenshot-card {
