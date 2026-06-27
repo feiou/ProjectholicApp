@@ -749,6 +749,11 @@
    Feature — Project stats: time budget + health dashboard
    (mirrors the in-app Project Stats / Health Dashboard screen)
    ============================================================ */
+/* This is a content card, not a fixed-ratio graphic — let it size to its
+   content so the figures, overview cards and health rings stay tight with no
+   dead space in the middle. (2-class specificity beats the responsive
+   .motion-stage aspect-ratio overrides.) */
+.motion-stage.proj-stat-stage { aspect-ratio: auto; gap: 0.85rem; justify-content: flex-start; }
 .pstat-figures { display: flex; gap: 1.6rem; flex-wrap: wrap; margin-top: 0.1rem; }
 .pstat-fig { display: flex; flex-direction: column; gap: 0.1rem; }
 .pstat-fig b {
@@ -760,12 +765,54 @@
 .pstat-fig--good b { color: #5fce9b; }
 .pstat-fig span { font-size: 0.72rem; color: var(--muted-ink); }
 
+/* Project Overview cards fill the body, mirroring the app's stats screen */
+.pstat-overview {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.55rem;
+  align-content: center;
+  min-height: 0;
+}
+.pstat-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.32rem;
+  padding: 0.75rem 0.7rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid var(--panel-stroke);
+  opacity: 0;
+  transform: translateY(10px);
+}
+.in-view .pstat-card { animation: cardIn 0.55s ease-out forwards; animation-delay: calc(0.2s + var(--i, 0) * 0.12s); }
+.pstat-card-h {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--muted-ink);
+  margin-bottom: 0.1rem;
+}
+.pstat-card em {
+  font-style: normal;
+  font-size: 0.72rem;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  white-space: nowrap;
+}
+.pstat-card em b { font-weight: 600; }
+.pstat-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+.pstat-dot--g { background: #5fce9b; }
+.pstat-dot--o { background: var(--accent); }
+.pstat-dot--b { background: #5fa8f0; }
+
 .pstat-head {
   font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 0.12em;
   color: var(--muted-ink);
-  margin-top: auto;
 }
 .pstat-rings {
   display: grid;
@@ -958,4 +1005,6 @@
   .duo-stage { aspect-ratio: 5 / 4; }
   .kanban-col { padding: 0.5rem 0.35rem; }
   .ms-task { max-width: 48%; }
+  /* Stack the project-overview cards so the nowrap stat rows never clip */
+  .pstat-overview { grid-template-columns: 1fr; }
 }
