@@ -1,7 +1,17 @@
-# Projectholic Complete User Manual (Display-Name Aligned)
+# Projectholic User Guide
 
-This is the full self-learn manual for end users.
-It is intentionally detailed and uses the same display labels shown in the app UI (from `Projectholic/en.lproj/Localizable.strings`).
+Welcome. This guide covers everything Projectholic can do — from your very first project to running real work day to day. It's built to be skimmed: jump to any topic from the contents, or read it straight through. Every button and label below matches exactly what you see in the app.
+
+## What's new in v1.1.0
+
+Run bigger, real-world projects with more control:
+
+- **Task Dependencies & Cascade (`Beta`)** — link tasks so one only starts after another finishes. Move a date and everything downstream reschedules automatically. See section 26.
+- **Costs & profit** — log one-time and recurring costs on any project, set your revenue, and see profit and margin at a glance. See section 27.
+- **Task attachments** — attach links, images, and documents (PDF, Office, and more) directly to a task. See section 28.
+- **Project templates** — start from a ready-made template gallery instead of a blank page. See section 29.
+
+Plus performance improvements and bug fixes throughout.
 
 ## 1. Product overview
 
@@ -73,6 +83,7 @@ Top bar controls:
 Add options:
 - `Guided (PMBOK)`
 - `Quick Add`
+- `From a Template` (opens the `Start with a Template` gallery — see section 29)
 
 Search and filtering:
 - Search placeholder: `Search projects...`
@@ -374,9 +385,9 @@ Possible actions include:
 - `Copy Project`
 - delete action
 
-## 22. Button and icon reference (quick answers)
+## 22. What each button and icon does
 
-When a user asks “what does this button do?”, use this mapping:
+Not sure what a button does? Here's a quick key to the icons you'll run into most:
 - `xmark`: close current sheet/page
 - `chevron.right`: open details / drill-down
 - `ellipsis`: open additional actions
@@ -451,36 +462,102 @@ When a user asks “what does this button do?”, use this mapping:
 6. Learn `Stats` interpretation basics
 7. Configure `Settings` defaults and `Work Hours`
 
-## 26. Troubleshooting reference
+## 26. Task Dependencies & Cascade (`Dependencies`, `Beta`)
+
+Link tasks so one only starts after another finishes. When a task you depend on moves, everything downstream automatically reschedules to stay in order — and one tap undoes the shift. This ships as `Beta`: it works, but expect ongoing refinements.
+
+Two ways to link tasks:
+- On the `Gantt`: long-press a task bar, choose `Do before…`, then tap the task it comes before.
+- From a task: open it, go to `Plan` > `Dependencies`, and add under `Do after` or `Do before`.
+
+Cascade behavior:
+- Moving or rescheduling a predecessor shifts its dependents forward to keep the order valid.
+- Before it applies, a preview shows how many tasks will move (`Shift N tasks?`); `Undo` reverts the whole cascade.
+- Circular links are blocked (`Would create a loop`).
+
+Where: `Gantt` tab (long-press a bar), or a task's `Plan` > `Dependencies`.
+
+## 27. Costs & profit (`Costs & profit`)
+
+See whether a project actually pays off. Log the money going out, set the money coming in, and read profit and margin at a glance.
+
+What you can log:
+- one-time charges
+- recurring subscriptions
+
+How it works:
+- Set the project's income under `Project revenue` (`Track project revenue`).
+- Add costs with `Add cost`; each cost has its own active period.
+- The screen shows `Total cost`, `Profit`, and `Margin`.
+- A `Calculation range` views costs across any date window (defaults to the project's start and end). Costs are scoped to the selected range; revenue is the project total.
+
+Entry points:
+- `Projects` > select a project > `Edit` > `Costs & profit`
+- the `Costs & profit` card in `Stats`
+
+Pro feature: if your Pro access lapses you can still view costs, but not add new ones.
+
+Where: `Projects` > select a project > `Edit` > `Costs & profit`.
+
+## 28. Task attachments (`Attachments`)
+
+Attach references directly to a task so everything you need sits in one place.
+
+Supported attachments:
+- links
+- images (photo library or camera)
+- documents (PDF, Office, text, and more)
+
+Adding attachments (in the task editor):
+- `Photo Library`
+- `Take Photo`
+- `Choose File`
+- `Add Link`
+
+Opening: tap an attachment to view it in-app — images and documents open in a built-in preview, links open in a browser. You can `Rename` or `Delete` any attachment.
+
+Notes:
+- Each file must be under the size limit shown in the app (large files are rejected).
+- Pro feature: if your Pro access lapses you can still view existing attachments, but not add new ones.
+
+Where: task editor > `Info` tab > `Attachments` (below `Notes`).
+
+## 29. Project templates (`Start with a Template`)
+
+Start from a proven plan instead of a blank page. Pick a template and Projectholic sets up the phases, tasks, and schedule for you — then you can change anything.
+
+Where to find templates:
+- First launch: the quick-start step offers a template or building your own.
+- Anytime: `Projects` > add (`plus`) > `From a Template`, which opens the `Start with a Template` gallery.
+
+After you pick one, the project is created fully structured; edit its phases, tasks, and dates like any other project.
+
+Where: `Projects` > add (`plus`) > `From a Template`.
+
+## 30. Troubleshooting
+
+Stuck on something? Here are the quick fixes for the questions we hear most.
 
 ## “I can’t find a task”
-Check:
-- date range
-- active filters
-- `Unscheduled` area
-- `Inbox`/unassigned phase area
+It's almost always hiding behind a filter or a date. Check:
+- the date range you're viewing
+- any active filters or tags
+- the `Unscheduled` area
+- the `Inbox` (unassigned-phase area)
 
-## “I cannot add more projects”
-Likely free-tier limitation after first project.
+## “I can’t add more projects”
+The free plan includes your first project; creating more needs Pro.
 
-## “Sync is not updating”
-Check `iCloud Status` labels and use `Refresh`.
+## “Sync isn’t updating”
+Open `iCloud Status` to see what's happening, then tap `Refresh`. If it's still stuck, make sure you're signed in to iCloud.
 
-## “My long task schedule looks wrong”
-Open task editor, verify `Type` is `Multi-day`, then validate spread constraints.
+## “My long task’s schedule looks wrong”
+Open the task and confirm its `Type` is `Multi-day`, then review the spread settings — max minutes per day, block sizes, and whether weekends are skipped.
 
-## “Recurring behavior is unexpected”
-Open recurring settings and check `Every`, `End Condition`, and selected pattern.
+## “A recurring task isn’t behaving as expected”
+Open the recurring settings and double-check `Every`, `End Condition`, and the pattern you picked.
 
-## 27. Support-answer template for UI questions
-
-When users ask about a specific control:
-1. Ask where they are (`Projects`, `Calendar`, `Gantt`, `Follow-up`, `Stats`, `Settings`)
-2. Identify icon shape and nearby label
-3. Map to section 22 and 23
-4. If destructive action, explain confirmation impact
-
-## 28. Glossary
+## 31. Glossary
 
 - Project: top-level container in `Projects`
 - Phase: deliverable segment inside a project
@@ -490,3 +567,8 @@ When users ask about a specific control:
 - `Unscheduled`: task without scheduled slot
 - Focus session: timed work record started via `Start Focus`
 - `Follow-up`: shared/delegated task tracking screen
+- Dependency: a `Do after` / `Do before` link between tasks; cascade auto-reschedules dependents
+- Cost item: a one-time or recurring charge logged on a project (`Costs & profit`)
+- `Margin`: profit as a share of revenue
+- `Attachments`: links, images, and documents attached to a task
+- Template: a ready-made project plan (`Start with a Template`)
