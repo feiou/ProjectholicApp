@@ -136,7 +136,7 @@
 .timeline {
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.6rem;
   margin-top: 3.5rem;
   position: relative;

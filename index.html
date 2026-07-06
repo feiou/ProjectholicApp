@@ -100,7 +100,7 @@
           "name": "Is Projectholic free?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes, fully free on the App Store. No trial timer, no upsell wall, no premium tier waiting to interrupt you. Planning, milestones, scheduling, gantt-style timeline, progress tracking, iCloud sync, all included. Built by an independent studio that earns its keep by being genuinely useful, not by adding friction to make you pay."
+            "text": "Projectholic is free to download and free to start: on the free plan you can build and schedule your first project, with milestones, tasks, subtasks, dependencies, and the board, at no cost. A Pro upgrade unlocks the rest: unlimited projects, two-way Apple Calendar sync, iCloud sync across your devices, in-depth stats and earnings, task attachments, and cost and profit tracking. Pro is available as a subscription or a one-time purchase through your Apple ID, so there is no separate account to create."
           }
         },
         {
@@ -548,6 +548,39 @@
       </div>
     </section>
 
+    <!-- Feature: Task attachments (split, visual left) -->
+    <section class="section reveal">
+      <div class="section-inner">
+        <div class="split-section">
+          <div class="motion-stage attach-stage" role="img" aria-label="Animated task attachments: a grid of image, PDF and document thumbnails with an add tile and a link row">
+            <div class="ms-row"><span class="ms-tag">Attachments</span><span class="ms-task">Design homepage &middot; 4</span></div>
+            <div class="attach-body">
+              <div class="attach-grid">
+                <div class="attach-tile attach-tile--img" style="--i:0"></div>
+                <div class="attach-tile" style="--i:1"><span class="attach-badge">PDF</span></div>
+                <div class="attach-tile" style="--i:2"><span class="attach-badge">DOCX</span></div>
+                <div class="attach-tile attach-tile--add" style="--i:3"><span>+</span></div>
+              </div>
+              <div class="attach-link" style="--i:4">
+                <span class="attach-link-ic">&#128279;</span>
+                <em>Brand guidelines<b>figma.com</b></em>
+              </div>
+            </div>
+          </div>
+          <div class="split-copy">
+            <h2>Everything a task needs, on the task<span class="pro-pill">Pro</span></h2>
+            <p>Keep the reference right where the work happens. Add photos, snap a document with the camera, attach a file, or drop in a link &mdash; then open any of them in place, without leaving Projectholic.</p>
+            <ul class="bullet-list">
+              <li>Photos, camera captures, files, and links on any task</li>
+              <li>PDFs, images, and Office docs open in a built-in viewer</li>
+              <li>Links open in-app; rename or delete anything in a tap</li>
+              <li>Added files stay viewable even on the free plan</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Feature: Two views (Gantt + Kanban) as a 2-up duo, breaking the split rhythm -->
     <section class="section reveal">
       <div class="section-inner">
@@ -603,6 +636,33 @@
       </div>
     </section>
 
+    <!-- Feature: Task dependencies (split reversed, visual right) -->
+    <section class="section reveal">
+      <div class="section-inner split-section reversed">
+        <div class="motion-stage dep-stage" role="img" aria-label="Animated dependency chain: three linked task cards where moving the first cascades the schedule of the others, with an undo toast">
+          <div class="ms-row"><span class="ms-tag ms-tag--blue">Dependencies</span><span class="ms-task">Do before &rarr; Do after</span></div>
+          <div class="dep-chain">
+            <div class="dep-node dep-node--g" style="--i:0"><b>Research</b><span>Mon&ndash;Tue</span></div>
+            <span class="dep-conn" style="--i:0"></span>
+            <div class="dep-node dep-node--b" style="--i:1"><b>Design</b><span>Wed&ndash;Thu</span></div>
+            <span class="dep-conn" style="--i:1"></span>
+            <div class="dep-node" style="--i:2"><b>Build</b><span>Fri&ndash;Mon</span></div>
+          </div>
+          <div class="dep-toast"><span class="dep-toast-ic">&#8635;</span> 2 tasks shifted <b>Undo</b></div>
+        </div>
+        <div class="split-copy">
+          <h2>Link tasks, and they reschedule themselves</h2>
+          <p>On the Gantt, link a task before the ones that follow. When something you depend on moves, everything downstream shifts with it to stay in order &mdash; and a single tap undoes the whole cascade.</p>
+          <ul class="bullet-list">
+            <li>Link tasks with &ldquo;Do before&rdquo; and &ldquo;Do after&rdquo;</li>
+            <li>Reschedule one task and dependents follow automatically</li>
+            <li>Undo an entire cascade with a single tap</li>
+            <li>Circular links are caught before they tangle your plan</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
     <!-- Feature: Revenue, as a full-width featured band (distinct family) -->
     <section class="section reveal">
       <div class="section-inner">
@@ -633,6 +693,40 @@
               <i style="--h:88%; --i:5"></i>
               <i style="--h:78%; --i:6"></i>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Feature: Costs & profit tracking (split, visual left) -->
+    <section class="section reveal">
+      <div class="section-inner">
+        <div class="split-section">
+          <div class="motion-stage cost-stage" role="img" aria-label="Animated costs and profit summary: revenue, costs and a counting-up profit figure with a margin bar, plus a recurring and a one-time cost line item">
+            <div class="ms-row"><span class="ms-tag ms-tag--green">Costs &amp; Profit</span><span class="ms-task">Client site</span></div>
+            <div class="cost-summary">
+              <div class="cost-fig"><span>Revenue</span><b>$4,500</b></div>
+              <div class="cost-fig"><span>Costs</span><b>$1,280</b></div>
+              <div class="cost-fig cost-fig--profit"><span>Profit</span><b>$<span data-target="3220" data-kind="number" data-decimals="0">3,220</span></b></div>
+            </div>
+            <div class="cost-marginwrap">
+              <div class="cost-margin"><span class="cost-margin-bar" style="--w:72%"></span></div>
+              <em class="cost-margin-cap">72% margin</em>
+            </div>
+            <div class="cost-items">
+              <div class="cost-item" style="--i:0"><span class="cost-dot cost-dot--o"></span><em>Design software</em><i>$60 / mo</i></div>
+              <div class="cost-item" style="--i:1"><span class="cost-dot cost-dot--b"></span><em>Stock photos</em><i>$220 once</i></div>
+            </div>
+          </div>
+          <div class="split-copy">
+            <h2>See if a project actually pays off<span class="pro-pill">Pro</span></h2>
+            <p>Log one-time charges and recurring subscriptions, set the project&rsquo;s revenue, and watch profit and margin update live. Pick any date window to see how costs stack up over time.</p>
+            <ul class="bullet-list">
+              <li>Track one-time costs and recurring subscriptions</li>
+              <li>Set revenue and see profit and margin instantly</li>
+              <li>Choose any date range to total costs over time</li>
+              <li>Kept per project, in your own currency</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -754,29 +848,23 @@
     <section id="roadmap" class="section reveal">
       <div class="section-inner">
         <h2 class="headline">What is coming next</h2>
-        <p class="lead">Major features planned for 2026, from smarter planning to an AI project manager that thinks like your PM.</p>
+        <p class="lead">Major features on the way, from smarter notifications to an AI project manager that thinks like your PM. Templates and task dependencies have already shipped.</p>
         <ol class="timeline">
           <li class="timeline-item">
             <span class="timeline-node"></span>
-            <span class="timeline-q">2026 Q1</span>
+            <span class="timeline-q">2026 Q3</span>
             <h4>Smart Notifications</h4>
             <p>Deadline warnings that flag a project at risk before your schedule slips.</p>
           </li>
           <li class="timeline-item">
             <span class="timeline-node"></span>
-            <span class="timeline-q">2026 Q2</span>
-            <h4>Templates &amp; Dependencies</h4>
-            <p>Reusable project structures, plus links between tasks that show what is blocking progress.</p>
-          </li>
-          <li class="timeline-item">
-            <span class="timeline-node"></span>
-            <span class="timeline-q">2026 Q3</span>
+            <span class="timeline-q">2026 Q4</span>
             <h4>AI Quick Add</h4>
             <p>Type or speak "Review designs Thursday 2-4pm" and get a structured, time-blocked task.</p>
           </li>
           <li class="timeline-item">
             <span class="timeline-node"></span>
-            <span class="timeline-q">2026 Q4</span>
+            <span class="timeline-q">2027</span>
             <h4>AI Project Manager</h4>
             <p>A personal PM that reviews projects, flags risks, and suggests the next step.</p>
           </li>
@@ -827,7 +915,7 @@
           </details>
           <details>
             <summary>Is Projectholic free?</summary>
-            <p>Yes, fully free on the App Store. No trial timer, no upsell wall, no premium tier waiting to interrupt you. Planning, milestones, scheduling, gantt-style timeline, progress tracking, iCloud sync, all included. Built by an independent studio that earns its keep by being genuinely useful, not by adding friction to make you pay.</p>
+            <p>Projectholic is free to download and free to start. On the free plan you can build and schedule your first project &mdash; milestones, tasks, subtasks, dependencies, and the board &mdash; at no cost. A Pro upgrade unlocks the rest: unlimited projects, two-way Apple Calendar sync, iCloud sync across your devices, in-depth stats and earnings, task attachments, and cost and profit tracking. Pro is available as a subscription or a one-time purchase through your Apple ID, so there's no separate account to create.</p>
           </details>
           <details>
             <summary>Which Apple devices does Projectholic support?</summary>
