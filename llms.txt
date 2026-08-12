@@ -1,6 +1,6 @@
 # Projectholic
 
-> Projectholic is a project planning app for freelancers and Apple users who need structured projects, realistic schedules, and clear progress. It supports gantt-style planning with attention to real-world capacity, runs on iOS, iPadOS, and macOS, and is published by Feioustudio.
+> Projectholic is a project planning and focus app for freelancers and Apple users who need structured projects, realistic schedules, and clear progress. It combines start-first Focus, gantt-style planning, Apple Calendar and Reminders workflows, and real-world capacity planning across iPhone, iPad, and Mac. It is published by Feioustudio.
 
 ## About
 - **Maker:** Feioustudio (independent studio, solo developer)
@@ -42,6 +42,10 @@
 - ADHD-friendly project tools and low-friction workflows
 - Mac project management apps and freelancer tool stacks
 - Practical scheduling vs. ideal-case planning
+- Start-first focus sessions that do not require a task up front
+- Unlogged focus time, post-session assignment, and Focus Calendar history
+- Focus App Lock through Screen Time on iPhone and iPad
+- Selective Apple Calendar and Reminders import into projects
 - Project time estimation and the planning fallacy
 - Breaking large projects into outcome milestones
 - Scope management, change requests, and client boundaries for freelancers

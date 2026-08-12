@@ -2,23 +2,27 @@
 
 Welcome. This guide covers everything Projectholic can do — from your very first project to running real work day to day. It's built to be skimmed: jump to any topic from the contents, or read it straight through. Every button and label below matches exactly what you see in the app.
 
-## What's new in v1.1.0
+## What's new
 
-Run bigger, real-world projects with more control:
+Focus first, then organize the work when the session is real:
 
-- **Task Dependencies & Cascade (`Beta`)** — link tasks so one only starts after another finishes. Move a date and everything downstream reschedules automatically. See section 26.
-- **Costs & profit** — log one-time and recurring costs on any project, set your revenue, and see profit and margin at a glance. See section 27.
-- **Task attachments** — attach links, images, and documents (PDF, Office, and more) directly to a task. See section 28.
-- **Project templates** — start from a ready-made template gallery instead of a blank page. See section 29.
+- **Start-first Focus** — begin from Home with one tap, without choosing or creating a task first. Available on iPhone, iPad, and Mac. See section 16.
+- **Unlogged Focus** — after a session, link the time to a task, phase, or project; create a task; or keep it in the inbox for later. See section 16.
+- **Focus Calendar** — completed sessions appear on the Today timeline and open their linked work. See section 16.
+- **Focus App Lock** — on iPhone and iPad, use Screen Time to block chosen distracting apps while focus is running. See section 16.
+- **Apple Import** — add selected Apple Calendar events and Reminders directly to any project. See section 30.
+- **Clearer Task View** — review schedules, subtasks, recurring rules, and details in a cleaner read-only layout before choosing Edit. See section 31.
 
-Plus performance improvements and bug fixes throughout.
+This release also improves Today and Gantt interactions, recurring-task focus progress, and overall reliability.
 
 ## 1. Product overview
 
 Projectholic is a project execution system combining:
 - `Projects` for project containers and goals
-- `Calendar` for daily/weekly execution
-- `Gantt` for timeline planning (iPad/Mac, Pro-oriented)
+- `Calendar` for daily/weekly execution and Focus history
+- `Gantt` for timeline planning on iPhone, iPad, and Mac
+- `Board` for status-based task flow
+- `Focus` for start-first sessions, Focus Calendar, and unlogged time
 - `Follow-up` for delegated/shared task tracking
 - `Stats` for progress and performance analysis
 - `Settings` for language, appearance, work hours, and data transfer
@@ -26,11 +30,11 @@ Projectholic is a project execution system combining:
 ## 2. What “full usage” looks like
 
 A complete workflow in Projectholic usually looks like this:
-1. Create a project in `Projects`
+1. Start Focus immediately, or create a project in `Projects`
 2. Define phases/deliverables
 3. Add tasks with suitable `Type` (`Regular`, `Multi-day`, `Recurring`)
 4. Place tasks on schedule in `Calendar`/`Gantt`
-5. Run execution with `Start Focus`
+5. Link unlogged Focus time to the work when you are ready
 6. Close loops in `Daily Summary` and `Day-End Review`
 7. Review outcomes in `Stats`
 
@@ -56,20 +60,24 @@ What users should do after onboarding:
 ## iPhone tabs
 - `Projects`
 - `Calendar`
-- `Follow-up`
-- `Stats`
-- `Settings`
+- `Gantt`
+- `Board`
+- `More`
 
 ## iPad/Mac sidebar tabs
 - `Projects`
 - `Gantt`
 - `Calendar`
+- `Board`
+- `Focus`
 - `Follow-up`
 - `Stats`
+- `Learn`
 - `Settings`
 
 Notes:
-- On iPhone, `Month` is represented through calendar experiences rather than a dedicated tab.
+- On iPhone, `More` contains Focus inbox, Follow-up, Stats, Learn, and Settings destinations that do not fit the compact tab bar.
+- On iPhone, `Gantt` uses a compact portrait layout and expands in landscape.
 - On iPad/Mac, `Gantt` and month-style `Calendar` are separated for planning clarity.
 
 ## 5. Projects screen deep guide
@@ -237,7 +245,7 @@ Menu includes:
 - `Day-End Review`
 
 Task block interactions:
-- single tap: open task editor/details
+- single tap: open the read-only task view
 - double tap: quick launch focus (auto-start path)
 - long press: context menu actions
 
@@ -272,24 +280,38 @@ Filter sheet actions:
 
 Useful when users want mid-level planning without full gantt complexity.
 
-## 16. Focus workflow (`Start Focus`)
+## 16. Start-first Focus, Focus Calendar, and App Lock
 
-Focus is task-linked.
+Focus no longer requires a task up front.
 
-Entry points:
-- task context menu (`Start Focus`)
-- double-tap task block
+Start-first entry points:
+- tap the Focus control from Home to begin immediately
+- on iPad and Mac, open the `Focus` sidebar destination for the timer hub
+- use a task's `Start Focus` action or double-tap its Calendar block when you already know the work
 
 Session lifecycle:
 - start
 - pause
 - resume
-- stop
+- minimize and keep timing elsewhere in the app
+- conclude
 
-Additional behavior:
-- active sessions can be minimized
-- minimized session can be resumed via floating indicator
-- history/logging preserved on task level
+When an unassigned session ends, choose one of these outcomes:
+- link it to an existing task, phase, or project
+- create a new task for the work
+- keep it in the `Unlogged Focus` inbox and organize it later
+
+Focus Calendar:
+- completed sessions appear as overlays on the Today timeline
+- linked sessions open the related work
+- the regular-width `Focus` destination groups the timer, Focus Calendar, and unlogged inbox
+
+Focus App Lock (iPhone and iPad):
+- choose distracting apps under `Focus App Lock`
+- grant the Screen Time permission when prompted
+- selected apps are blocked while the timer is running and released when focus ends
+
+Task-linked sessions continue to preserve history on the task and contribute to project focus progress.
 
 ## 17. `Follow-up` (shared/delegated tasks)
 
@@ -433,9 +455,9 @@ Not sure what a button does? Here's a quick key to the icons you'll run into mos
 ## 24. Daily user routines
 
 ## Routine A: Fast daily execution
-1. Open `Calendar`
-2. Check scheduled blocks
-3. Start one priority task with `Start Focus`
+1. Start Focus from Home as soon as you begin
+2. Open `Calendar` when you need the day's scheduled blocks
+3. Conclude the session and link it to the work, or keep it unlogged
 4. Mark completions inline
 5. End with `Daily Summary`
 
@@ -457,7 +479,7 @@ Not sure what a button does? Here's a quick key to the icons you'll run into mos
 1. Learn `Projects` creation and sorting
 2. Learn task `Type` differences
 3. Learn `Calendar` block editing
-4. Learn `Start Focus` and session lifecycle
+4. Learn start-first Focus, assignment, and the unlogged inbox
 5. Learn `Follow-up` delegation operations
 6. Learn `Stats` interpretation basics
 7. Configure `Settings` defaults and `Work Hours`
@@ -534,7 +556,35 @@ After you pick one, the project is created fully structured; edit its phases, ta
 
 Where: `Projects` > add (`plus`) > `From a Template`.
 
-## 30. Troubleshooting
+## 30. Apple Calendar and Reminders import
+
+Bring selected items from Apple's apps into the project where you will do the work.
+
+How to import:
+1. Open a project and choose `Edit Project`.
+2. Go to `Reminders & Sync`.
+3. Choose `Import from Apple Calendar` or `Import from Apple Reminders`.
+4. Select the calendars or reminder lists you want to browse.
+5. Select individual events or reminders, then import them.
+
+Projectholic creates project tasks from the selected items and skips items that were already imported. Calendar and Reminders access stays under the system permissions on your device.
+
+Where: project editor > `Reminders & Sync`.
+
+## 31. Read-only Task View
+
+Opening a task now starts with a cleaner review layout instead of putting every field into edit mode.
+
+The view groups the information you are most likely to inspect:
+- schedule and duration
+- project and phase
+- subtasks and completion
+- recurring rule and progress
+- notes, dependencies, attachments, and other details
+
+Use `Edit` only when you want to change the task. Your preferred font style is applied to the reading layout.
+
+## 32. Troubleshooting
 
 Stuck on something? Here are the quick fixes for the questions we hear most.
 
@@ -557,7 +607,7 @@ Open the task and confirm its `Type` is `Multi-day`, then review the spread sett
 ## “A recurring task isn’t behaving as expected”
 Open the recurring settings and double-check `Every`, `End Condition`, and the pattern you picked.
 
-## 31. Glossary
+## 33. Glossary
 
 - Project: top-level container in `Projects`
 - Phase: deliverable segment inside a project
@@ -565,7 +615,8 @@ Open the recurring settings and double-check `Every`, `End Condition`, and the p
 - `Multi-day`: long task spread over time blocks
 - `Recurring`: rule-based repeating task
 - `Unscheduled`: task without scheduled slot
-- Focus session: timed work record started via `Start Focus`
+- Focus session: timed work record that can start with or without a linked task
+- Unlogged Focus: completed focus time waiting in the inbox to be linked or kept for later
 - `Follow-up`: shared/delegated task tracking screen
 - Dependency: a `Do after` / `Do before` link between tasks; cascade auto-reschedules dependents
 - Cost item: a one-time or recurring charge logged on a project (`Costs & profit`)

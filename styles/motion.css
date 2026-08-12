@@ -83,7 +83,7 @@
 }
 
 /* ============================================================
-   1. Focus session — timer ring + controls + floating pill
+   1. Start-first Focus — timer + organize-later destinations
    ============================================================ */
 .focus-ring {
   position: relative;
@@ -132,50 +132,92 @@
   color: rgba(245, 242, 237, 0.45);
 }
 
-.focus-controls {
+.focus-file {
   display: flex;
+  align-items: center;
   justify-content: center;
-  gap: 0.9rem;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+  padding: 0.55rem;
+  border-radius: 16px;
+  border: 1px solid var(--panel-stroke);
+  background: rgba(0, 0, 0, 0.24);
 }
-.focus-btn {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
+.focus-file__label {
+  flex-basis: 100%;
+  color: rgba(245, 242, 237, 0.5);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-align: center;
+  text-transform: uppercase;
+}
+.focus-file__choice {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 3px;
+  min-height: 30px;
+  padding: 0.25rem 0.68rem;
+  border-radius: 999px;
   border: 1px solid var(--panel-stroke);
   background: rgba(255, 255, 255, 0.05);
+  color: var(--muted-ink);
+  font-size: 0.69rem;
+  font-weight: 600;
+  opacity: 0;
+  transform: translateY(8px);
 }
-.focus-btn--pause { background: var(--accent); border-color: transparent; }
-.focus-btn--pause i { width: 3px; height: 13px; border-radius: 1px; background: #1a1206; display: block; }
-.focus-btn--stop::after { content: ''; width: 11px; height: 11px; border-radius: 2px; background: rgba(245, 242, 237, 0.8); }
-.in-view .focus-btn--pause { animation: focusBeat 2.2s ease-in-out infinite; }
+.focus-file__choice--active {
+  color: #1a1206;
+  background: var(--accent);
+  border-color: transparent;
+}
+.in-view .focus-file__choice {
+  animation: pillIn 0.55s ease-out forwards;
+}
+.in-view .focus-file__choice:nth-of-type(2) { animation-delay: 0.75s; }
+.in-view .focus-file__choice:nth-of-type(3) { animation-delay: 0.9s; }
+.in-view .focus-file__choice:nth-of-type(4) { animation-delay: 1.05s; }
 
-.focus-pill {
-  display: inline-flex;
+.focus-timeline {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 0.7rem;
+  min-height: 46px;
+  padding: 0.55rem 0.75rem;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid var(--panel-stroke);
+  opacity: 0;
+  transform: translateY(10px);
+}
+.focus-timeline time {
+  color: rgba(245, 242, 237, 0.48);
+  font-size: 0.66rem;
+  font-variant-numeric: tabular-nums;
+}
+.focus-timeline span {
+  display: flex;
   align-items: center;
   gap: 0.5rem;
-  align-self: flex-start;
-  font-size: 0.74rem;
-  color: var(--muted-ink);
-  padding: 0.45rem 0.8rem;
+  color: var(--ink);
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+.focus-timeline i {
+  width: 4px;
+  height: 22px;
   border-radius: 999px;
-  background: rgba(0, 0, 0, 0.38);
-  border: 1px solid var(--panel-stroke);
-  backdrop-filter: blur(8px);
-  opacity: 0;
-  transform: translateY(12px);
+  background: var(--accent);
+  box-shadow: 0 0 10px rgba(255, 140, 66, 0.45);
 }
-.in-view .focus-pill { animation: pillIn 0.7s ease-out 1.1s forwards; }
-.focus-pill-play {
-  width: 0;
-  height: 0;
-  border-left: 8px solid var(--accent);
-  border-top: 5px solid transparent;
-  border-bottom: 5px solid transparent;
+.focus-timeline b {
+  color: rgba(245, 242, 237, 0.42);
+  font-size: 1.25rem;
+  font-weight: 400;
 }
+.in-view .focus-timeline { animation: pillIn 0.65s ease-out 1.25s forwards; }
 
 /* ============================================================
    2. Multi-day auto-spread — chunks across weekday columns
